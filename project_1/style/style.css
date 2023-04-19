@@ -527,7 +527,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   fill: #c13584;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1200px) {
   header {
     width: 750px;
     padding: 0 25px;
@@ -631,12 +631,13 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     height: 40px;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 768px) {
   .header {
     width: 315px;
-    padding: 10px 15px 0;
+    padding: 10px 15px;
     transition: all 0.3s ease;
     align-items: flex-start;
+    justify-content: space-between;
     height: 90px;
     position: relative;
     margin-bottom: 20px;
@@ -647,6 +648,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   .header .burger-menu {
     width: 50px;
+    margin-right: 0;
   }
   .header .burger-menu .burger-menu-icon {
     stroke: #8a40ee;
@@ -675,6 +677,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     width: 315px;
     padding: 0 10px;
     height: 421px;
+    margin-bottom: 50px;
   }
   main .first-screen .first-screen-text {
     gap: 25px;
@@ -702,10 +705,12 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     height: 492px;
     flex-direction: column;
     position: relative;
+    margin-bottom: 50px;
   }
   main .intro img {
     position: absolute;
     bottom: 0;
+    width: 255px;
   }
   main .intro .intro-text {
     width: 270px;
@@ -725,12 +730,15 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     width: 315px;
     height: 2297px;
     gap: 25px;
+    margin-bottom: 50px;
   }
   main .features h2 {
     font-size: 30px;
+    margin-bottom: 0px;
   }
   main .features .features-info {
     width: 300px;
+    margin-bottom: 0px;
   }
   main .features ul {
     height: 2093px;
@@ -738,7 +746,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   main .features ul li {
     width: 300px;
-    height: 600px;
+    height: 500px;
   }
   main .features ul li .card-img {
     top: 300px;
@@ -760,6 +768,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     height: 809px;
     gap: 20px;
     padding-top: 20px;
+    margin-bottom: 50px;
   }
   main .testimonials h2 {
     font-size: 30px;
@@ -788,15 +797,17 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   footer {
     width: 315px;
     height: 1160px;
+    gap: 30px;
   }
   footer .footer-heading {
     height: 307px;
+    flex-direction: column;
+  }
+  footer .footer-heading .footer-heading-title {
+    text-align: center;
   }
   footer .footer-heading .footer-heading-title h2 {
     font-size: 30px;
-  }
-  footer .footer-heading .footer-heading-title p {
-    text-align: center;
   }
   footer .footer-heading .footer-heading-buttons {
     flex-direction: column;
@@ -814,6 +825,9 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   footer .footer-nav .footer-contacts {
     margin-right: 0;
+  }
+  footer .footer-nav .footer-contacts a img {
+    margin-bottom: 20px;
   }
   footer .footer-nav .footer-contacts p {
     text-align: center;

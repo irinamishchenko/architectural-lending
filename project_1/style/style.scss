@@ -661,7 +661,7 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 769px) and (max-width: 1200px){
     header {
         width: $container-middle;
         padding: 0 25px;
@@ -794,12 +794,13 @@ footer {
     }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 768px) {
     .header {
         width: $container-small;
-        padding: 10px 15px 0;
+        padding: 10px 15px;
         transition: all 0.3s ease;
         align-items: flex-start;
+        justify-content: space-between;
         height: 90px;
         position: relative;
         margin-bottom: 20px;
@@ -811,7 +812,7 @@ footer {
 
         .burger-menu {
             width: 50px;
-
+            margin-right: 0;
             .burger-menu-icon {
                 stroke: $purple;
                 display: inline-block;
@@ -846,7 +847,7 @@ footer {
             width: $container-small;
             padding: 0 10px;
             height: 421px;
-
+            margin-bottom: 50px;
             .first-screen-text {
                 gap: 25px;
                 align-items: center;
@@ -878,10 +879,12 @@ footer {
             height: 492px;
             flex-direction: column;
             position: relative;
+            margin-bottom: 50px;
 
             img {
                 position: absolute;
                 bottom: 0;
+                width: 255px;
             }
 
             .intro-text {
@@ -905,13 +908,15 @@ footer {
             width: $container-small;
             height: 2297px;
             gap: 25px;
-
+            margin-bottom: 50px;
             h2 {
                 font-size: 30px;
+                margin-bottom: 0px;
             }
 
             .features-info {
                 width: 300px;
+                margin-bottom: 0px;
             }
 
             ul {
@@ -920,7 +925,7 @@ footer {
 
                 li {
                     width: 300px;
-                    height: 600px;
+                    height: 500px;
 
                     .card-img {
                         top: 300px;
@@ -949,7 +954,7 @@ footer {
             height: 809px;
             gap: 20px;
             padding-top: 20px;
-
+            margin-bottom: 50px;
             h2 {
                 font-size: 30px;
             }
@@ -984,17 +989,14 @@ footer {
     footer {
         width: $container-small;
         height: 1160px;
-
+        gap: 30px;
         .footer-heading {
             height: 307px;
-
+            flex-direction: column;
             .footer-heading-title {
+                text-align: center;
                 h2 {
                     font-size: 30px;
-                }
-
-                p {
-                    text-align: center;
                 }
             }
 
@@ -1016,6 +1018,10 @@ footer {
 
             .footer-contacts {
                 margin-right: 0;
+                a img {
+                    margin-bottom: 20px;
+
+                }
 
                 p {
                     text-align: center;
