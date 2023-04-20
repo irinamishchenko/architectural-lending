@@ -1,6 +1,7 @@
 footer, main .testimonials, main .features, main .intro, main .first-screen, header {
   width: 1170px;
   display: flex;
+  height: 100%;
 }
 
 footer .footer-heading .footer-heading-title h2, main .testimonials h2, main .features h2, main .intro .intro-text h2 {
@@ -113,7 +114,6 @@ header .burger-menu .header-nav li a:hover {
   color: #8a40ee;
 }
 main .first-screen {
-  height: 489px;
   margin: 0 auto 100px;
   position: relative;
 }
@@ -148,14 +148,13 @@ main .first-screen .first-screen-text button:hover {
   background: #8a40ee;
 }
 main .first-screen img {
-  width: 770px;
-  height: 407px;
+  width: 750px;
+  height: 395px;
   position: absolute;
   bottom: 0;
   right: 0;
 }
 main .intro {
-  height: 560px;
   margin: 0 auto 120px;
   background: #fde8f5;
   border-radius: 50px;
@@ -163,6 +162,7 @@ main .intro {
   gap: 130px;
   padding-left: 70px;
   box-sizing: border-box;
+  padding: 75px 70px;
 }
 main .intro .intro-text {
   width: 500px;
@@ -182,7 +182,6 @@ main .intro .intro-text p {
   color: #4b5d68;
 }
 main .features {
-  height: 1078px;
   margin: 0 auto 120px;
   flex-direction: column;
   align-items: center;
@@ -306,8 +305,8 @@ main .features ul li .container-4 {
   background: #eaf6fc;
 }
 main .testimonials {
-  height: 580px;
   margin: 0 auto 120px;
+  padding: 80px 70px;
   background: #ccddff;
   border-radius: 50px;
   flex-direction: column;
@@ -375,7 +374,6 @@ main .testimonials ul li .testimonial .testimonial-comment {
 }
 
 footer {
-  height: 570px;
   margin: 0 auto;
   flex-direction: column;
   gap: 103px;
@@ -530,10 +528,9 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
 @media (min-width: 769px) and (max-width: 1200px) {
   header {
     width: 750px;
-    padding: 0 25px;
+    padding: 0;
     justify-content: space-between;
     margin: 0 auto 50px;
-    box-sizing: border-box;
   }
   header a img {
     margin-right: 0px;
@@ -544,10 +541,8 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   main .first-screen {
     width: 750px;
-    padding: 0 25px;
+    padding: 0;
     margin: 0 auto 50px;
-    box-sizing: border-box;
-    height: 512px;
   }
   main .first-screen .first-screen-text p {
     width: 306px;
@@ -560,19 +555,16 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     width: 750px;
     padding: 0 25px;
     margin: 0 auto 50px;
-    height: 530px;
     gap: 50px;
-    padding-left: 30px;
+    padding: 30px 20px;
   }
   main .intro img {
     width: 240px;
   }
   main .features {
     width: 750px;
-    padding: 0 25px;
+    padding: 0;
     margin: 0 auto 50px;
-    box-sizing: border-box;
-    height: 1900px;
     gap: 50px;
   }
   main .features h2 {
@@ -589,9 +581,8 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   main .testimonials {
     width: 750px;
-    padding: 0 25px;
+    padding: 0;
     margin: 0 auto 50px;
-    height: 842px;
     gap: 50px;
     padding-top: 50px;
   }
@@ -603,8 +594,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   footer {
     width: 750px;
-    padding: 0 25px;
-    height: 570px;
+    padding: 0;
     gap: 50px;
     box-sizing: border-box;
   }
@@ -634,7 +624,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
 @media (max-width: 768px) {
   .header {
     width: 315px;
-    padding: 10px 15px;
+    padding-top: 15px;
     transition: all 0.3s ease;
     align-items: flex-start;
     justify-content: space-between;
@@ -678,8 +668,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   main .first-screen {
     width: 315px;
-    padding: 0 10px;
-    height: 421px;
+    padding: 0;
     margin-bottom: 50px;
   }
   main .first-screen .first-screen-text {
@@ -704,7 +693,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   main .intro {
     width: 315px;
-    padding: 0 10px;
+    padding: 0;
     height: 492px;
     flex-direction: column;
     position: relative;
@@ -731,7 +720,6 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   main .features {
     width: 315px;
-    height: 2297px;
     gap: 25px;
     margin-bottom: 50px;
   }
@@ -744,19 +732,20 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     margin-bottom: 0px;
   }
   main .features ul {
-    height: 2093px;
+    height: 1210px;
     width: 300px;
   }
   main .features ul li {
     width: 300px;
-    height: 500px;
+    height: 280px;
   }
   main .features ul li .card-img {
     top: 300px;
+    display: none;
   }
   main .features ul li .card-container {
     width: 300px;
-    height: 500px;
+    height: 280px;
   }
   main .features ul li .card-container .card-bg-1 img {
     left: 40px;
@@ -765,7 +754,7 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
     bottom: 246px;
   }
   main .features ul li .card-container .card-bg-4 img {
-    bottom: 0px;
+    top: 0px;
     right: 0px;
     width: 260px;
     height: auto;
@@ -780,7 +769,6 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   main .testimonials {
     width: 315px;
-    height: 809px;
     gap: 20px;
     padding-top: 20px;
     margin-bottom: 50px;
@@ -811,7 +799,6 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   }
   footer {
     width: 315px;
-    height: 1160px;
     gap: 30px;
   }
   footer .footer-heading {

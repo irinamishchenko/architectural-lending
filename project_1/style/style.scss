@@ -11,6 +11,7 @@ $container-small: 315px;
 %container-large {
     width: 1170px;
     display: flex;
+    height: 100%;
 }
 
 %section-subtitle {
@@ -144,7 +145,6 @@ header {
 main {
     .first-screen {
         @extend %container-large;
-        height: 489px;
         margin: 0 auto 100px;
         position: relative;
 
@@ -185,8 +185,8 @@ main {
         }
 
         img {
-            width: 770px;
-            height: 407px;
+            width: 750px;
+            height: 395px;
             position: absolute;
             bottom: 0;
             right: 0;
@@ -195,7 +195,6 @@ main {
 
     .intro {
         @extend %container-large;
-        height: 560px;
         margin: 0 auto 120px;
         background: #fde8f5;
         border-radius: 50px;
@@ -203,6 +202,7 @@ main {
         gap: 130px;
         padding-left: 70px;
         box-sizing: border-box;
+        padding: 75px 70px;
 
         .intro-text {
             width: 500px;
@@ -228,10 +228,10 @@ main {
 
     .features {
         @extend %container-large;
-        height: 1078px;
         margin: 0 auto 120px;
         flex-direction: column;
         align-items: center;
+        
 
         h2 {
             @extend %section-subtitle;
@@ -381,8 +381,8 @@ main {
 
     .testimonials {
         @extend %container-large;
-        height: 580px;
         margin: 0 auto 120px;
+        padding: 80px 70px;
         background: #ccddff;
         border-radius: 50px;
         flex-direction: column;
@@ -461,7 +461,6 @@ main {
 
 footer {
     @extend %container-large;
-    height: 570px;
     margin: 0 auto;
     flex-direction: column;
     gap: 103px;
@@ -664,10 +663,9 @@ footer {
 @media (min-width: 769px) and (max-width: 1200px){
     header {
         width: $container-middle;
-        padding: 0 25px;
+        padding: 0;
         justify-content: space-between;
         margin: 0 auto 50px;
-        box-sizing: border-box;
 
         a img {
             margin-right: 0px;
@@ -682,10 +680,8 @@ footer {
     main {
         .first-screen {
             width: $container-middle;
-            padding: 0 25px;
+            padding: 0;
             margin: 0 auto 50px;
-            box-sizing: border-box;
-            height: 512px;
 
             .first-screen-text {
                 p {
@@ -703,9 +699,8 @@ footer {
             width: $container-middle;
             padding: 0 25px;
             margin: 0 auto 50px;
-            height: 530px;
             gap: 50px;
-            padding-left: 30px;
+            padding: 30px 20px;
 
             img {
                 width: 240px;
@@ -714,10 +709,8 @@ footer {
 
         .features {
             width: $container-middle;
-            padding: 0 25px;
+            padding: 0;
             margin: 0 auto 50px;
-            box-sizing: border-box;
-            height: 1900px;
             gap: 50px;
 
             h2 {
@@ -739,9 +732,8 @@ footer {
 
         .testimonials {
             width: $container-middle;
-            padding: 0 25px;
+            padding: 0;
             margin: 0 auto 50px;
-            height: 842px;
             gap: 50px;
             padding-top: 50px;
 
@@ -756,8 +748,7 @@ footer {
 
     footer {
         width: $container-middle;
-        padding: 0 25px;
-        height: 570px;
+        padding: 0;
         gap: 50px;
         box-sizing: border-box;
 
@@ -798,7 +789,7 @@ footer {
 @media (max-width: 768px) {
     .header {
         width: $container-small;
-        padding: 10px 15px;
+        padding-top: 15px;
         transition: all 0.3s ease;
         align-items: flex-start;
         justify-content: space-between;
@@ -849,8 +840,7 @@ footer {
     main {
         .first-screen {
             width: $container-small;
-            padding: 0 10px;
-            height: 421px;
+            padding: 0;
             margin-bottom: 50px;
             .first-screen-text {
                 gap: 25px;
@@ -879,7 +869,7 @@ footer {
 
         .intro {
             width: $container-small;
-            padding: 0 10px;
+            padding: 0;
             height: 492px;
             flex-direction: column;
             position: relative;
@@ -910,7 +900,6 @@ footer {
 
         .features {
             width: $container-small;
-            height: 2297px;
             gap: 25px;
             margin-bottom: 50px;
             h2 {
@@ -924,19 +913,20 @@ footer {
             }
 
             ul {
-                height: 2093px;
+                height: 1210px;
                 width: 300px;
 
                 li {
                     width: 300px;
-                    height: 500px;
+                    height: 280px;
                     .card-img {
                         top: 300px;
+                        display: none;
                     }
                     
                     .card-container {
                         width: 300px;
-                        height: 500px;
+                        height: 280px;
                         .card-bg-1 img {
                             left: 40px;
                         }
@@ -946,7 +936,7 @@ footer {
                         }
     
                         .card-bg-4 img {
-                            bottom: 0px;
+                            top: 0px;
                             right: 0px;
                             width: 260px;
                             height: auto;
@@ -967,7 +957,6 @@ footer {
 
         .testimonials {
             width: $container-small;
-            height: 809px;
             gap: 20px;
             padding-top: 20px;
             margin-bottom: 50px;
@@ -1004,7 +993,6 @@ footer {
 
     footer {
         width: $container-small;
-        height: 1160px;
         gap: 30px;
         .footer-heading {
             height: 307px;
