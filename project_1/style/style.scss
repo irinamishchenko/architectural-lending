@@ -294,7 +294,7 @@ main {
                         height: 151px;
                     }
 
-                    .card-bg-3 {
+                    .card-bg-3 img {
                         @extend %card-bg;
                         top: 11px;
                         right: 13px;
@@ -302,7 +302,7 @@ main {
                         height: 40.21px;
                     }
 
-                    .card-bg-4 {
+                    .card-bg-4 img {
                         @extend %card-bg;
                         bottom: 20px;
                         right: 20px;
@@ -733,6 +733,7 @@ footer {
                 align-items: center;
                 flex-wrap: nowrap;
                 height: 1690px;
+
             }
         }
 
@@ -929,15 +930,27 @@ footer {
                 li {
                     width: 300px;
                     height: 500px;
-
                     .card-img {
                         top: 300px;
                     }
-
+                    
                     .card-container {
                         width: 300px;
                         height: 500px;
-
+                        .card-bg-1 img {
+                            left: 40px;
+                        }
+    
+                        .card-bg-2 img {
+                            bottom: 246px;
+                        }
+    
+                        .card-bg-4 img {
+                            bottom: 0px;
+                            right: 0px;
+                            width: 260px;
+                            height: auto;
+                        }
                         .card-text {
                             padding: 10px 15px;
                             margin-left: 0;

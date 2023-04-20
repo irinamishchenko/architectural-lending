@@ -46,7 +46,7 @@ footer .footer-heading .footer-heading-buttons .button-request:hover svg, header
   stroke: #ffffff;
 }
 
-main .features ul li .card-container .card-bg-4, main .features ul li .card-container .card-bg-3, main .features ul li .card-container .card-bg-2 img, main .features ul li .card-container .card-bg-1 img {
+main .features ul li .card-container .card-bg-4 img, main .features ul li .card-container .card-bg-3 img, main .features ul li .card-container .card-bg-2 img, main .features ul li .card-container .card-bg-1 img {
   position: absolute;
   z-index: 1;
 }
@@ -240,13 +240,13 @@ main .features ul li .card-container .card-bg-2 img {
   width: 211px;
   height: 151px;
 }
-main .features ul li .card-container .card-bg-3 {
+main .features ul li .card-container .card-bg-3 img {
   top: 11px;
   right: 13px;
   width: 68.05px;
   height: 40.21px;
 }
-main .features ul li .card-container .card-bg-4 {
+main .features ul li .card-container .card-bg-4 img {
   bottom: 20px;
   right: 20px;
   width: 360px;
@@ -757,6 +757,18 @@ footer .footer-nav .footer-socials ul .footer-instagram:hover .footer-socials-in
   main .features ul li .card-container {
     width: 300px;
     height: 500px;
+  }
+  main .features ul li .card-container .card-bg-1 img {
+    left: 40px;
+  }
+  main .features ul li .card-container .card-bg-2 img {
+    bottom: 246px;
+  }
+  main .features ul li .card-container .card-bg-4 img {
+    bottom: 0px;
+    right: 0px;
+    width: 260px;
+    height: auto;
   }
   main .features ul li .card-container .card-text {
     padding: 10px 15px;
