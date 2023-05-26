@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:ital@0;1&family=Source+Sans+Pro&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Monticello</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <a href="">
+          <img class="header-logo" src="images/logo.png" alt="logo" />
+        </a>
+        <ul class="header-menu">
+          <li class="header-menu-item">
+            <a
+              class="header-menu-item-link active"
+              href="#about"
+              data-section="about"
+              >About us</a
+            >
+          </li>
+          <li class="header-menu-item">
+            <a
+              class="header-menu-item-link"
+              href="#projects"
+              data-section="projects"
+              >Projects</a
+            >
+          </li>
+          <li class="header-menu-item">
+            <a class="header-menu-item-link" href="#news" data-section="news"
+              >News</a
+            >
+          </li>
+          <li class="header-menu-item">
+            <a
+              class="header-menu-item-link"
+              href="#contacts"
+              data-section="contacts"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <ul class="header-socials">
+          <li>
+            <a href="#">
+              <svg>
+                <use xlink:href="images/sprite.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg>
+                <use xlink:href="images/sprite.svg#twitter-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg>
+                <use xlink:href="images/sprite.svg#instagram-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="about" data-section="about" class="swiper header-swiper">
+        <div class="header-swiper-content">
+          <div class="header-heading">
+            <h1 class="header-title">Simple & modern</h1>
+            <p class="header-subtitle">We make the world beautiful everyday</p>
+          </div>
+          <button class="header-scroll-button"></button>
+        </div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="images/header-slider-picture-1.jpg" alt="background" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/header-slider-picture-2.jpg" alt="background" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/header-slider-picture-3.jpg" alt="background" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/header-slider-picture-4.jpg" alt="background" />
+          </div>
+          <div class="swiper-slide">
+            <img src="images/header-slider-picture-5.jpg" alt="background" />
+          </div>
+        </div>
+        <div class="swiper-pagination header-swiper-pagination"></div>
+      </div>
+    </header>
+    <main>
+      <section class="projects" data-section="projects" id="projects">
+        <div class="projects-container">
+          <h2 class="projects-title">What we do</h2>
+          <ul class="projects-list">
+            <li class="projects-list-item">
+              <div class="project-list-item-img-container">
+                <img src="images/projects-picture-1.jpg" alt="building" />
+              </div>
+              <div class="projects-list-item-content">
+                <p class="projects-list-item-subtitle">One world</p>
+                <h3 class="projects-list-item-title">Trade center</h3>
+                <p class="projects-list-item-description">
+                  Increasing prosperity in our lives can be accomplished by
+                  having the right frame of mind. The truth is, our thoughts are
+                  very powerful.
+                </p>
+                <button class="projects-list-item-button">More details</button>
+                <p class="projects-list-item-location">
+                  <svg>
+                    <use xlink:href="images/sprite.svg#location-icon"></use>
+                  </svg>
+                  <span>New York City, United States - 1776 feet </span>
+                </p>
+              </div>
+            </li>
+            <li class="projects-list-item">
+              <div class="projects-list-item-content">
+                <p class="projects-list-item-subtitle">One world</p>
+                <h3 class="projects-list-item-title">Trade center</h3>
+                <p class="projects-list-item-description">
+                  Increasing prosperity in our lives can be accomplished by
+                  having the right frame of mind. The truth is, our thoughts are
+                  very powerful.
+                </p>
+                <button class="projects-list-item-button">More details</button>
+                <p class="projects-list-item-location">
+                  <svg>
+                    <use xlink:href="images/sprite.svg#location-icon"></use>
+                  </svg>
+                  <span>New York City, United States - 1776 feet </span>
+                </p>
+              </div>
+              <div class="project-list-item-img-container">
+                <img src="images/projects-picture-2.jpg" alt="building" />
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="news" data-section="news" id="news">
+        <div class="news-container">
+          <h2 class="news-title">Latest news</h2>
+          <div class="news-swiper-container">
+            <div class="news-swiper-button-prev"></div>
+            <div class="swiper news-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img
+                    class="news-slider-picture"
+                    src="images/news-picture-1.jpg"
+                    alt="building"
+                  />
+                  <div class="news-slider-text-container">
+                    <h3>See the unmatched beauty of the great</h3>
+                    <p>
+                      Free directories: directories are perfect for customers
+                      that are searching for...
+                    </p>
+                  </div>
+                  <div class="news-slider-author-container">
+                    <img
+                      class="news-slider-author-picture"
+                      src="images/news-author-1.jpg"
+                      alt="author"
+                    />
+                    <div class="news-slider-author-date-container">
+                      <h4>Alja Brun</h4>
+                      <p>20 Jan 2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="news-slider-picture"
+                    src="images/news-picture-2.jpg"
+                    alt="building"
+                  />
+                  <div class="news-slider-text-container">
+                    <h3>Effective advertising pointers.</h3>
+                    <p>
+                      Having a home based business is a wonderful asset to your
+                      life...
+                    </p>
+                  </div>
+                  <div class="news-slider-author-container">
+                    <img
+                      class="news-slider-author-picture"
+                      src="images/news-author-2.jpg"
+                      alt="author"
+                    />
+                    <div class="news-slider-author-date-container">
+                      <h4>Dominic Freeman</h4>
+                      <p>13 Dec 2019</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="news-slider-picture"
+                    src="images/news-picture-3.jpg"
+                    alt="building"
+                  />
+                  <div class="news-slider-text-container">
+                    <h3>Hypnotize yourself into the ghost.</h3>
+                    <p>
+                      There are many things that are important to catalog
+                      design...
+                    </p>
+                  </div>
+                  <div class="news-slider-author-container">
+                    <img
+                      class="news-slider-author-picture"
+                      src="images/news-author-3.jpg"
+                      alt="author"
+                    />
+                    <div class="news-slider-author-date-container">
+                      <h4>Alice Ward</h4>
+                      <p>30 Nov 2019</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="news-slider-picture"
+                    src="images/news-picture-4.jpg"
+                    alt="building"
+                  />
+                  <div class="news-slider-text-container">
+                    <h3>See the unmatched beauty of the great</h3>
+                    <p>
+                      Free directories: directories are perfect for customers
+                      that are searching for...
+                    </p>
+                  </div>
+                  <div class="news-slider-author-container">
+                    <img
+                      class="news-slider-author-picture"
+                      src="images/news-author-4.jpg"
+                      alt="author"
+                    />
+                    <div class="news-slider-author-date-container">
+                      <h4>Alja Brun</h4>
+                      <p>20 Jan 2020</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img
+                    class="news-slider-picture"
+                    src="images/news-picture-5.jpg"
+                    alt="building"
+                  />
+                  <div class="news-slider-text-container">
+                    <h3>See the unmatched beauty of the great</h3>
+                    <p>
+                      Free directories: directories are perfect for customers
+                      that are searching for...
+                    </p>
+                  </div>
+                  <div class="news-slider-author-container">
+                    <img
+                      class="news-slider-author-picture"
+                      src="images/news-author-5.jpg"
+                      alt="author"
+                    />
+                    <div class="news-slider-author-date-container">
+                      <h4>Alja Brun</h4>
+                      <p>20 Jan 2020</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="news-swiper-pagination"></div>
+            </div>
+            <div class="news-swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+      <section class="gallery">
+        <div class="gallery-container">
+          <div class="gallery-modal">
+            <img class="gallery-modal-img" src="images/gallery-picture-1.jpg" />
+            <svg class="gallery-modal-close-btn">
+              <use xlink:href="images/sprite.svg#close-icon"></use>
+            </svg>
+          </div>
+          <h2 class="gallery-title">Gallery</h2>
+          <ul class="gallery-items">
+            <li class="gallery-item-1">
+              <img src="images/gallery-picture-1.jpg" alt="building" />
+            </li>
+            <li class="gallery-item-2">
+              <img src="images/gallery-picture-2.jpg" alt="building" />
+            </li>
+            <li class="gallery-item-3">
+              <img src="images/gallery-picture-3.jpg" alt="building" />
+            </li>
+            <li class="gallery-item-4">
+              <img src="images/gallery-picture-4.jpg" alt="building" />
+            </li>
+            <li class="gallery-item-5">
+              <img src="images/gallery-picture-5.jpg" alt="building" />
+            </li>
+          </ul>
+          <button class="gallery-button">See more</button>
+        </div>
+      </section>
+      <section class="contacts" data-section="contacts" id="contacts">
+        <div
+          id="googleMap"
+          class="contacts-map"
+          style="width: 100%; height: 700px"
+        ></div>
+        <script
+          async
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIZAOgowSck3MLAr1YC3FGKk9OFSK8jrw&callback=initMap"
+        ></script>
+        <div class="contacts-container">
+          <h2 class="contacts-title">Get in touch</h2>
+          <div class="contacts-content">
+            <ul class="contacts-list">
+              <li class="contacts-list-item">
+                <svg>
+                  <use xlink:href="images/sprite.svg#location-icon"></use>
+                </svg>
+                <a href="#">91 Nolah Extensions Suite 670</a>
+              </li>
+              <li class="contacts-list-item">
+                <svg>
+                  <use xlink:href="images/sprite.svg#phone-icon"></use>
+                </svg>
+                <a href="tel:+0013568682454">+001 356-868-2454</a>
+              </li>
+              <li class="contacts-list-item">
+                <svg>
+                  <use xlink:href="images/sprite.svg#mail-icon"></use>
+                </svg>
+                <a href="mailto:montichello@service.com">
+                  montichello@service.com
+                </a>
+              </li>
+              <li class="contacts-list-item">
+                <svg>
+                  <use xlink:href="images/sprite.svg#clock-icon"></use>
+                </svg>
+                <a href="#">From 07:05AM to 19:30PM</a>
+              </li>
+            </ul>
+            <form class="contacts-form" action="#" method="GET">
+              <input
+                class="contacts-form-name"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                value="Mollie Medina"
+                required
+                minlength="2"
+              />
+              <input
+                class="contacts-form-email"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+                minlength="5"
+              />
+              <input
+                class="contacts-form-button"
+                type="submit"
+                value="Submit"
+              />
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-container">
+        <a href="">
+          <img src="images/logo.png" alt="logo" />
+        </a>
+        <ul class="footer-socials">
+          <li>
+            <a href="#">
+              <svg>
+                <use xlink:href="images/sprite.svg#facebook-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg>
+                <use xlink:href="images/sprite.svg#twitter-icon"></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <svg>
+                <use xlink:href="images/sprite.svg#instagram-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
