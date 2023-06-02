@@ -1,54 +1,32 @@
-footer .footer-container .footer-socials,
-header .header-container .header-socials {
+footer .footer-container .footer-socials, header .header-container .header-socials {
   width: 160px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   gap: 20px;
 }
-footer .footer-container .footer-socials li,
-header .header-container .header-socials li {
+footer .footer-container .footer-socials li, header .header-container .header-socials li {
   width: 40px;
   height: 40px;
   border: 1px solid #ffffff;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
-footer .footer-container .footer-socials li a svg,
-header .header-container .header-socials li a svg {
+footer .footer-container .footer-socials li a svg, header .header-container .header-socials li a svg {
   width: 18px;
   height: 18px;
   fill: #ffffff;
 }
-footer .footer-container .footer-socials li:hover,
-header .header-container .header-socials li:hover {
+footer .footer-container .footer-socials li:hover, header .header-container .header-socials li:hover {
   border: 1px solid #7e5aff;
   background-color: #ffffff;
 }
-footer .footer-container .footer-socials li:hover a svg,
-header .header-container .header-socials li:hover a svg {
+footer .footer-container .footer-socials li:hover a svg, header .header-container .header-socials li:hover a svg {
   fill: #7e5aff;
 }
 
-main .gallery .gallery-container .gallery-button,
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-button {
+main .gallery .gallery-container .gallery-button, main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-button {
   width: 190px;
   height: 50px;
   font-family: "Montserrat", sans-serif;
@@ -61,20 +39,12 @@ main
   background-color: transparent;
   border: 1px solid #2c4058;
 }
-main .gallery .gallery-container .gallery-button:hover,
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-button:hover {
+main .gallery .gallery-container .gallery-button:hover, main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-button:hover {
   color: #ffffff;
   background-color: #2c4058;
 }
 
-main .news .news-container .news-swiper-container .news-swiper-button-next,
-main .news .news-container .news-swiper-container .news-swiper-button-prev {
+main .news .news-container .news-swiper-container .news-swiper-button-next, main .news .news-container .news-swiper-container .news-swiper-button-prev {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -82,30 +52,11 @@ main .news .news-container .news-swiper-container .news-swiper-button-prev {
   background: transparent url(../images/arrow.png) no-repeat center;
   cursor: pointer;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper-button-next:hover,
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper-button-prev:hover {
+main .news .news-container .news-swiper-container .news-swiper-button-next:hover, main .news .news-container .news-swiper-container .news-swiper-button-prev:hover {
   background-color: #55b7ff;
 }
 
-main .contacts .contacts-container .contacts-title,
-main .gallery .gallery-container .gallery-title,
-main .news .news-container .news-title,
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-title,
-main .projects .projects-container .projects-title {
+main .contacts .contacts-container .contacts-title, main .gallery .gallery-container .gallery-title, main .news .news-container .news-title, main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-title, main .projects .projects-container .projects-title {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -119,14 +70,10 @@ header {
   margin-bottom: 130px;
 }
 header .header-container {
-  -webkit-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   width: 1170px;
   height: 54px;
   margin: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: fixed;
   top: 53px;
@@ -141,11 +88,7 @@ header .header-container a .header-logo {
 }
 header .header-container .header-menu {
   width: 515px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   gap: 60px;
   margin-right: 110px;
@@ -192,18 +135,9 @@ header .header-swiper .header-swiper-content {
   right: 0;
   bottom: 50px;
   z-index: 4;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 header .header-swiper .header-swiper-content .header-heading .header-title {
@@ -246,7 +180,6 @@ header .header-swiper .swiper-wrapper .swiper-slide::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -o-linear-gradient(206.57deg, #7e5aff 16.9%, #55b7ff 83.27%);
   background: linear-gradient(243.43deg, #7e5aff 16.9%, #55b7ff 83.27%);
   opacity: 0.9;
   z-index: 2;
@@ -254,15 +187,8 @@ header .header-swiper .swiper-wrapper .swiper-slide::after {
 header .header-swiper .header-swiper-pagination {
   height: 210px;
   width: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   top: 420px;
   right: 52px;
@@ -274,10 +200,7 @@ header .header-swiper .header-swiper-pagination .swiper-pagination-bullet {
   background-color: transparent;
   opacity: 1;
 }
-header
-  .header-swiper
-  .header-swiper-pagination
-  .swiper-pagination-bullet-active {
+header .header-swiper .header-swiper-pagination .swiper-pagination-bullet-active {
   background: #ffffff;
 }
 
@@ -310,56 +233,26 @@ main .projects .projects-container .projects-title::before {
 main .projects .projects-container .projects-list {
   width: 1170px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  align-items: end;
   gap: 177px;
 }
 main .projects .projects-container .projects-list .projects-list-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 65px;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item:first-of-type {
-  -ms-flex-item-align: start;
+main .projects .projects-container .projects-list .projects-list-item:first-of-type {
   align-self: start;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .project-list-item-img-container {
+main .projects .projects-container .projects-list .projects-list-item .project-list-item-img-container {
   position: relative;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .project-list-item-img-container
-  img {
+main .projects .projects-container .projects-list .projects-list-item .project-list-item-img-container img {
   width: 630px;
   height: 470px;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .project-list-item-img-container:first-of-type::before {
+main .projects .projects-container .projects-list .projects-list-item .project-list-item-img-container:first-of-type::before {
   content: "";
   width: 585px;
   height: 470px;
@@ -370,12 +263,7 @@ main
   top: -57px;
   z-index: -1;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .project-list-item-img-container:last-of-type::before {
+main .projects .projects-container .projects-list .projects-list-item .project-list-item-img-container:last-of-type::before {
   content: "";
   width: 585px;
   height: 470px;
@@ -386,23 +274,12 @@ main
   top: -57px;
   z-index: -1;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content {
+main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content {
   width: 476px;
   height: 350px;
   padding-top: 94px;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-subtitle {
+main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-subtitle {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -411,23 +288,11 @@ main
   text-transform: uppercase;
   color: #2c4058;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-title {
+main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-title {
   color: #2c4058;
   margin-bottom: 19px;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-description {
+main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-description {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -436,35 +301,15 @@ main
   color: #2c4058;
   margin-bottom: 40px;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-button {
+main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-button {
   margin-bottom: 60px;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-location
-  svg {
+main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-location svg {
   width: 9px;
   height: 17px;
   fill: #2c4058;
 }
-main
-  .projects
-  .projects-container
-  .projects-list
-  .projects-list-item
-  .projects-list-item-content
-  .projects-list-item-location
-  span {
+main .projects .projects-container .projects-list .projects-list-item .projects-list-item-content .projects-list-item-location span {
   font-family: "Open Sans", sans-serif;
   font-style: italic;
   font-weight: 400;
@@ -485,7 +330,6 @@ main .news::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -o-linear-gradient(212.9deg, #24ccfa 11.16%, #3c7fd4 89.18%);
   background: linear-gradient(237.1deg, #24ccfa 11.16%, #3c7fd4 89.18%);
   opacity: 0.9;
   z-index: 2;
@@ -517,11 +361,7 @@ main .news .news-container .news-title::before {
   margin: auto;
 }
 main .news .news-container .news-swiper-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 main .news .news-container .news-swiper-container .news-swiper {
@@ -529,48 +369,20 @@ main .news .news-container .news-swiper-container .news-swiper {
   z-index: 4;
   height: 570px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide {
   width: 370px;
   height: 514px;
   background: #ffffff;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-picture {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-picture {
   width: 100%;
   height: 246.67px;
   margin-bottom: 23px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-text-container {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-text-container {
   padding: 0 20px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-text-container
-  h3 {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-text-container h3 {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -580,15 +392,7 @@ main
   color: #2c4058;
   margin-bottom: 15px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-text-container
-  p {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-text-container p {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -597,45 +401,18 @@ main
   color: #2c4058;
   margin-bottom: 39px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-author-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-author-container {
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   padding-left: 20px;
   gap: 20px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-author-container
-  .news-slider-author-picture {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-author-container .news-slider-author-picture {
   width: 60px;
   height: 60px;
   border-radius: 50%;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-author-container
-  h4 {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-author-container h4 {
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -645,15 +422,7 @@ main
   color: #2c4058;
   margin-bottom: 6px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .swiper-wrapper
-  .swiper-slide
-  .news-slider-author-container
-  p {
+main .news .news-container .news-swiper-container .news-swiper .swiper-wrapper .swiper-slide .news-slider-author-container p {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -661,54 +430,29 @@ main
   line-height: 17px;
   color: #55b7ff;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .news-swiper-pagination {
+main .news .news-container .news-swiper-container .news-swiper .news-swiper-pagination {
   width: 210px;
   height: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   margin: auto;
   position: relative;
   bottom: 13px;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .news-swiper-pagination
-  .swiper-pagination-bullet {
+main .news .news-container .news-swiper-container .news-swiper .news-swiper-pagination .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
   border: 1px solid #ffffff;
   background-color: transparent;
   opacity: 1;
 }
-main
-  .news
-  .news-container
-  .news-swiper-container
-  .news-swiper
-  .news-swiper-pagination
-  .swiper-pagination-bullet-active {
+main .news .news-container .news-swiper-container .news-swiper .news-swiper-pagination .swiper-pagination-bullet-active {
   background: #ffffff;
 }
 main .news .news-container .news-swiper-container .news-swiper-button-prev {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 main .news .news-container .news-swiper-container .news-swiper-button-next {
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 main .gallery {
@@ -718,15 +462,8 @@ main .gallery .gallery-container {
   width: 1170px;
   padding: 180px 0 150px;
   margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
 }
 main .gallery .gallery-container .gallery-modal {
@@ -737,11 +474,7 @@ main .gallery .gallery-container .gallery-modal {
   height: 100%;
   background-color: rgba(63, 63, 63, 0.7);
   z-index: 3;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   display: none;
 }
@@ -761,8 +494,6 @@ main .gallery .gallery-container .gallery-modal .gallery-modal-close-btn {
   cursor: pointer;
 }
 main .gallery .gallery-container .gallery-modal .gallery-modal-close-btn:hover {
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 main .gallery .gallery-container .gallery-title {
@@ -796,6 +527,15 @@ main .gallery .gallery-container .gallery-items {
 main .gallery .gallery-container .gallery-items li {
   cursor: pointer;
   position: relative;
+}
+main .gallery .gallery-container .gallery-items li:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(44, 64, 88, 0.2);
 }
 main .gallery .gallery-container .gallery-items li:hover::after {
   content: url(../images/loupe.png);
@@ -848,7 +588,6 @@ main .contacts .contacts-container {
   background: #ffffff;
   margin: auto;
   padding: 0 60px;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 main .contacts .contacts-container::after {
@@ -880,8 +619,6 @@ main .contacts .contacts-container .contacts-title::before {
   margin: auto;
 }
 main .contacts .contacts-container .contacts-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 40px;
   position: absolute;
@@ -890,49 +627,21 @@ main .contacts .contacts-container .contacts-content {
 main .contacts .contacts-container .contacts-content .contacts-list {
   width: 300px;
   height: 196px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-main
-  .contacts
-  .contacts-container
-  .contacts-content
-  .contacts-list
-  .contacts-list-item {
-  display: -webkit-box;
-  display: -ms-flexbox;
+main .contacts .contacts-container .contacts-content .contacts-list .contacts-list-item {
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   gap: 10px;
 }
-main
-  .contacts
-  .contacts-container
-  .contacts-content
-  .contacts-list
-  .contacts-list-item
-  svg {
+main .contacts .contacts-container .contacts-content .contacts-list .contacts-list-item svg {
   width: 18px;
   height: 18px;
   fill: #7e5aff;
 }
-main
-  .contacts
-  .contacts-container
-  .contacts-content
-  .contacts-list
-  .contacts-list-item
-  a {
+main .contacts .contacts-container .contacts-content .contacts-list .contacts-list-item a {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -942,16 +651,9 @@ main
 main .contacts .contacts-container .contacts-content .contacts-form {
   width: 310px;
   height: 195px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: flex-end;
-  -ms-flex-align: flex-end;
-  align-items: flex-end;
+  align-items: end;
 }
 main .contacts .contacts-container .contacts-content .contacts-form input {
   font-family: "Montserrat", sans-serif;
@@ -961,48 +663,28 @@ main .contacts .contacts-container .contacts-content .contacts-form input {
   line-height: 27px;
   color: #000000;
 }
-main
-  .contacts
-  .contacts-container
-  .contacts-content
-  .contacts-form
-  .contacts-form-name {
+main .contacts .contacts-container .contacts-content .contacts-form .contacts-form-name {
   width: 100%;
   height: 41px;
   border: none;
   border-bottom: 1px solid #2c4058;
   margin-bottom: 26px;
 }
-main
-  .contacts
-  .contacts-container
-  .contacts-content
-  .contacts-form
-  .contacts-form-email {
+main .contacts .contacts-container .contacts-content .contacts-form .contacts-form-email {
   width: 100%;
   height: 41px;
   border: none;
   border-bottom: 1px solid #2c4058;
   margin-bottom: 30px;
 }
-main
-  .contacts
-  .contacts-container
-  .contacts-content
-  .contacts-form
-  .contacts-form-button {
+main .contacts .contacts-container .contacts-content .contacts-form .contacts-form-button {
   cursor: pointer;
   width: 140px;
   height: 50px;
   border: 1px solid #2c4058;
   background-color: transparent;
 }
-main
-  .contacts
-  .contacts-container
-  .contacts-content
-  .contacts-form
-  .contacts-form-button:hover {
+main .contacts .contacts-container .contacts-content .contacts-form .contacts-form-button:hover {
   color: #ffffff;
   background-color: #2c4058;
 }
@@ -1019,7 +701,6 @@ footer::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -o-linear-gradient(198.94deg, #7e5aff -2.19%, #55b7ff 103.21%);
   background: linear-gradient(251.06deg, #7e5aff -2.19%, #55b7ff 103.21%);
   opacity: 0.9;
   z-index: 2;
@@ -1030,11 +711,7 @@ footer .footer-container {
   left: 0;
   right: 0;
   padding-top: 200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   opacity: 1;
   position: absolute;
@@ -1044,3 +721,5 @@ footer .footer-container a img {
   width: 241px;
   height: 54px;
 }
+
+/*# sourceMappingURL=styles.css.map */
