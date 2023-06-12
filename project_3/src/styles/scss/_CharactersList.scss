@@ -1,0 +1,71 @@
+.characters-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .characters-item {
+    width: 350px;
+    height: 450px;
+    border: 1px solid grey;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    background-color: #f1f1f1;
+    .character-add-info {
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 0, 0, 0.8);
+      z-index: -1;
+      .character-add-info-btn {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 150px;
+        font-family: "Roboto Condensed", sans-serif;
+        font-size: 50px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: black;
+        text-decoration: none;
+        background-color: transparent;
+        background-image: url(../../images/characters-btn.png);
+        background-position: center;
+        background-size: cover;
+        &:hover {
+          width: 310px;
+          height: 155px;
+        }
+      }
+    }
+    &:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+      .character-add-info {
+        z-index: 1;
+      }
+    }
+
+    .characters-item-picture {
+      width: 350px;
+      height: 350px;
+    }
+    .characters-item-name {
+      font-family: "Oswald", sans-serif;
+      font-size: 35px;
+      font-weight: bold;
+      padding: 0 10px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.navigation {
+  display: flex;
+  gap: 30px;
+  .navigation-item {
+    font-family: "Roboto Condensed", sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 20px;
+    &:hover {
+      color: red;
+    }
+  }
+  .active {
+    color: red;
+  }
+}
