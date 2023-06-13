@@ -1,0 +1,90 @@
+.comics-main-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  .comics-picture {
+    width: 500px;
+  }
+  .comics-content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .comics-content-title {
+      font-family: "Oswald", sans-serif;
+      font-size: 40px;
+      text-transform: uppercase;
+      font-weight: bold;
+      &::after {
+        content: "";
+        width: 130px;
+        height: 3px;
+        background-color: red;
+        display: block;
+        margin-top: 15px;
+      }
+    }
+    .comics-content-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      .comics-content-list-item {
+        font-family: "Roboto Condensed", sans-serif;
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+.comics-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 50px;
+  .comics-info-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    &::after {
+      content: "";
+      width: 130px;
+      height: 3px;
+      background-color: red;
+      display: block;
+      margin-top: 15px;
+    }
+  }
+  .comics-info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .comics-info-list-item {
+      a {
+        font-family: "Roboto Condensed", sans-serif;
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+  .comics-info-text {
+    a {
+      font-family: "Roboto Condensed", sans-serif;
+      text-decoration: none;
+      color: black;
+      font-size: 25px;
+      &:hover {
+        color: red;
+      }
+    }
+  }
+  &:last-of-type {
+    margin-bottom: 100px;
+  }
+}

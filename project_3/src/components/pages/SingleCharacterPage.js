@@ -8,7 +8,6 @@ function SingleCharacterPage() {
 
   return (
     <div className="container">
-      {/* <h2 className="characters-title">Marvel character</h2> */}
       <SingleCharacter />
     </div>
   );

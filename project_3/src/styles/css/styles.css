@@ -690,8 +690,10 @@ main {
   font-weight: bold;
   text-transform: uppercase;
   color: black;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   background-image: url(../../images/comics-btn.png);
   background-position: center;
@@ -819,6 +821,7 @@ main {
   align-items: center;
   gap: 15px;
   position: relative;
+  background-color: #f1f1f1;
 }
 .series-list .series-item .series-add-info {
   position: absolute;
@@ -925,14 +928,14 @@ main {
 .character-main-info-wrapper .character-photo {
   width: 500px;
 }
-.character-main-info-wrapper .character-description {
+.character-main-info-wrapper .character-description-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
 }
-.character-main-info-wrapper .character-description .character-name {
+.character-main-info-wrapper .character-description-container .character-name {
   padding: 100px 0;
   text-align: center;
   font-family: "Oswald", sans-serif;
@@ -940,7 +943,7 @@ main {
   text-transform: uppercase;
   font-weight: bold;
 }
-.character-main-info-wrapper .character-description .character-name::before {
+.character-main-info-wrapper .character-description-container .character-name::before {
   content: "";
   width: 170px;
   height: 3px;
@@ -948,7 +951,7 @@ main {
   display: block;
   margin: 0 auto 15px;
 }
-.character-main-info-wrapper .character-description .character-name::after {
+.character-main-info-wrapper .character-description-container .character-name::after {
   content: "";
   width: 170px;
   height: 3px;
@@ -957,9 +960,154 @@ main {
   margin: 20px auto 0;
   font-family: "Roboto Condensed", sans-serif;
 }
-.character-main-info-wrapper .character-description .character-description {
+.character-main-info-wrapper .character-description-container .character-description {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 25px;
+}
+
+.character-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 50px;
+}
+.character-info-container .character-info-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.character-info-container .character-info-title::after {
+  content: "";
+  width: 130px;
+  height: 3px;
+  background-color: red;
+  display: block;
+  margin-top: 15px;
+}
+.character-info-container .character-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.character-info-container .character-info-list .character-info-list-item a {
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+.character-info-container .character-info-list .character-info-list-item a:hover {
+  color: red;
+}
+.character-info-container .character-button {
+  margin: 0 auto;
+  width: 210px;
+  height: 150px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url(../../images/single-character-btn.png);
+  background-position: center;
+  background-size: cover;
+}
+.character-info-container .character-button:hover {
+  font-size: 55px;
+  transition: all 0.5s;
+}
+.character-info-container:last-of-type {
+  margin-bottom: 100px;
+}
+
+.comics-main-info-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+.comics-main-info-container .comics-picture {
+  width: 500px;
+}
+.comics-main-info-container .comics-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.comics-main-info-container .comics-content-container .comics-content-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.comics-main-info-container .comics-content-container .comics-content-title::after {
+  content: "";
+  width: 130px;
+  height: 3px;
+  background-color: red;
+  display: block;
+  margin-top: 15px;
+}
+.comics-main-info-container .comics-content-container .comics-content-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.comics-main-info-container .comics-content-container .comics-content-list .comics-content-list-item {
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+
+.comics-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 50px;
+}
+.comics-info-container .comics-info-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.comics-info-container .comics-info-title::after {
+  content: "";
+  width: 130px;
+  height: 3px;
+  background-color: red;
+  display: block;
+  margin-top: 15px;
+}
+.comics-info-container .comics-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.comics-info-container .comics-info-list .comics-info-list-item a {
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+.comics-info-container .comics-info-list .comics-info-list-item a:hover {
+  color: red;
+}
+.comics-info-container .comics-info-text a {
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+}
+.comics-info-container .comics-info-text a:hover {
+  color: red;
+}
+.comics-info-container:last-of-type {
+  margin-bottom: 100px;
 }
 
 /*# sourceMappingURL=styles.css.map */

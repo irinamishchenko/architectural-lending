@@ -43,7 +43,6 @@ function CharactersList() {
           >
             More
           </Link>
-          {/* <button  >More</button> */}
         </div>
         <img
           className="characters-item-picture"

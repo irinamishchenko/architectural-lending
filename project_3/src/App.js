@@ -8,6 +8,7 @@ import EventsPage from "./components/pages/EventsPage";
 import SeriesPage from "./components/pages/SeriesPage";
 import NotFoundPage from "./components/pages/NotFoundPage";
 import SingleCharacterPage from "./components/pages/SingleCharacterPage";
+import SingleComicsPage from "./components/pages/SingleComicsPage";
 
 import "./styles/css/styles.css";
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/characters" element={<CharactersPage />} />
           <Route path="/characters/:id" element={<SingleCharacterPage />} />
           <Route path="/comics" element={<ComicsPage />} />
+          <Route path="/comics/:id" element={<SingleComicsPage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/series" element={<SeriesPage />} />
           <Route path="*" element={<NotFoundPage />} />

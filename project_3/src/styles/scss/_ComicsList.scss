@@ -35,8 +35,10 @@
         font-weight: bold;
         text-transform: uppercase;
         color: black;
-        border: none;
-        cursor: pointer;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: transparent;
         background-image: url(../../images/comics-btn.png);
         background-position: center;

@@ -20,7 +20,6 @@ function SingleCharacter() {
         },
       })
       .then((response) => setCharacter(response.data.data.results[0]))
-      // .then((response) => console.log(response.data.data.results[0]))
       .catch((error) => setError(error.message));
   }
 
@@ -44,7 +43,7 @@ function SingleCharacter() {
             src={character.thumbnail.path + "." + character.thumbnail.extension}
             alt={character.name}
           />
-          <div className="character-description">
+          <div className="character-description-container">
             <h2 className="character-name">{character.name}</h2>
             {character.description ? (
               <p className="character-description">{character.description}</p>
@@ -52,49 +51,47 @@ function SingleCharacter() {
           </div>
         </div>
         {character.comics.items ? (
-          <div className="character-comics">
-            <h3 className="character-comics-title">Comics</h3>
-            <ol className="character-comics-list">
+          <section className="character-info-container">
+            <h3 className="character-info-title">Comics</h3>
+            <ol className="character-info-list">
               {character.comics.items.map((item) => (
-                <li className="character-comics-list-item" key={item.name}>
-                  {item.name}
+                <li className="character-info-list-item" key={item.name}>
+                  <a href="#">{item.name}</a>
                 </li>
               ))}
             </ol>
-            <button className="character-comics-button">More</button>
-          </div>
+            <button className="character-button">More</button>
+          </section>
         ) : null}
         {character.events.items ? (
-          <div className="character-events">
-            <h3 className="character-events-title">Comics</h3>
-            <ol className="character-events-list">
+          <section className="character-info-container">
+            <h3 className="character-info-title">Events</h3>
+            <ol className="character-info-list">
               {character.events.items.map((item) => (
-                <li className="character-events-list-item" key={item.name}>
-                  {item.name}
+                <li className="character-info-list-item" key={item.name}>
+                  <a href="#">{item.name}</a>
                 </li>
               ))}
             </ol>
-            <button className="character-events-button">More</button>
-          </div>
+            <button className="character-button">More</button>
+          </section>
         ) : null}
         {character.series.items ? (
-          <div className="character-series">
-            <h3 className="character-series-title">Comics</h3>
-            <ol className="character-series-list">
+          <section className="character-info-container">
+            <h3 className="character-info-title">Series</h3>
+            <ol className="character-info-list">
               {character.series.items.map((item) => (
-                <li className="character-series-list-item" key={item.name}>
-                  {item.name}
+                <li className="character-info-list-item" key={item.name}>
+                  <a href="#">{item.name}</a>
                 </li>
               ))}
             </ol>
-            <button className="character-series-button">More</button>
-          </div>
+            <button className="character-button">More</button>
+          </section>
         ) : null}
       </>
     );
   }
 }
-// return <div>Character</div>;
-// }
 
 export default SingleCharacter;

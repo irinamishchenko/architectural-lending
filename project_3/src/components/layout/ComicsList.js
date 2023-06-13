@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const baseURL = "http://gateway.marvel.com/v1/public/comics";
@@ -36,7 +37,9 @@ function ComicsList() {
     const comicsItems = comics.map((item) => (
       <li key={item.id} className="comics-item">
         <div className="comics-add-info">
-          <button className="comics-add-info-btn">More</button>
+          <Link to={"/comics/" + item.id} className="comics-add-info-btn">
+            More
+          </Link>
         </div>
         <img
           className="comics-item-picture"
