@@ -912,11 +912,18 @@ main {
   width: 1200px;
   margin: 0 auto;
   padding-top: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .footer .footer-container nav ul {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+.footer .footer-container .footer-logo {
+  width: 300px;
+  height: auto;
 }
 
 .character-main-info-wrapper {
@@ -1108,6 +1115,36 @@ main {
 }
 .comics-info-container:last-of-type {
   margin-bottom: 100px;
+}
+
+.socials-list {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.socials-list .socials-list-item {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.socials-list .socials-list-item a svg {
+  fill: white;
+  width: 30px;
+  height: 30px;
+}
+.socials-list .socials-list-item:hover {
+  border: 1px solid transparent;
+  background-color: white;
+}
+.socials-list .socials-list-item:hover a svg {
+  fill: red;
 }
 
 /*# sourceMappingURL=styles.css.map */
