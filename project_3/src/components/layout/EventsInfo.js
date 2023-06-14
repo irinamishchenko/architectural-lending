@@ -1,13 +1,16 @@
+import { Link } from "react-router-dom";
+
 function EventsInfo(props) {
   const events = props.events.items;
-  console.log(props);
+  let remadeArr = events[0].resourceURI.split("/");
+  let eventsId = Number(remadeArr.splice(remadeArr.length - 1).join());
   return (
     <section className="info-container">
       <h3 className="info-title">Events</h3>
       <ol className="info-list">
         {events.map((item) => (
           <li className="info-list-item" key={item.name}>
-            <a href="#">{item.name}</a>
+            <Link to={"/events/" + eventsId}>{item.name}</Link>
           </li>
         ))}
       </ol>

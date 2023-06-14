@@ -9,10 +9,19 @@ const socials = [
   "#twitter-icon",
 ];
 
+const links = [
+  "https://www.facebook.com/Marvel/",
+  "https://www.youtube.com/channel/UCvC4D8onUfXzvjTOM-dBfEA",
+  "https://www.pinterest.com/marvelofficial/",
+  "https://www.instagram.com/marvel/",
+  "https://marvelentertainment.tumblr.com/",
+  "https://twitter.com/Marvel",
+];
+
 function Socials() {
-  const socialLinks = socials.map((icon) => (
+  const socialLinks = socials.map((icon, index) => (
     <li className="socials-list-item" key={icon}>
-      <a href="#">
+      <a href={links[index]} target="_blank">
         <svg>
           <use href={sprite + icon} />
         </svg>

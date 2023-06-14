@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Navigation from "./Navigation";
 import Socials from "./Socials";
 import logo from "../../images/logo.png";
@@ -8,7 +9,9 @@ function Footer() {
       <div className="footer-container">
         <Navigation />
         <Socials />
-        <img className="footer-logo" src={logo} alt="logo" />
+        <Link to="/">
+          <img className="footer-logo" src={logo} alt="logo" />
+        </Link>
       </div>
     </footer>
   );

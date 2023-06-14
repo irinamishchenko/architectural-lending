@@ -926,7 +926,7 @@ main {
   flex-direction: column;
   gap: 15px;
 }
-.footer .footer-container .footer-logo {
+.footer .footer-container a .footer-logo {
   width: 300px;
   height: auto;
 }
