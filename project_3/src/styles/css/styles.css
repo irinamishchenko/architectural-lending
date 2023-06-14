@@ -849,8 +849,10 @@ main {
   font-weight: bold;
   text-transform: uppercase;
   color: black;
-  border: none;
-  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: transparent;
   background-image: url(../../images/series-btn.png);
   background-position: center;
@@ -1253,7 +1255,7 @@ main {
   border: none;
   cursor: pointer;
   background-color: transparent;
-  background-image: url(../../images/info-btn.png);
+  background-image: url(../../images/single-character-btn.png);
   background-position: center;
   background-size: cover;
 }
