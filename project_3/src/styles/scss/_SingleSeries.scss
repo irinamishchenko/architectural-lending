@@ -1,0 +1,46 @@
+.single-series-main-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin: 150px 0 50px 0;
+  width: 100%;
+  .single-series-photo {
+    width: 500px;
+  }
+  .single-series-description-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    .single-series-title {
+      padding: 100px 0;
+      text-align: center;
+      font-family: "Oswald", sans-serif;
+      font-size: 70px;
+      text-transform: uppercase;
+      font-weight: bold;
+      &::before {
+        content: "";
+        width: 170px;
+        height: 3px;
+        background-color: red;
+        display: block;
+        margin: 0 auto 15px;
+      }
+      &::after {
+        content: "";
+        width: 170px;
+        height: 3px;
+        background-color: red;
+        display: block;
+        margin: 20px auto 0;
+        font-family: "Roboto Condensed", sans-serif;
+      }
+    }
+    .single-series-description {
+      font-family: "Roboto Condensed", sans-serif;
+      font-size: 25px;
+    }
+  }
+}

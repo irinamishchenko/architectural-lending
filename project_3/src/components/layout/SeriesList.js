@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const baseURL = "http://gateway.marvel.com/v1/public/series";
@@ -37,7 +38,9 @@ function SeriesList() {
     const seriesItems = series.map((item) => (
       <li key={item.id} className="series-item">
         <div className="series-add-info">
-          <button className="series-add-info-btn">More</button>
+          <Link to={"/series/" + item.id} className="series-add-info-btn">
+            More
+          </Link>
         </div>
         <img
           className="series-item-picture"

@@ -1,0 +1,59 @@
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 50px;
+  .info-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    &::after {
+      content: "";
+      width: 130px;
+      height: 3px;
+      background-color: red;
+      display: block;
+      margin-top: 15px;
+    }
+  }
+  .info-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .info-list-item {
+      a {
+        font-family: "Roboto Condensed", sans-serif;
+        text-decoration: none;
+        color: black;
+        font-size: 25px;
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+  .info-button {
+    margin: 0 auto;
+    width: 210px;
+    height: 150px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url(../../images/info-btn.png);
+    background-position: center;
+    background-size: cover;
+    &:hover {
+      font-size: 55px;
+      transition: all 0.5s;
+    }
+  }
+  &:last-of-type {
+    margin-bottom: 100px;
+  }
+}

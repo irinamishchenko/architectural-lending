@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import EventsInfo from "./EventsInfo";
+import CreatorsInfo from "./CreatorsInfo";
+import CharactersInfo from "./CharactersInfo";
 
 const baseURL = "http://gateway.marvel.com/v1/public/comics/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -19,7 +22,6 @@ function SingleComics() {
         },
       })
       .then((response) => setSingleComics(response.data.data.results[0]))
-      // .then((response) => console.log(response.data.data.results[0]))
       .catch((error) => setError(error.message));
   }
 
@@ -62,51 +64,43 @@ function SingleComics() {
           ) : null}
         </div>
         {singleComics.characters.items.length > 0 ? (
-          <section className="comics-info-container">
-            <h3 className="comics-info-title">Characters</h3>
-            <ol className="comics-info-list">
-              {singleComics.characters.items.map((character, index) => (
-                <li className="comics-info-list-item" key={index}>
-                  <a href="#">{character.name}</a>
-                </li>
-              ))}
-            </ol>
-          </section>
+          // <section className="comics-info-container">
+          //   <h3 className="comics-info-title">Characters</h3>
+          //   <ol className="comics-info-list">
+          //     {singleComics.characters.items.map((character, index) => (
+          //       <li className="comics-info-list-item" key={index}>
+          //         <a href="#">{character.name}</a>
+          //       </li>
+          //     ))}
+          //   </ol>
+          // </section>
+          <CharactersInfo characters={singleComics.characters} />
         ) : null}
         {singleComics.creators.items.length > 0 ? (
-          <section className="comics-info-container">
-            <h3 className="comics-info-title">Creators</h3>
-            <ol className="comics-info-list">
-              {singleComics.creators.items.map((creator, index) => (
-                <li className="comics-info-list-item" key={index}>
-                  <a href="#">
-                    {creator.name}: {creator.role}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </section>
+          <CreatorsInfo creators={singleComics.creators} />
         ) : null}
         {singleComics.events.items.length > 0 ? (
-          <section className="comics-info-container">
-            <h3 className="comics-info-title">Events</h3>
-            <ol className="comics-info-list">
-              {singleComics.events.items.map((event, index) => (
-                <li className="comics-info-list-item" key={index}>
-                  <a href="#">{event.name}</a>
-                </li>
-              ))}
-            </ol>
-          </section>
+          // <section className="comics-info-container">
+          //   <h3 className="comics-info-title">Events</h3>
+          //   <ol className="comics-info-list">
+          //     {singleComics.events.items.map((event, index) => (
+          //       <li className="comics-info-list-item" key={index}>
+          //         <a href="#">{event.name}</a>
+          //       </li>
+          //     ))}
+          //   </ol>
+          // </section>
+          <EventsInfo events={singleComics.events} />
         ) : null}
         {singleComics.series ? (
-          <section className="comics-info-container">
-            <h3 className="comics-info-title">Series</h3>
-            <p className="comics-info-text">
+          <section className="info-container">
+            <h3 className="info-title">Series</h3>
+            <p className="info-text">
               <a href="#">{singleComics.series.name}</a>
             </p>
           </section>
-        ) : null}
+        ) : // <SeriesInfo series={singleComics.series} />
+        null}
       </>
     );
   }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const baseURL = "http://gateway.marvel.com/v1/public/events";
@@ -41,7 +42,9 @@ function EventsList() {
         <div className="event-item-info">
           <h2 className="event-item-title">{event.title}</h2>
           <p className="event-item-description">{event.description}</p>
-          <button className="event-item-button">More</button>
+          <Link to={"/events/" + event.id} className="event-item-button">
+            More
+          </Link>
         </div>
       </li>
     ));
