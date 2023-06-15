@@ -36,10 +36,6 @@ function SingleCharacter() {
       </div>
     );
   } else if (character) {
-    // console.log(character.comics.items[0].resourceURI.split("/"));
-    // let newArr = character.comics.items[0].resourceURI.split("/");
-    // let id = Number(newArr.splice(newArr.length - 1).join());
-    // console.log(id);
     return (
       <>
         <div className="character-main-info-wrapper">

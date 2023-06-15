@@ -23,7 +23,6 @@ function SingleSeries() {
         },
       })
       .then((response) => setSingleSeries(response.data.data.results[0]))
-      // .then((response) => console.log(response.data.data.results[0]))
       .catch((error) => setError(error.message));
   }
 
@@ -38,7 +37,6 @@ function SingleSeries() {
       </div>
     );
   } else if (singleSeries) {
-    console.log(singleSeries);
     return (
       <>
         <div className="single-series-main-info-wrapper">

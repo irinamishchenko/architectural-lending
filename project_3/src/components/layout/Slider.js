@@ -6,7 +6,6 @@ import picture3 from "../../images/slider-picture-3.jpg";
 import picture4 from "../../images/slider-picture-4.jpg";
 import picture5 from "../../images/slider-picture-5.jpg";
 import picture6 from "../../images/slider-picture-6.jpg";
-// import "../styles/css/styles.css";
 
 function Slider() {
   const images = [picture1, picture2, picture3, picture4, picture5, picture6];

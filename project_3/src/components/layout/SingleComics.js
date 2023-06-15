@@ -36,7 +36,6 @@ function SingleComics() {
       </div>
     );
   } else if (singleComics) {
-    console.log(singleComics);
     return (
       <>
         <h2 className="comics-title">{singleComics.title}</h2>
@@ -64,32 +63,12 @@ function SingleComics() {
           ) : null}
         </div>
         {singleComics.characters.items.length > 0 ? (
-          // <section className="comics-info-container">
-          //   <h3 className="comics-info-title">Characters</h3>
-          //   <ol className="comics-info-list">
-          //     {singleComics.characters.items.map((character, index) => (
-          //       <li className="comics-info-list-item" key={index}>
-          //         <a href="#">{character.name}</a>
-          //       </li>
-          //     ))}
-          //   </ol>
-          // </section>
           <CharactersInfo characters={singleComics.characters} />
         ) : null}
         {singleComics.creators.items.length > 0 ? (
           <CreatorsInfo creators={singleComics.creators} />
         ) : null}
         {singleComics.events.items.length > 0 ? (
-          // <section className="comics-info-container">
-          //   <h3 className="comics-info-title">Events</h3>
-          //   <ol className="comics-info-list">
-          //     {singleComics.events.items.map((event, index) => (
-          //       <li className="comics-info-list-item" key={index}>
-          //         <a href="#">{event.name}</a>
-          //       </li>
-          //     ))}
-          //   </ol>
-          // </section>
           <EventsInfo events={singleComics.events} />
         ) : null}
         {singleComics.series ? (
@@ -99,8 +78,7 @@ function SingleComics() {
               <a href="#">{singleComics.series.name}</a>
             </p>
           </section>
-        ) : // <SeriesInfo series={singleComics.series} />
-        null}
+        ) : null}
       </>
     );
   }

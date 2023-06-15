@@ -23,7 +23,6 @@ function SingleEvent() {
         },
       })
       .then((response) => setEvent(response.data.data.results[0]))
-      // .then((response) => console.log(response.data.data.results[0]))
       .catch((error) => setError(error.message));
   }
 
@@ -38,7 +37,6 @@ function SingleEvent() {
       </div>
     );
   } else if (event) {
-    console.log(event);
     return (
       <>
         <div className="event-main-info-wrapper">

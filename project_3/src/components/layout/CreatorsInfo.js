@@ -1,14 +1,21 @@
+import { Link } from "react-router-dom";
+
 function CreatorsInfo(props) {
   const creators = props.creators.items;
+
   return (
     <section className="info-container">
       <h3 className="info-title">Creators</h3>
       <ol className="info-list">
         {creators.map((creator, index) => (
           <li className="info-list-item" key={index}>
-            <a href="#">
+            <Link
+              to={
+                "/creators/" + creator.resourceURI.split("/").splice(6).join()
+              }
+            >
               {creator.name}: {creator.role}
-            </a>
+            </Link>
           </li>
         ))}
       </ol>
