@@ -57,3 +57,12 @@
     margin-bottom: 100px;
   }
 }
+
+.error {
+  height: 200px;
+  text-align: center;
+  .error-message {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 50px;
+  }
+}
