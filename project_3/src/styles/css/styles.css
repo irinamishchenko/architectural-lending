@@ -554,6 +554,36 @@ main {
   margin: 20px auto 0;
 }
 
+.characters-form {
+  width: 500px;
+  height: 40px;
+  margin: 0 auto 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.characters-form .characters-input {
+  width: 300px;
+  height: 100%;
+  font-size: 20px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+.characters-form .characters-form-button {
+  font-family: "Oswald", sans-serif;
+  width: 120px;
+  height: 100%;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.characters-form .characters-form-button:hover {
+  color: white;
+  background-color: #000;
+}
+
 .characters-list {
   display: flex;
   flex-wrap: wrap;
@@ -648,6 +678,74 @@ main {
   background-color: red;
   display: block;
   margin: 20px auto 0;
+}
+
+.comics-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 300px;
+  margin-bottom: 50px;
+}
+.comics-form .comics-title-input {
+  font-family: "Oswald", sans-serif;
+  padding-left: 5px;
+  width: 170px;
+  font-size: 20px;
+}
+.comics-form .comics-type-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.comics-form .comics-type-wrapper h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+.comics-form .comics-type-wrapper .comics-type-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+.comics-form .comics-type-wrapper .comics-type-title .comics-type-input {
+  width: 15px;
+  height: 15px;
+}
+.comics-form .comics-year-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comics-form .comics-year-title .comics-year-input {
+  font-family: "Oswald", sans-serif;
+  padding-left: 5px;
+  width: 50px;
+  font-size: 20px;
+}
+.comics-form .comics-format-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.comics-form .comics-format-title .comics-format-select {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+.comics-form .comics-form-button {
+  font-family: "Oswald", sans-serif;
+  width: 80px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.comics-form .comics-form-button:hover {
+  color: white;
+  background-color: #000;
 }
 
 .comics-list {
