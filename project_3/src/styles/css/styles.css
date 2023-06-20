@@ -844,6 +844,42 @@ main {
   margin: 20px auto 0;
 }
 
+.events-form {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.events-form .events-title-input {
+  font-family: "Oswald", sans-serif;
+  padding-left: 5px;
+  width: 230px;
+  font-size: 20px;
+}
+.events-form .events-order-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.events-form .events-order-title .events-order-select {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  width: 130px;
+}
+.events-form .events-form-button {
+  font-family: "Oswald", sans-serif;
+  width: 80px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.events-form .events-form-button:hover {
+  color: white;
+  background-color: #000;
+}
+
 .events-list {
   display: flex;
   flex-direction: column;
@@ -905,6 +941,65 @@ main {
 .events-list .events-item .event-item-info .event-item-button:hover {
   font-size: 30px;
   transition: all 0.5s;
+}
+
+.series-form {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.series-form .series-title-input {
+  font-family: "Oswald", sans-serif;
+  padding-left: 5px;
+  width: 170px;
+  font-size: 20px;
+}
+.series-form .series-year-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.series-form .series-year-title .series-year-input {
+  font-family: "Oswald", sans-serif;
+  padding-left: 5px;
+  width: 50px;
+  font-size: 20px;
+}
+.series-form .series-order-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.series-form .series-order-title .series-order-select {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+.series-form .series-format-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.series-form .series-format-title .series-order-select {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+.series-form .series-form-button {
+  font-family: "Oswald", sans-serif;
+  width: 80px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.series-form .series-form-button:hover {
+  color: white;
+  background-color: #000;
 }
 
 .series-list {

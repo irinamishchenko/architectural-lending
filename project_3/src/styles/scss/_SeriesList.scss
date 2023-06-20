@@ -1,3 +1,62 @@
+.series-form {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  .series-title-input {
+    font-family: "Oswald", sans-serif;
+    padding-left: 5px;
+    width: 170px;
+    font-size: 20px;
+  }
+  .series-year-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .series-year-input {
+      font-family: "Oswald", sans-serif;
+      padding-left: 5px;
+      width: 50px;
+      font-size: 20px;
+    }
+  }
+  .series-order-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .series-order-select {
+      font-family: "Oswald", sans-serif;
+      font-size: 20px;
+    }
+  }
+  .series-format-title {
+    font-family: "Oswald", sans-serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    .series-order-select {
+      font-family: "Oswald", sans-serif;
+      font-size: 20px;
+    }
+  }
+  .series-form-button {
+    font-family: "Oswald", sans-serif;
+    width: 80px;
+    font-size: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      color: white;
+      background-color: #000;
+    }
+  }
+}
+
 .series-list {
   display: flex;
   flex-wrap: wrap;

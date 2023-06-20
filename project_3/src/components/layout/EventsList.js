@@ -8,22 +8,48 @@ const API_key = "95857d6d985fa57f979a3eca57531d54";
 function EventsList() {
   const [events, setEvents] = useState(null);
   const [error, setError] = useState(null);
+  const [search, setSearch] = useState(null);
+  const [order, setOrder] = useState(null);
 
-  async function fetchEvents() {
-    axios
-      .get(baseURL, {
-        params: {
-          apikey: API_key,
-          orderBy: "-startDate",
-        },
-      })
-      .then((response) => setEvents(response.data.data.results))
-      .catch((error) => setError(error.message));
+  const orders = ["name", "startDate"];
+
+  async function fetchEvents(search, order) {
+    if (!search && !order) {
+      axios
+        .get(baseURL, {
+          params: {
+            apikey: API_key,
+            orderBy: "-startDate",
+          },
+        })
+        .then((response) => setEvents(response.data.data.results))
+        .catch((error) => setError(error.message));
+    } else if (search || order) {
+      axios
+        .get(baseURL, {
+          params: {
+            apikey: API_key,
+            nameStartsWith: search,
+            orderBy: order,
+          },
+        })
+        .then((response) => setEvents(response.data.data.results))
+        .catch((error) => setError(error.message));
+    }
   }
 
   useEffect(() => {
     fetchEvents();
   }, []);
+
+  function handleChange() {
+    fetchEvents(search);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    fetchEvents(search, order);
+  }
 
   if (error) {
     return (
@@ -48,7 +74,36 @@ function EventsList() {
         </div>
       </li>
     ));
-    return <ul className="events-list">{eventsItems}</ul>;
+    const ordersItems = orders.map((order) => (
+      <option key={order}>{order}</option>
+    ));
+    return (
+      <>
+        <form
+          className="events-form"
+          onChange={handleChange}
+          onSubmit={handleSubmit}
+        >
+          <input
+            className="events-title-input"
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          <label className="events-order-title">
+            Order by:
+            <select
+              className="events-order-select"
+              onChange={(e) => setOrder(e.target.value)}
+            >
+              {ordersItems}
+            </select>
+          </label>
+          <input className="events-form-button" type="submit" value="Search" />
+        </form>
+        <ul className="events-list">{eventsItems}</ul>
+      </>
+    );
   }
 }
 
