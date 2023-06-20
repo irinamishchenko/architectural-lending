@@ -87,6 +87,7 @@ function EventsList() {
           <input
             className="events-title-input"
             type="text"
+            placeholder="title"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

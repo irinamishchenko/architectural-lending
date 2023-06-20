@@ -85,6 +85,7 @@ function CharactersList() {
           <input
             className="characters-input"
             type="text"
+            placeholder="name"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

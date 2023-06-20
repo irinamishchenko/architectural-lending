@@ -98,6 +98,7 @@ function SeriesList() {
           <input
             className="series-title-input"
             type="text"
+            placeholder="title"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />

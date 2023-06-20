@@ -92,6 +92,7 @@ function ComicsList() {
           <input
             className="comics-title-input"
             type="text"
+            placeholder="title"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
           />
