@@ -1,0 +1,33 @@
+.creators-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .creator-list-item {
+    width: 350px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 10px 0;
+    border: 1px solid black;
+    background-color: #f1f1f1;
+    margin-bottom: 50px;
+    &:hover {
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+    .creator-name {
+      font-family: "Oswald", sans-serif;
+      font-size: 30px;
+    }
+    .creator-picture {
+      height: 500px;
+      width: 100%;
+    }
+    .creator-info {
+      font-family: "Oswald", sans-serif;
+      font-size: 20px;
+    }
+  }
+}

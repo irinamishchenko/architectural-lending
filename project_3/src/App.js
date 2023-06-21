@@ -15,6 +15,7 @@ import SingleCreatorPage from "./components/pages/SingleCreatorPage";
 import SingleCharacterComicsPage from "./components/pages/SingleCharacterComicsPage";
 import SingleCharacterEventsPage from "./components/pages/SingleCharacterEventsPage";
 import SingleCharacterSeriesPage from "./components/pages/SingleCharacterSeriesPage";
+import SingleComicsCreatorsPage from "./components/pages/SingleComicsCreatorsPage";
 
 import "./styles/css/styles.css";
 
@@ -40,6 +41,10 @@ function App() {
           />
           <Route path="/comics" element={<ComicsPage />} />
           <Route path="/comics/:id" element={<SingleComicsPage />} />
+          <Route
+            path="/comics/:id/creators"
+            element={<SingleComicsCreatorsPage />}
+          />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/events/:id" element={<SingleEventPage />} />
           <Route path="/series" element={<SeriesPage />} />
