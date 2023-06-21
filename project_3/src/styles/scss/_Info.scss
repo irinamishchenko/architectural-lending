@@ -42,9 +42,10 @@
     font-weight: bold;
     text-transform: uppercase;
     color: black;
-    border: none;
-    cursor: pointer;
-    background-color: transparent;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-image: url(../../images/single-character-btn.png);
     background-position: center;
     background-size: cover;

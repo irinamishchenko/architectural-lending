@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function SeriesInfo(props) {
+  const params = useParams();
+  const id = params.id;
+
   const series = props.series.items;
   const seriesItems = series.map((item) => (
     <li className="info-list-item" key={item.name}>
@@ -14,7 +17,9 @@ function SeriesInfo(props) {
       <h3 className="info-title">Series</h3>
       <ol className="info-list">{seriesItems}</ol>
       {props.series.available && props.series.available > 20 ? (
-        <button className="info-button">More</button>
+        <Link to={"/characters/" + id + "/series"} className="info-button">
+          More
+        </Link>
       ) : null}
     </section>
   );
