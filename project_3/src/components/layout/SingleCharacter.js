@@ -52,13 +52,13 @@ function SingleCharacter() {
           </div>
         </div>
         {character.comics.items ? (
-          <ComicsInfo comics={character.comics} />
+          <ComicsInfo comics={character.comics} name={"characters"} />
         ) : null}
         {character.events.items ? (
-          <EventsInfo events={character.events} />
+          <EventsInfo events={character.events} name={"characters"} />
         ) : null}
         {character.series.items ? (
-          <SeriesInfo series={character.series} />
+          <SeriesInfo series={character.series} name={"characters"} />
         ) : null}
       </>
     );

@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function CharactersInfo(props) {
+  const params = useParams();
+  const id = params.id;
+  const name = props.name;
   const characters = props.characters.items;
   const charactersItems = characters.map((character, index) => (
     <li className="info-list-item" key={index}>
@@ -16,7 +19,12 @@ function CharactersInfo(props) {
       <h3 className="info-title">Characters</h3>
       <ol className="info-list">{charactersItems}</ol>
       {props.characters.available && props.characters.available > 20 ? (
-        <button className="info-button">More</button>
+        <Link
+          to={"/" + name + "/" + id + "/characters"}
+          className="info-button"
+        >
+          More
+        </Link>
       ) : null}
     </section>
   );

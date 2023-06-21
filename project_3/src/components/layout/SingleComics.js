@@ -63,13 +63,16 @@ function SingleComics() {
           ) : null}
         </div>
         {singleComics.characters.items.length > 0 ? (
-          <CharactersInfo characters={singleComics.characters} />
+          <CharactersInfo
+            characters={singleComics.characters}
+            name={"comics"}
+          />
         ) : null}
         {singleComics.creators.items.length > 0 ? (
-          <CreatorsInfo creators={singleComics.creators} />
+          <CreatorsInfo creators={singleComics.creators} name={"comics"} />
         ) : null}
         {singleComics.events.items.length > 0 ? (
-          <EventsInfo events={singleComics.events} />
+          <EventsInfo events={singleComics.events} name={"comics"} />
         ) : null}
         {singleComics.series ? (
           <section className="info-container">

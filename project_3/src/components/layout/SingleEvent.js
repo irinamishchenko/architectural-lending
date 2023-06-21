@@ -53,16 +53,16 @@ function SingleEvent() {
           </div>
         </div>
         {event.characters.items.length > 0 ? (
-          <CharactersInfo characters={event.characters} />
+          <CharactersInfo characters={event.characters} name={"events"} />
         ) : null}
         {event.comics.items.length > 0 ? (
-          <ComicsInfo comics={event.comics} />
+          <ComicsInfo comics={event.comics} name={"events"} />
         ) : null}
         {event.creators.items.length > 0 ? (
-          <CreatorsInfo creators={event.creators} />
+          <CreatorsInfo creators={event.creators} name={"events"} />
         ) : null}
         {event.series.items.length > 0 ? (
-          <SeriesInfo series={event.series} />
+          <SeriesInfo series={event.series} name={"events"} />
         ) : null}
       </>
     );
