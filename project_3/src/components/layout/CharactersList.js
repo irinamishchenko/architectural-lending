@@ -17,22 +17,26 @@ function CharactersList() {
           params: {
             apikey: API_key,
             events: 310,
-            limit: 42,
             offset: 1,
+            limit: 42,
           },
         })
-        .then((response) => setCharacters(response.data.data.results))
+        .then((response) => {
+          setCharacters(response.data.data.results);
+        })
         .catch((error) => setError(error.message));
     } else if (search) {
       axios
         .get(baseURL, {
           params: {
             apikey: API_key,
-            limit: 42,
             nameStartsWith: search,
+            limit: 42,
           },
         })
-        .then((response) => setCharacters(response.data.data.results))
+        .then((response) => {
+          setCharacters(response.data.data.results);
+        })
         .catch((error) => setError(error.message));
     }
   }
@@ -75,6 +79,7 @@ function CharactersList() {
         <h2 className="characters-item-name">{character.name}</h2>
       </li>
     ));
+
     return (
       <>
         <form

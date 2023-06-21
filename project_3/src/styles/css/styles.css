@@ -655,6 +655,26 @@ main {
   text-align: center;
 }
 
+.show-more-button {
+  width: 200px;
+  height: 70px;
+  margin: 0 auto 50px;
+  display: block;
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.show-more-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.show-more-button-hidden {
+  display: none;
+}
+
 .comics-title {
   padding: 100px 0;
   text-align: center;
@@ -755,7 +775,7 @@ main {
 }
 .comics-list .comics-item {
   width: 350px;
-  height: 650px;
+  height: 700px;
   border: 1px solid black;
   margin-bottom: 50px;
   display: flex;
@@ -891,6 +911,7 @@ main {
   gap: 30px;
   border: 1px solid black;
   background-color: #f1f1f1;
+  height: 350px;
 }
 .events-list .events-item:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -903,7 +924,7 @@ main {
   padding-right: 15px;
 }
 .events-list .events-item .event-item-picture {
-  width: 300px;
+  width: 350px;
   height: auto;
 }
 .events-list .events-item .event-item-info {

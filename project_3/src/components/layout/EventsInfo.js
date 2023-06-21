@@ -12,18 +12,7 @@ function EventsInfo(props) {
   return (
     <section className="info-container">
       <h3 className="info-title">Events</h3>
-      <ol className="info-list">
-        {/* {events.map((item) => (
-          <li className="info-list-item" key={item.name}>
-            <Link
-              to={"/events/" + item.resourceURI.split("/").splice(6).join()}
-            >
-              {item.name}
-            </Link>
-          </li>
-        ))} */}
-        {eventsItems}
-      </ol>
+      <ol className="info-list">{eventsItems}</ol>
       {props.events.available && props.events.available > 20 ? (
         <button className="info-button">More</button>
       ) : null}
