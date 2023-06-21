@@ -2,17 +2,19 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const baseURL = "http://gateway.marvel.com/v1/public/comics/";
+const baseURL = "http://gateway.marvel.com/v1/public/events/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
 
-function SingleComicsCreators() {
+console.log(baseURL);
+
+function SingleEventCreators() {
   const params = useParams();
   const id = params.id;
   const [creators, setCreators] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
 
-  async function fetchComicsCreators() {
+  async function fetchEventsCreators() {
     axios
       .get(baseURL + "/" + id + "/creators", {
         params: {
@@ -30,7 +32,7 @@ function SingleComicsCreators() {
   }
 
   useEffect(() => {
-    fetchComicsCreators();
+    fetchEventsCreators();
   }, []);
 
   if (error) {
@@ -57,4 +59,4 @@ function SingleComicsCreators() {
   }
 }
 
-export default SingleComicsCreators;
+export default SingleEventCreators;

@@ -59,16 +59,19 @@ function SingleSeries() {
           </div>
         </div>
         {singleSeries.characters.items.length > 0 ? (
-          <CharactersInfo characters={singleSeries.characters} />
+          <CharactersInfo
+            characters={singleSeries.characters}
+            name={"series"}
+          />
         ) : null}
         {singleSeries.comics.items.length > 0 ? (
-          <ComicsInfo comics={singleSeries.comics} />
+          <ComicsInfo comics={singleSeries.comics} name={"series"} />
         ) : null}
         {singleSeries.creators.items.length > 0 ? (
-          <CreatorsInfo creators={singleSeries.creators} />
+          <CreatorsInfo creators={singleSeries.creators} name={"series"} />
         ) : null}
         {singleSeries.events.items.length > 0 ? (
-          <SeriesInfo series={singleSeries.events} />
+          <SeriesInfo series={singleSeries.events} name={"series"} />
         ) : null}
       </>
     );
