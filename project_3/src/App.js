@@ -20,6 +20,9 @@ import SingleEventCharactersPage from "./components/pages/SingleEventCharactersP
 import SingleEventComicsPage from "./components/pages/SingleEventComicsPage";
 import SingleEventCreatorsPage from "./components/pages/SingleEventCreatorsPage";
 import SingleEventSeriesPage from "./components/pages/SingleEventSeriesPage";
+import SingleSeriesCharactersPage from "./components/pages/SingleSeriesCharactersPage";
+import SingleSeriesComicsPage from "./components/pages/SingleSeriesComicsPage";
+import SingleSeriesCreatorsPage from "./components/pages/SingleSeriesCreatorsPage";
 
 import "./styles/css/styles.css";
 
@@ -69,6 +72,18 @@ function App() {
           />
           <Route path="/series" element={<SeriesPage />} />
           <Route path="/series/:id" element={<SingleSeriesPage />} />
+          <Route
+            path="/series/:id/characters"
+            element={<SingleSeriesCharactersPage />}
+          />
+          <Route
+            path="/series/:id/comics"
+            element={<SingleSeriesComicsPage />}
+          />
+          <Route
+            path="/series/:id/creators"
+            element={<SingleSeriesCreatorsPage />}
+          />
           <Route path="/creators/:id" element={<SingleCreatorPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>

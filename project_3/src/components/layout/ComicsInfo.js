@@ -13,8 +13,6 @@ function ComicsInfo(props) {
     </li>
   ));
 
-  // const URL = name + "/" + id + "/comics";
-  // console.log(name + "/" + id + "/comics");
   return (
     <section className="info-container">
       <h3 className="info-title">Comics</h3>

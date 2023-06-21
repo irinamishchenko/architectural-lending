@@ -2,19 +2,17 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const baseURL = "http://gateway.marvel.com/v1/public/events/";
+const baseURL = "http://gateway.marvel.com/v1/public/series/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
 
-console.log(baseURL);
-
-function SingleEventCreators() {
+function SingleSeriesCreators() {
   const params = useParams();
   const id = params.id;
   const [creators, setCreators] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
 
-  async function fetchEventsCreators() {
+  async function fetchSeriesCreators() {
     axios
       .get(baseURL + "/" + id + "/creators", {
         params: {
@@ -32,7 +30,7 @@ function SingleEventCreators() {
   }
 
   useEffect(() => {
-    fetchEventsCreators();
+    fetchSeriesCreators();
   }, []);
 
   if (error) {
@@ -58,4 +56,4 @@ function SingleEventCreators() {
   }
 }
 
-export default SingleEventCreators;
+export default SingleSeriesCreators;

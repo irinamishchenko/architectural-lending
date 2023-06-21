@@ -64,7 +64,6 @@ function SeriesList() {
       </div>
     );
   } else if (series) {
-    console.log(series);
     const seriesItems = series.map((item) => (
       <li key={item.id} className="series-item">
         <div className="series-add-info">
