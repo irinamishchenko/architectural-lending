@@ -25,7 +25,7 @@ const links = [
 
 function Navigation() {
   const navItems = links.map((item) => (
-    <li key={item.link.toString()}>
+    <li key={item.link}>
       <NavLink to={item.path} className="navigation-item">
         {item.link}
       </NavLink>
