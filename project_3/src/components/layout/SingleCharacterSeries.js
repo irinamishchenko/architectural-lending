@@ -17,7 +17,7 @@ function SingleCharacterSeries() {
       .get(baseURL + "/" + id + "/events", {
         params: {
           apikey: API_key,
-          limit: 100,
+          limit: 99,
         },
       })
       .then(
@@ -40,7 +40,6 @@ function SingleCharacterSeries() {
       </div>
     );
   } else if (series) {
-    console.log(series);
     const seriesItems = series.map((item) => (
       <li key={item.id} className="series-item">
         <div className="series-add-info">

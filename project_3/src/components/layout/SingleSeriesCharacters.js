@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import sprite from "./../../images/sprite.svg";
 
 const baseURL = "http://gateway.marvel.com/v1/public/series/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -11,13 +12,17 @@ function SingleSeriesCharacters() {
   const [characters, setCharacters] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
+  const [offset, setOffset] = useState(0);
 
-  async function fetchSeriesCharacters() {
+  const LIMIT = 99;
+
+  async function fetchSeriesCharacters(offset) {
     axios
       .get(baseURL + "/" + id + "/characters", {
         params: {
           apikey: API_key,
-          limit: 100,
+          limit: LIMIT,
+          offset: offset,
         },
       })
       .then(
@@ -32,6 +37,16 @@ function SingleSeriesCharacters() {
   useEffect(() => {
     fetchSeriesCharacters();
   }, []);
+
+  function handlePrevClick() {
+    setOffset(offset - LIMIT);
+    fetchSeriesCharacters(offset - LIMIT);
+  }
+
+  function handleNextClick() {
+    setOffset(offset + LIMIT);
+    fetchSeriesCharacters(offset + LIMIT);
+  }
 
   if (error) {
     return (
@@ -62,6 +77,30 @@ function SingleSeriesCharacters() {
     return (
       <>
         <ul className="characters-list">{charactersItems}</ul>
+        <div className="list-buttons">
+          <button
+            className={
+              offset > 0 ? "list-button" : "list-button list-button-inactive"
+            }
+            onClick={handlePrevClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+          <button
+            className={
+              offset + LIMIT < total
+                ? "list-button"
+                : "list-button list-button-inactive"
+            }
+            onClick={handleNextClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+        </div>
       </>
     );
   }

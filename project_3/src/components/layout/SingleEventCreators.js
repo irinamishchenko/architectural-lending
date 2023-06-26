@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import sprite from "./../../images/sprite.svg";
 
 const baseURL = "http://gateway.marvel.com/v1/public/events/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
-
-console.log(baseURL);
 
 function SingleEventCreators() {
   const params = useParams();
@@ -13,13 +12,17 @@ function SingleEventCreators() {
   const [creators, setCreators] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
+  const [offset, setOffset] = useState(0);
 
-  async function fetchEventsCreators() {
+  const LIMIT = 99;
+
+  async function fetchEventsCreators(offset) {
     axios
       .get(baseURL + "/" + id + "/creators", {
         params: {
           apikey: API_key,
-          limit: 100,
+          limit: LIMIT,
+          offset: offset,
         },
       })
       .then(
@@ -34,6 +37,16 @@ function SingleEventCreators() {
   useEffect(() => {
     fetchEventsCreators();
   }, []);
+
+  function handlePrevClick() {
+    setOffset(offset - LIMIT);
+    fetchEventsCreators(offset - LIMIT);
+  }
+
+  function handleNextClick() {
+    setOffset(offset + LIMIT);
+    fetchEventsCreators(offset + LIMIT);
+  }
 
   if (error) {
     return (
@@ -54,7 +67,35 @@ function SingleEventCreators() {
         </p>
       </li>
     ));
-    return <ul className="creators-list">{creatorsItems}</ul>;
+    return (
+      <>
+        <ul className="creators-list">{creatorsItems}</ul>{" "}
+        <div className="list-buttons">
+          <button
+            className={
+              offset > 0 ? "list-button" : "list-button list-button-inactive"
+            }
+            onClick={handlePrevClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+          <button
+            className={
+              offset + LIMIT < total
+                ? "list-button"
+                : "list-button list-button-inactive"
+            }
+            onClick={handleNextClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+        </div>
+      </>
+    );
   }
 }
 

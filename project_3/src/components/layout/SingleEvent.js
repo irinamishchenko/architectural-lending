@@ -23,6 +23,7 @@ function SingleEvent() {
         },
       })
       .then((response) => setEvent(response.data.data.results[0]))
+      // .then((response) => console.log(response.data.data.results[0]))
       .catch((error) => setError(error.message));
   }
 

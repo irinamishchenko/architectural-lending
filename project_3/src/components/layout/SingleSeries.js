@@ -4,7 +4,7 @@ import axios from "axios";
 import CharactersInfo from "./CharactersInfo";
 import ComicsInfo from "./ComicsInfo";
 import CreatorsInfo from "./CreatorsInfo";
-import SeriesInfo from "./SeriesInfo";
+import EventsInfo from "./EventsInfo";
 
 const baseURL = "http://gateway.marvel.com/v1/public/series/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -71,7 +71,7 @@ function SingleSeries() {
           <CreatorsInfo creators={singleSeries.creators} name={"series"} />
         ) : null}
         {singleSeries.events.items.length > 0 ? (
-          <SeriesInfo series={singleSeries.events} name={"series"} />
+          <EventsInfo events={singleSeries.events} name={"series"} />
         ) : null}
       </>
     );

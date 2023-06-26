@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import sprite from "./../../images/sprite.svg";
 
 const baseURL = "http://gateway.marvel.com/v1/public/series/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -11,13 +12,17 @@ function SingleSeriesComics() {
   const [comics, setComics] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
+  const [offset, setOffset] = useState(0);
 
-  async function fetchSeriesComics() {
+  const LIMIT = 99;
+
+  async function fetchSeriesComics(offset) {
     axios
       .get(baseURL + "/" + id + "/comics", {
         params: {
           apikey: API_key,
-          limit: 100,
+          limit: LIMIT,
+          offset: offset,
         },
       })
       .then(
@@ -32,6 +37,16 @@ function SingleSeriesComics() {
   useEffect(() => {
     fetchSeriesComics();
   }, []);
+
+  function handlePrevClick() {
+    setOffset(offset - LIMIT);
+    fetchSeriesComics(offset - LIMIT);
+  }
+
+  function handleNextClick() {
+    setOffset(offset + LIMIT);
+    fetchSeriesComics(offset + LIMIT);
+  }
 
   if (error) {
     return (
@@ -58,6 +73,30 @@ function SingleSeriesComics() {
     return (
       <>
         <ul className="comics-list">{comicsItems}</ul>
+        <div className="list-buttons">
+          <button
+            className={
+              offset > 0 ? "list-button" : "list-button list-button-inactive"
+            }
+            onClick={handlePrevClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+          <button
+            className={
+              offset + LIMIT < total
+                ? "list-button"
+                : "list-button list-button-inactive"
+            }
+            onClick={handleNextClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+        </div>
       </>
     );
   }

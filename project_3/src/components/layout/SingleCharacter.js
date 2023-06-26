@@ -36,7 +36,6 @@ function SingleCharacter() {
       </div>
     );
   } else if (character) {
-    console.log(character.events.items);
     return (
       <>
         <div className="character-main-info-wrapper">
