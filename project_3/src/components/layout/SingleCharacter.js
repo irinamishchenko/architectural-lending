@@ -36,6 +36,7 @@ function SingleCharacter() {
       </div>
     );
   } else if (character) {
+    console.log(character.events.items);
     return (
       <>
         <div className="character-main-info-wrapper">
@@ -51,13 +52,13 @@ function SingleCharacter() {
             ) : null}
           </div>
         </div>
-        {character.comics.items ? (
+        {character.comics.items.length > 0 ? (
           <ComicsInfo comics={character.comics} name={"characters"} />
         ) : null}
-        {character.events.items ? (
+        {character.events.items.length > 0 ? (
           <EventsInfo events={character.events} name={"characters"} />
         ) : null}
-        {character.series.items ? (
+        {character.series.items.length > 0 ? (
           <SeriesInfo series={character.series} name={"characters"} />
         ) : null}
       </>
