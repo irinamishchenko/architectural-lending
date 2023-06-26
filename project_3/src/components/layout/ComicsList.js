@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import sprite from "./../../images/sprite.svg";
 
 const baseURL = "http://gateway.marvel.com/v1/public/comics";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -12,21 +13,30 @@ function ComicsList() {
   const [type, setType] = useState(null);
   const [year, setYear] = useState(null);
   const [format, setFormat] = useState(null);
+  const [total, setTotal] = useState(null);
+  const [offset, setOffset] = useState(0);
+
+  const LIMIT = 99;
 
   const formats = ["comic", "magazine", "hardcover", "digest"];
 
-  async function fetchComics(search, type, year, format) {
+  async function fetchComics(search, offset, type, year, format) {
     if (!search && !type && !year && !format) {
       axios
         .get(baseURL, {
           params: {
             apikey: API_key,
             format: "hardcover",
-            limit: 21,
-            offset: 3,
+            limit: LIMIT,
+            offset: offset,
           },
         })
-        .then((response) => setComics(response.data.data.results))
+        .then(
+          (response) => (
+            setComics(response.data.data.results),
+            setTotal(response.data.data.total)
+          )
+        )
         .catch((error) => setError(error.message));
     } else if (search || type || year || format) {
       axios
@@ -34,12 +44,19 @@ function ComicsList() {
           params: {
             apikey: API_key,
             titleStartsWith: search,
+            limit: LIMIT,
+            offset: offset,
             formatType: type,
             startYear: year,
             format: format,
           },
         })
-        .then((response) => setComics(response.data.data.results))
+        .then(
+          (response) => (
+            setComics(response.data.data.results),
+            setTotal(response.data.data.total)
+          )
+        )
         .catch((error) => setError(error.message));
     }
   }
@@ -49,12 +66,22 @@ function ComicsList() {
   }, []);
 
   function handleChange() {
-    fetchComics(search, type);
+    fetchComics(search, offset, type);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetchComics(search, type, year, format);
+    fetchComics(search, offset, type, year, format);
+  }
+
+  function handlePrevClick() {
+    setOffset(offset - LIMIT);
+    fetchComics(search, offset - LIMIT, type, year, format);
+  }
+
+  function handleNextClick() {
+    setOffset(offset + LIMIT);
+    fetchComics(search, offset + LIMIT, type, year, format);
   }
 
   if (error) {
@@ -142,6 +169,30 @@ function ComicsList() {
           <input className="comics-form-button" type="submit" value="Search" />
         </form>
         <ul className="comics-list">{comicsItems}</ul>
+        <div className="list-buttons">
+          <button
+            className={
+              offset > 0 ? "list-button" : "list-button list-button-inactive"
+            }
+            onClick={handlePrevClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+          <button
+            className={
+              offset + LIMIT < total
+                ? "list-button"
+                : "list-button list-button-inactive"
+            }
+            onClick={handleNextClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+        </div>
       </>
     );
   }

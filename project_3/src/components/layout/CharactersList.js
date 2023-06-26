@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import sprite from "./../../images/sprite.svg";
 
 const baseURL = "http://gateway.marvel.com/v1/public/characters";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -9,21 +10,28 @@ function CharactersList() {
   const [characters, setCharacters] = useState(null);
   const [error, setError] = useState(null);
   const [search, setSearch] = useState(null);
+  const [total, setTotal] = useState(null);
+  const [offset, setOffset] = useState(0);
 
-  async function fetchCharacters(search) {
+  const LIMIT = 99;
+
+  async function fetchCharacters(search, offset) {
     if (!search) {
       axios
         .get(baseURL, {
           params: {
             apikey: API_key,
             events: 310,
-            offset: 1,
-            limit: 42,
+            limit: LIMIT,
+            offset: offset,
           },
         })
-        .then((response) => {
-          setCharacters(response.data.data.results);
-        })
+        .then(
+          (response) => (
+            setCharacters(response.data.data.results),
+            setTotal(response.data.data.total)
+          )
+        )
         .catch((error) => setError(error.message));
     } else if (search) {
       axios
@@ -31,12 +39,16 @@ function CharactersList() {
           params: {
             apikey: API_key,
             nameStartsWith: search,
-            limit: 42,
+            limit: LIMIT,
+            offset: offset,
           },
         })
-        .then((response) => {
-          setCharacters(response.data.data.results);
-        })
+        .then(
+          (response) => (
+            setCharacters(response.data.data.results),
+            setTotal(response.data.data.total)
+          )
+        )
         .catch((error) => setError(error.message));
     }
   }
@@ -45,13 +57,23 @@ function CharactersList() {
     fetchCharacters();
   }, []);
 
-  function handleChange(e) {
-    fetchCharacters(search);
+  function handleChange() {
+    fetchCharacters(search, offset);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetchCharacters(search);
+    fetchCharacters(search, offset);
+  }
+
+  function handlePrevClick() {
+    setOffset(offset - LIMIT);
+    fetchCharacters(search, offset - LIMIT);
+  }
+
+  function handleNextClick() {
+    setOffset(offset + LIMIT);
+    fetchCharacters(search, offset + LIMIT);
   }
 
   if (error) {
@@ -101,6 +123,30 @@ function CharactersList() {
           />
         </form>
         <ul className="characters-list">{charactersItems}</ul>
+        <div className="list-buttons">
+          <button
+            className={
+              offset > 0 ? "list-button" : "list-button list-button-inactive"
+            }
+            onClick={handlePrevClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+          <button
+            className={
+              offset + LIMIT < total
+                ? "list-button"
+                : "list-button list-button-inactive"
+            }
+            onClick={handleNextClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+        </div>
       </>
     );
   }

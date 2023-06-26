@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import sprite from "./../../images/sprite.svg";
 
 const baseURL = "http://gateway.marvel.com/v1/public/events";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -10,19 +11,30 @@ function EventsList() {
   const [error, setError] = useState(null);
   const [search, setSearch] = useState(null);
   const [order, setOrder] = useState(null);
+  const [total, setTotal] = useState(null);
+  const [offset, setOffset] = useState(0);
+
+  const LIMIT = 99;
 
   const orders = ["name", "startDate"];
 
-  async function fetchEvents(search, order) {
+  async function fetchEvents(search, offset, order) {
     if (!search && !order) {
       axios
         .get(baseURL, {
           params: {
             apikey: API_key,
             orderBy: "-startDate",
+            limit: LIMIT,
+            offset: offset,
           },
         })
-        .then((response) => setEvents(response.data.data.results))
+        .then(
+          (response) => (
+            setEvents(response.data.data.results),
+            setTotal(response.data.data.total)
+          )
+        )
         .catch((error) => setError(error.message));
     } else if (search || order) {
       axios
@@ -30,10 +42,17 @@ function EventsList() {
           params: {
             apikey: API_key,
             nameStartsWith: search,
+            limit: LIMIT,
+            offset: offset,
             orderBy: order,
           },
         })
-        .then((response) => setEvents(response.data.data.results))
+        .then(
+          (response) => (
+            setEvents(response.data.data.results),
+            setTotal(response.data.data.total)
+          )
+        )
         .catch((error) => setError(error.message));
     }
   }
@@ -43,12 +62,22 @@ function EventsList() {
   }, []);
 
   function handleChange() {
-    fetchEvents(search);
+    fetchEvents(search, offset);
   }
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetchEvents(search, order);
+    fetchEvents(search, offset, order);
+  }
+
+  function handlePrevClick() {
+    setOffset(offset - LIMIT);
+    fetchEvents(search, offset - LIMIT, order);
+  }
+
+  function handleNextClick() {
+    setOffset(offset + LIMIT);
+    fetchEvents(search, offset + LIMIT, order);
   }
 
   if (error) {
@@ -103,6 +132,30 @@ function EventsList() {
           <input className="events-form-button" type="submit" value="Search" />
         </form>
         <ul className="events-list">{eventsItems}</ul>
+        <div className="list-buttons">
+          <button
+            className={
+              offset > 0 ? "list-button" : "list-button list-button-inactive"
+            }
+            onClick={handlePrevClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+          <button
+            className={
+              offset + LIMIT < total
+                ? "list-button"
+                : "list-button list-button-inactive"
+            }
+            onClick={handleNextClick}
+          >
+            <svg>
+              <use href={sprite + "#arrow-icon"} />
+            </svg>
+          </button>
+        </div>
       </>
     );
   }
