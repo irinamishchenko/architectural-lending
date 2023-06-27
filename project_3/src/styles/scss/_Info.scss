@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 40px;
   margin-top: 50px;
+
   .info-title {
     font-family: "Oswald", sans-serif;
     font-size: 40px;
@@ -56,6 +57,34 @@
   }
   &:last-of-type {
     margin-bottom: 100px;
+  }
+}
+.comics-info-container {
+  &::after {
+    content: "";
+    background-image: url("./../../images/decor-picture-1.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 500px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    right: 0;
+    opacity: 0.4;
+  }
+}
+.series-info-container {
+  &::after {
+    content: "";
+    background-image: url("./../../images/decor-picture-2.png");
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 350px;
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    right: 0;
+    opacity: 0.4;
   }
 }
 

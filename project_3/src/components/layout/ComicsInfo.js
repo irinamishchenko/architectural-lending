@@ -14,7 +14,7 @@ function ComicsInfo(props) {
   ));
 
   return (
-    <section className="info-container">
+    <section className="info-container comics-info-container">
       <h3 className="info-title">Comics</h3>
       <ol className="info-list">{comicsItems}</ol>
       {props.comics.available && props.comics.available > 20 ? (

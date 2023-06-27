@@ -13,7 +13,7 @@ function SeriesInfo(props) {
     </li>
   ));
   return (
-    <section className="info-container">
+    <section className="info-container series-info-container">
       <h3 className="info-title">Series</h3>
       <ol className="info-list">{seriesItems}</ol>
       {props.series.available && props.series.available > 20 ? (
