@@ -9,7 +9,6 @@ function SingleComicsCreators() {
   const params = useParams();
   const id = params.id;
   const [creators, setCreators] = useState(null);
-  const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchComicsCreators() {
@@ -20,12 +19,7 @@ function SingleComicsCreators() {
           limit: 100,
         },
       })
-      .then(
-        (response) => (
-          setCreators(response.data.data.results),
-          setTotal(response.data.data.total)
-        )
-      )
+      .then((response) => setCreators(response.data.data.results))
       .catch((error) => setError(error.message));
   }
 

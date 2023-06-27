@@ -9,7 +9,6 @@ function SingleCharacterEvents() {
   const params = useParams();
   const id = params.id;
   const [events, setEvents] = useState(null);
-  const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchCharacterEvents() {
@@ -20,12 +19,7 @@ function SingleCharacterEvents() {
           limit: 100,
         },
       })
-      .then(
-        (response) => (
-          setEvents(response.data.data.results),
-          setTotal(response.data.data.total)
-        )
-      )
+      .then((response) => setEvents(response.data.data.results))
       .catch((error) => setError(error.message));
   }
 

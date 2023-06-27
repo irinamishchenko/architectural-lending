@@ -9,7 +9,6 @@ function SingleEventSeries() {
   const params = useParams();
   const id = params.id;
   const [series, setSeries] = useState(null);
-  const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchEventsSeries() {
@@ -20,12 +19,7 @@ function SingleEventSeries() {
           limit: 100,
         },
       })
-      .then(
-        (response) => (
-          setSeries(response.data.data.results),
-          setTotal(response.data.data.total)
-        )
-      )
+      .then((response) => setSeries(response.data.data.results))
       .catch((error) => setError(error.message));
   }
 

@@ -1,5 +1,3 @@
-// import bgImage from "./../../images/home-section-bg.png";
-
 const homeContent = [
   {
     title: "Characters",
