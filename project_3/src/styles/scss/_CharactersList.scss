@@ -100,23 +100,3 @@
     }
   }
 }
-
-.show-more-button {
-  width: 200px;
-  height: 70px;
-  margin: 0 auto 50px;
-  display: block;
-  font-family: "Oswald", sans-serif;
-  font-size: 28px;
-  border: 2px solid black;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: black;
-    color: white;
-  }
-}
-
-.show-more-button-hidden {
-  display: none;
-}

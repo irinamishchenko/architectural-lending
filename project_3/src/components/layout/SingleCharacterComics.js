@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import sprite from "./../../images/sprite.svg";
+import Buttons from "./Buttons";
 
 const baseURL = "http://gateway.marvel.com/v1/public/characters/";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -41,11 +41,13 @@ function SingleCharacterComics() {
   function handlePrevClick() {
     setOffset(offset - LIMIT);
     fetchCharacterComics(offset - LIMIT);
+    console.log("Prev click");
   }
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
     fetchCharacterComics(offset + LIMIT);
+    console.log("Next click");
   }
 
   if (error) {
@@ -70,33 +72,18 @@ function SingleCharacterComics() {
         <h2 className="comics-item-title">{item.title}</h2>
       </li>
     ));
+
     return (
       <>
         <ul className="comics-list">{comicsItems}</ul>
-        <div className="list-buttons">
-          <button
-            className={
-              offset > 0 ? "list-button" : "list-button list-button-inactive"
-            }
-            onClick={handlePrevClick}
-          >
-            <svg>
-              <use href={sprite + "#arrow-icon"} />
-            </svg>
-          </button>
-          <button
-            className={
-              offset + LIMIT < total
-                ? "list-button"
-                : "list-button list-button-inactive"
-            }
-            onClick={handleNextClick}
-          >
-            <svg>
-              <use href={sprite + "#arrow-icon"} />
-            </svg>
-          </button>
-        </div>
+
+        <Buttons
+          onPrevClick={handlePrevClick}
+          onNextClick={handleNextClick}
+          offset={offset}
+          limit={LIMIT}
+          total={total}
+        />
       </>
     );
   }
