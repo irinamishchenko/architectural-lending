@@ -36,21 +36,24 @@ function SingleCharacter() {
       </div>
     );
   } else if (character) {
+    const GENERAL_INFO = (
+      <div className="character-main-info-wrapper">
+        <img
+          className="character-photo"
+          src={character.thumbnail.path + "." + character.thumbnail.extension}
+          alt={character.name}
+        />
+        <div className="character-description-container">
+          <h2 className="character-name">{character.name}</h2>
+          {character.description ? (
+            <p className="character-description">{character.description}</p>
+          ) : null}
+        </div>
+      </div>
+    );
     return (
       <>
-        <div className="character-main-info-wrapper">
-          <img
-            className="character-photo"
-            src={character.thumbnail.path + "." + character.thumbnail.extension}
-            alt={character.name}
-          />
-          <div className="character-description-container">
-            <h2 className="character-name">{character.name}</h2>
-            {character.description ? (
-              <p className="character-description">{character.description}</p>
-            ) : null}
-          </div>
-        </div>
+        {GENERAL_INFO}
         {character.comics.items.length > 0 ? (
           <ComicsInfo comics={character.comics} name={"characters"} />
         ) : null}

@@ -36,19 +36,22 @@ function SingleCreator() {
       </div>
     );
   } else if (creator) {
+    const GENERAL_INFO = (
+      <div className="creator-main-info">
+        <h2 className="creator-name">{creator.fullName}</h2>
+        {creator.thumbnail.path ===
+        "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? null : (
+          <img
+            className="creator-picture"
+            src={creator.thumbnail.path + "." + creator.thumbnail.extension}
+            alt={creator.fullName}
+          />
+        )}
+      </div>
+    );
     return (
       <>
-        <div className="creator-main-info">
-          <h2 className="creator-name">{creator.fullName}</h2>
-          {creator.thumbnail.path ===
-          "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available" ? null : (
-            <img
-              className="creator-picture"
-              src={creator.thumbnail.path + "." + creator.thumbnail.extension}
-              alt={creator.fullName}
-            />
-          )}
-        </div>
+        {GENERAL_INFO}
         {creator.comics.items.length > 0 ? (
           <ComicsInfo comics={creator.comics} />
         ) : null}

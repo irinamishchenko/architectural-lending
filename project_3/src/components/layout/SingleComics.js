@@ -36,8 +36,9 @@ function SingleComics() {
       </div>
     );
   } else if (singleComics) {
-    return (
+    const GENERAL_INFO = (
       <>
+        {" "}
         <h2 className="comics-title">{singleComics.title}</h2>
         <div className="comics-main-info-container">
           <img
@@ -62,6 +63,11 @@ function SingleComics() {
             </div>
           ) : null}
         </div>
+      </>
+    );
+    return (
+      <>
+        {GENERAL_INFO}
         {singleComics.characters.items.length > 0 ? (
           <CharactersInfo
             characters={singleComics.characters}

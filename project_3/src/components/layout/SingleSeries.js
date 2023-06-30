@@ -37,27 +37,28 @@ function SingleSeries() {
       </div>
     );
   } else if (singleSeries) {
+    const GENERAL_INFO = (
+      <div className="single-series-main-info-wrapper">
+        <img
+          className="single-series-photo"
+          src={
+            singleSeries.thumbnail.path + "." + singleSeries.thumbnail.extension
+          }
+          alt={singleSeries.title}
+        />
+        <div className="single-series-description-container">
+          <h2 className="single-series-title">{singleSeries.title}</h2>
+          {singleSeries.description ? (
+            <p className="single-series-description">
+              {singleSeries.description}
+            </p>
+          ) : null}
+        </div>
+      </div>
+    );
     return (
       <>
-        <div className="single-series-main-info-wrapper">
-          <img
-            className="single-series-photo"
-            src={
-              singleSeries.thumbnail.path +
-              "." +
-              singleSeries.thumbnail.extension
-            }
-            alt={singleSeries.title}
-          />
-          <div className="single-series-description-container">
-            <h2 className="single-series-title">{singleSeries.title}</h2>
-            {singleSeries.description ? (
-              <p className="single-series-description">
-                {singleSeries.description}
-              </p>
-            ) : null}
-          </div>
-        </div>
+        {GENERAL_INFO}
         {singleSeries.characters.items.length > 0 ? (
           <CharactersInfo
             characters={singleSeries.characters}

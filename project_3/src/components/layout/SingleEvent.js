@@ -37,21 +37,24 @@ function SingleEvent() {
       </div>
     );
   } else if (event) {
+    const GENERAL_INFO = (
+      <div className="event-main-info-wrapper">
+        <img
+          className="event-photo"
+          src={event.thumbnail.path + "." + event.thumbnail.extension}
+          alt={event.title}
+        />
+        <div className="event-description-container">
+          <h2 className="event-title">{event.title}</h2>
+          {event.description ? (
+            <p className="event-description">{event.description}</p>
+          ) : null}
+        </div>
+      </div>
+    );
     return (
       <>
-        <div className="event-main-info-wrapper">
-          <img
-            className="event-photo"
-            src={event.thumbnail.path + "." + event.thumbnail.extension}
-            alt={event.title}
-          />
-          <div className="event-description-container">
-            <h2 className="event-title">{event.title}</h2>
-            {event.description ? (
-              <p className="event-description">{event.description}</p>
-            ) : null}
-          </div>
-        </div>
+        {GENERAL_INFO}
         {event.characters.items.length > 0 ? (
           <CharactersInfo characters={event.characters} name={"events"} />
         ) : null}
