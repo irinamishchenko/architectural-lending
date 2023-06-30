@@ -18,9 +18,6 @@ function SeriesList() {
 
   const LIMIT = 96;
 
-  const ORDERS = ["title", "modified", "startYear"];
-  const FORMATS = ["comic", "magazine", "hardcover", "digest"];
-
   async function fetchSeries(search, offset, year, order, format) {
     if (!search && !year && !order && !format) {
       axios
@@ -119,11 +116,17 @@ function SeriesList() {
         </p>
       </li>
     ));
+    const ORDERS = ["title", "modified", "startYear"];
+    const FORMATS = ["comic", "magazine", "hardcover", "digest"];
     const ORDERS_ITEMS = ORDERS.map((order) => (
-      <option key={order}>{order}</option>
+      <option key={order} value={order}>
+        {order}
+      </option>
     ));
     const FORMAT_ITEMS = FORMATS.map((format) => (
-      <option key={format}>{format}</option>
+      <option key={format} value={format}>
+        {format}
+      </option>
     ));
     const SEARCH_FORM = (
       <form

@@ -16,8 +16,6 @@ function EventsList() {
 
   const LIMIT = 99;
 
-  const ORDERS = ["name", "startDate"];
-
   async function fetchEvents(search, offset, order) {
     if (!search && !order) {
       axios
@@ -111,8 +109,11 @@ function EventsList() {
         </div>
       </li>
     ));
+    const ORDERS = ["name", "startDate"];
     const ORDERS_ITEMS = ORDERS.map((order) => (
-      <option key={order}>{order}</option>
+      <option key={order} value={order}>
+        {order}
+      </option>
     ));
     const SEARCH_FORM = (
       <form

@@ -18,8 +18,6 @@ function ComicsList() {
 
   const LIMIT = 99;
 
-  const FORMATS = ["comic", "magazine", "hardcover", "digest"];
-
   async function fetchComics(search, offset, type, year, format) {
     if (!search && !type && !year && !format) {
       axios
@@ -66,7 +64,7 @@ function ComicsList() {
   }, []);
 
   function handleChange() {
-    fetchComics(search, offset, type);
+    fetchComics(search, offset);
   }
 
   function handleSubmit(e) {
@@ -115,8 +113,11 @@ function ComicsList() {
         <h2 className="comics-item-title">{item.title}</h2>
       </li>
     ));
+    const FORMATS = ["comic", "magazine", "hardcover", "digest"];
     const FORMAT_ITEMS = FORMATS.map((format) => (
-      <option key={format}>{format}</option>
+      <option key={format} value={format}>
+        {format}
+      </option>
     ));
     const SEARCH_FORM = (
       <form
