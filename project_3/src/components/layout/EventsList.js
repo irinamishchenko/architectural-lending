@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import sprite from "./../../images/sprite.svg";
+import Buttons from "./Buttons";
 
 const baseURL = "http://gateway.marvel.com/v1/public/events";
 const API_key = "95857d6d985fa57f979a3eca57531d54";
@@ -132,30 +132,13 @@ function EventsList() {
           <input className="events-form-button" type="submit" value="Search" />
         </form>
         <ul className="events-list">{eventsItems}</ul>
-        <div className="list-buttons">
-          <button
-            className={
-              offset > 0 ? "list-button" : "list-button list-button-inactive"
-            }
-            onClick={handlePrevClick}
-          >
-            <svg>
-              <use href={sprite + "#arrow-icon"} />
-            </svg>
-          </button>
-          <button
-            className={
-              offset + LIMIT < total
-                ? "list-button"
-                : "list-button list-button-inactive"
-            }
-            onClick={handleNextClick}
-          >
-            <svg>
-              <use href={sprite + "#arrow-icon"} />
-            </svg>
-          </button>
-        </div>
+        <Buttons
+          onPrevClick={handlePrevClick}
+          onNextClick={handleNextClick}
+          offset={offset}
+          limit={LIMIT}
+          total={total}
+        />
       </>
     );
   }
