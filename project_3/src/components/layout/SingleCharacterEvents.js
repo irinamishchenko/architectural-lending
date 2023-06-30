@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
-const baseURL = "http://gateway.marvel.com/v1/public/characters/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/characters/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleCharacterEvents() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [events, setEvents] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchCharacterEvents() {
     axios
-      .get(baseURL + "/" + id + "/events", {
+      .get(BASE_URL + "/" + ID + "/events", {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
           limit: 100,
         },
       })
@@ -34,7 +34,7 @@ function SingleCharacterEvents() {
       </div>
     );
   } else if (events) {
-    const eventsItems = events.map((event) => (
+    const EVENTS_ITEMS = events.map((event) => (
       <li key={event.id} className="events-item">
         <img
           className="event-item-picture"
@@ -52,7 +52,7 @@ function SingleCharacterEvents() {
     ));
     return (
       <>
-        <ul className="events-list">{eventsItems}</ul>
+        <ul className="events-list">{EVENTS_ITEMS}</ul>
       </>
     );
   }

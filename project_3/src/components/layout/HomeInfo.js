@@ -1,4 +1,4 @@
-const homeContent = [
+const HOME_CONTENT = [
   {
     title: "Characters",
     info: "Choose your favourite characters and read more about them! What comics did they appear in? Who created them? Learn about the events and series of the Marvel Universe with their participation!",
@@ -17,7 +17,7 @@ const homeContent = [
   },
 ];
 function HomeInfo() {
-  const contentItems = homeContent.map((item) => (
+  const CONTENT_ITEMS = HOME_CONTENT.map((item) => (
     <li key={item.title.toLowerCase()} className="home-info-list-item">
       <div className="home-info-title-wrapper">
         <h2 className="home-info-title">{item.title}</h2>
@@ -27,7 +27,7 @@ function HomeInfo() {
   ));
   return (
     <>
-      <ul className="home-info-list">{contentItems}</ul>
+      <ul className="home-info-list">{CONTENT_ITEMS}</ul>
     </>
   );
 }

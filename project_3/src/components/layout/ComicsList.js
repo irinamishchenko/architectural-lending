@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Buttons from "./Buttons";
 
-const baseURL = "http://gateway.marvel.com/v1/public/comics";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/comics";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function ComicsList() {
   const [comics, setComics] = useState(null);
@@ -18,14 +18,14 @@ function ComicsList() {
 
   const LIMIT = 99;
 
-  const formats = ["comic", "magazine", "hardcover", "digest"];
+  const FORMATS = ["comic", "magazine", "hardcover", "digest"];
 
   async function fetchComics(search, offset, type, year, format) {
     if (!search && !type && !year && !format) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             format: "hardcover",
             limit: LIMIT,
             offset: offset,
@@ -40,9 +40,9 @@ function ComicsList() {
         .catch((error) => setError(error.message));
     } else if (search || type || year || format) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             titleStartsWith: search,
             limit: LIMIT,
             offset: offset,
@@ -100,7 +100,7 @@ function ComicsList() {
       </div>
     );
   } else if (comics) {
-    const comicsItems = comics.map((item) => (
+    const COMICS_ITEMS = comics.map((item) => (
       <li key={item.id} className="comics-item">
         <div className="comics-add-info">
           <Link to={"/comics/" + item.id} className="comics-add-info-btn">
@@ -115,10 +115,10 @@ function ComicsList() {
         <h2 className="comics-item-title">{item.title}</h2>
       </li>
     ));
-    const formatItems = formats.map((format) => (
+    const FORMAT_ITEMS = FORMATS.map((format) => (
       <option key={format}>{format}</option>
     ));
-    const form = (
+    const SEARCH_FORM = (
       <form
         className="comics-form"
         onChange={handleChange}
@@ -171,7 +171,7 @@ function ComicsList() {
             className="comics-format-select"
             onChange={(e) => setFormat(e.target.value)}
           >
-            {formatItems}
+            {FORMAT_ITEMS}
           </select>
         </label>
         <input className="comics-form-button" type="submit" value="Search" />
@@ -179,8 +179,8 @@ function ComicsList() {
     );
     return (
       <>
-        {form}
-        <ul className="comics-list">{comicsItems}</ul>
+        {SEARCH_FORM}
+        <ul className="comics-list">{COMICS_ITEMS}</ul>
         <Buttons
           onPrevClick={handlePrevClick}
           onNextClick={handleNextClick}

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-const links = [
+const LINKS = [
   {
     link: "Home",
     path: "/",
@@ -24,7 +24,7 @@ const links = [
 ];
 
 function Navigation() {
-  const navItems = links.map((item) => (
+  const NAV_ITEMS = LINKS.map((item) => (
     <li key={item.link}>
       <NavLink to={item.path} className="navigation-item">
         {item.link}
@@ -33,7 +33,7 @@ function Navigation() {
   ));
   return (
     <nav>
-      <ul className="navigation">{navItems}</ul>
+      <ul className="navigation">{NAV_ITEMS}</ul>
     </nav>
   );
 }

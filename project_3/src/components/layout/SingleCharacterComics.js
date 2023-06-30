@@ -3,12 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Buttons from "./Buttons";
 
-const baseURL = "http://gateway.marvel.com/v1/public/characters/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/characters/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleCharacterComics() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [comics, setComics] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
@@ -18,9 +18,9 @@ function SingleCharacterComics() {
 
   async function fetchCharacterComics(offset) {
     axios
-      .get(baseURL + "/" + id + "/comics", {
+      .get(BASE_URL + "/" + ID + "/comics", {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
           limit: LIMIT,
           offset: offset,
         },
@@ -65,7 +65,7 @@ function SingleCharacterComics() {
       </div>
     );
   } else if (comics) {
-    const comicsItems = comics.map((item) => (
+    const COMICS_ITEMS = comics.map((item) => (
       <li key={item.id} className="comics-item">
         <div className="comics-add-info">
           <Link to={"/comics/" + item.id} className="comics-add-info-btn">
@@ -83,7 +83,7 @@ function SingleCharacterComics() {
 
     return (
       <>
-        <ul className="comics-list">{comicsItems}</ul>
+        <ul className="comics-list">{COMICS_ITEMS}</ul>
 
         <Buttons
           onPrevClick={handlePrevClick}

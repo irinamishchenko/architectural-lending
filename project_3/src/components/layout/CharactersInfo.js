@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 
 function CharactersInfo(props) {
-  const params = useParams();
-  const id = params.id;
-  const name = props.name;
-  const characters = props.characters.items;
-  const charactersItems = characters.map((character, index) => (
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
+  const NAME = props.name;
+  const CHARACTERS = props.characters.items;
+  const CHARACTERS_ITEMS = CHARACTERS.map((character, index) => (
     <li className="info-list-item" key={index}>
       <Link
         to={"/characters/" + character.resourceURI.split("/").splice(6).join()}
@@ -17,10 +17,10 @@ function CharactersInfo(props) {
   return (
     <section className="info-container">
       <h3 className="info-title">Characters</h3>
-      <ol className="info-list">{charactersItems}</ol>
+      <ol className="info-list">{CHARACTERS_ITEMS}</ol>
       {props.characters.available && props.characters.available > 20 ? (
         <Link
-          to={"/" + name + "/" + id + "/characters"}
+          to={"/" + NAME + "/" + ID + "/characters"}
           className="info-button"
         >
           More

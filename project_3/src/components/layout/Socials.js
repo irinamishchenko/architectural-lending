@@ -1,6 +1,6 @@
 import sprite from "../../images/sprite.svg";
 
-const socialLinks = [
+const SOCIAL_LINKS = [
   {
     icon: "#facebook-icon",
     link: "https://www.facebook.com/Marvel/",
@@ -28,7 +28,7 @@ const socialLinks = [
 ];
 
 function Socials() {
-  const socialLinksItems = socialLinks.map((item, index) => (
+  const SOCIAL_LINKS_ITEMS = SOCIAL_LINKS.map((item, index) => (
     <li className="socials-list-item" key={index}>
       <a href={item.link} target="_blank">
         <svg>
@@ -37,7 +37,7 @@ function Socials() {
       </a>
     </li>
   ));
-  return <ul className="socials-list">{socialLinksItems}</ul>;
+  return <ul className="socials-list">{SOCIAL_LINKS_ITEMS}</ul>;
 }
 
 export default Socials;

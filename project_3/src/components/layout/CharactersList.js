@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Buttons from "./Buttons";
 
-const baseURL = "http://gateway.marvel.com/v1/public/characters";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/characters";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function CharactersList() {
   const [characters, setCharacters] = useState(null);
@@ -18,9 +18,9 @@ function CharactersList() {
   async function fetchCharacters(search, offset) {
     if (!search) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             events: 310,
             limit: LIMIT,
             offset: offset,
@@ -35,9 +35,9 @@ function CharactersList() {
         .catch((error) => setError(error.message));
     } else if (search) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             nameStartsWith: search,
             limit: LIMIT,
             offset: offset,
@@ -91,7 +91,7 @@ function CharactersList() {
       </div>
     );
   } else if (characters) {
-    const charactersItems = characters.map((character) => (
+    const CHARACTERS_ITEMS = characters.map((character) => (
       <li key={character.id} className="characters-item">
         <div className="character-add-info">
           <Link
@@ -109,7 +109,7 @@ function CharactersList() {
         <h2 className="characters-item-name">{character.name}</h2>
       </li>
     ));
-    const form = (
+    const SEARCH_FORM = (
       <form
         className="characters-form"
         onChange={handleChange}
@@ -132,8 +132,8 @@ function CharactersList() {
 
     return (
       <>
-        {form}
-        <ul className="characters-list">{charactersItems}</ul>
+        {SEARCH_FORM}
+        <ul className="characters-list">{CHARACTERS_ITEMS}</ul>
         <Buttons
           onPrevClick={handlePrevClick}
           onNextClick={handleNextClick}

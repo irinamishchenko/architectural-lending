@@ -5,20 +5,20 @@ import EventsInfo from "./EventsInfo";
 import SeriesInfo from "./SeriesInfo";
 import axios from "axios";
 
-const baseURL = "http://gateway.marvel.com/v1/public/creators/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/creators/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleCreator() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [creator, setCreator] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchCreator() {
     axios
-      .get(baseURL + "/" + id, {
+      .get(BASE_URL + "/" + ID, {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
         },
       })
       .then((response) => setCreator(response.data.data.results[0]))

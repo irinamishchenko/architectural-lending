@@ -6,20 +6,20 @@ import ComicsInfo from "./ComicsInfo";
 import CreatorsInfo from "./CreatorsInfo";
 import SeriesInfo from "./SeriesInfo";
 
-const baseURL = "http://gateway.marvel.com/v1/public/events/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/events/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleEvent() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [event, setEvent] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchEvent() {
     axios
-      .get(baseURL + "/" + id, {
+      .get(BASE_URL + "/" + ID, {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
         },
       })
       .then((response) => setEvent(response.data.data.results[0]))

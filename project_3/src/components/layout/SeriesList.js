@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Buttons from "./Buttons";
 
-const baseURL = "http://gateway.marvel.com/v1/public/series";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/series";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SeriesList() {
   const [series, setSeries] = useState(null);
@@ -18,15 +18,15 @@ function SeriesList() {
 
   const LIMIT = 96;
 
-  const orders = ["title", "modified", "startYear"];
-  const formats = ["comic", "magazine", "hardcover", "digest"];
+  const ORDERS = ["title", "modified", "startYear"];
+  const FORMATS = ["comic", "magazine", "hardcover", "digest"];
 
   async function fetchSeries(search, offset, year, order, format) {
     if (!search && !year && !order && !format) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             orderBy: "-modified",
             contains: "comic",
             limit: LIMIT,
@@ -42,9 +42,9 @@ function SeriesList() {
         .catch((error) => setError(error.message));
     } else if (search || year || order || format) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             titleStartsWith: search,
             startYear: year,
             orderBy: order,
@@ -101,7 +101,7 @@ function SeriesList() {
       </div>
     );
   } else if (series) {
-    const seriesItems = series.map((item) => (
+    const SERIES_ITEMS = series.map((item) => (
       <li key={item.id} className="series-item">
         <div className="series-add-info">
           <Link to={"/series/" + item.id} className="series-add-info-btn">
@@ -119,13 +119,13 @@ function SeriesList() {
         </p>
       </li>
     ));
-    const orderItems = orders.map((order) => (
+    const ORDERS_ITEMS = ORDERS.map((order) => (
       <option key={order}>{order}</option>
     ));
-    const formatItems = formats.map((format) => (
+    const FORMAT_ITEMS = FORMATS.map((format) => (
       <option key={format}>{format}</option>
     ));
-    const form = (
+    const SEARCH_FORM = (
       <form
         className="series-form"
         onChange={handleChange}
@@ -153,7 +153,7 @@ function SeriesList() {
             className="series-order-select"
             onChange={(e) => setOrder(e.target.value)}
           >
-            {orderItems}
+            {ORDERS_ITEMS}
           </select>
         </label>
         <label className="series-format-title">
@@ -162,7 +162,7 @@ function SeriesList() {
             className="series-order-select"
             onChange={(e) => setFormat(e.target.value)}
           >
-            {formatItems}
+            {FORMAT_ITEMS}
           </select>
         </label>
         <input className="series-form-button" type="submit" value="Search" />
@@ -170,8 +170,8 @@ function SeriesList() {
     );
     return (
       <>
-        {form}
-        <ul className="series-list">{seriesItems}</ul>
+        {SEARCH_FORM}
+        <ul className="series-list">{SERIES_ITEMS}</ul>
         <Buttons
           onPrevClick={handlePrevClick}
           onNextClick={handleNextClick}

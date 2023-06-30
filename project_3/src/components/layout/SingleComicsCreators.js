@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const baseURL = "http://gateway.marvel.com/v1/public/comics/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/comics/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleComicsCreators() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [creators, setCreators] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchComicsCreators() {
     axios
-      .get(baseURL + "/" + id + "/creators", {
+      .get(BASE_URL + "/" + ID + "/creators", {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
           limit: 100,
         },
       })
@@ -34,8 +34,7 @@ function SingleComicsCreators() {
       </div>
     );
   } else if (creators) {
-    console.log(creators);
-    const creatorsItems = creators.map((creator, index) => (
+    const CREATORS_ITEMS = creators.map((creator, index) => (
       <li className="creator-list-item" key={index}>
         <h3 className="creator-name">{creator.fullName} </h3>
         <img
@@ -47,7 +46,7 @@ function SingleComicsCreators() {
         </p>
       </li>
     ));
-    return <ul className="creators-list">{creatorsItems}</ul>;
+    return <ul className="creators-list">{CREATORS_ITEMS}</ul>;
   }
 }
 

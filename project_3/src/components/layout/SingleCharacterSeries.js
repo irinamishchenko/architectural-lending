@@ -2,20 +2,20 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
-const baseURL = "http://gateway.marvel.com/v1/public/characters/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/characters/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleCharacterSeries() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [series, setSeries] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchCharacterSeries() {
     axios
-      .get(baseURL + "/" + id + "/events", {
+      .get(BASE_URL + "/" + ID + "/events", {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
           limit: 99,
         },
       })
@@ -34,7 +34,7 @@ function SingleCharacterSeries() {
       </div>
     );
   } else if (series) {
-    const seriesItems = series.map((item) => (
+    const SERIES_ITEMS = series.map((item) => (
       <li key={item.id} className="series-item">
         <div className="series-add-info">
           <Link to={"/series/" + item.id} className="series-add-info-btn">
@@ -51,7 +51,7 @@ function SingleCharacterSeries() {
     ));
     return (
       <>
-        <ul className="series-list">{seriesItems}</ul>
+        <ul className="series-list">{SERIES_ITEMS}</ul>
       </>
     );
   }

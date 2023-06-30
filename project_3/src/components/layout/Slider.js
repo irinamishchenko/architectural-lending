@@ -8,8 +8,8 @@ import picture5 from "../../images/slider-picture-5.jpg";
 import picture6 from "../../images/slider-picture-6.jpg";
 
 function Slider() {
-  const images = [picture1, picture2, picture3, picture4, picture5, picture6];
-  const sliders = images.map((image, index) => (
+  const IMAGES = [picture1, picture2, picture3, picture4, picture5, picture6];
+  const SLIDES = IMAGES.map((image, index) => (
     <SwiperSlide key={index} className="slider-item">
       <img className="slider-image" src={image} alt="marvel" />
     </SwiperSlide>
@@ -24,7 +24,7 @@ function Slider() {
       // autoplay={{ delay: 4000 }}
       pagination={{ clickable: true }}
     >
-      {sliders}
+      {SLIDES}
     </Swiper>
   );
 }

@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Buttons from "./Buttons";
 
-const baseURL = "http://gateway.marvel.com/v1/public/events";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/events";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function EventsList() {
   const [events, setEvents] = useState(null);
@@ -16,14 +16,14 @@ function EventsList() {
 
   const LIMIT = 99;
 
-  const orders = ["name", "startDate"];
+  const ORDERS = ["name", "startDate"];
 
   async function fetchEvents(search, offset, order) {
     if (!search && !order) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             orderBy: "-startDate",
             limit: LIMIT,
             offset: offset,
@@ -38,9 +38,9 @@ function EventsList() {
         .catch((error) => setError(error.message));
     } else if (search || order) {
       axios
-        .get(baseURL, {
+        .get(BASE_URL, {
           params: {
-            apikey: API_key,
+            apikey: API_KEY,
             nameStartsWith: search,
             limit: LIMIT,
             offset: offset,
@@ -95,7 +95,7 @@ function EventsList() {
       </div>
     );
   } else if (events) {
-    const eventsItems = events.map((event) => (
+    const EVENTS_ITEMS = events.map((event) => (
       <li key={event.id} className="events-item">
         <img
           className="event-item-picture"
@@ -111,10 +111,10 @@ function EventsList() {
         </div>
       </li>
     ));
-    const ordersItems = orders.map((order) => (
+    const ORDERS_ITEMS = ORDERS.map((order) => (
       <option key={order}>{order}</option>
     ));
-    const form = (
+    const SEARCH_FORM = (
       <form
         className="events-form"
         onChange={handleChange}
@@ -133,7 +133,7 @@ function EventsList() {
             className="events-order-select"
             onChange={(e) => setOrder(e.target.value)}
           >
-            {ordersItems}
+            {ORDERS_ITEMS}
           </select>
         </label>
         <input className="events-form-button" type="submit" value="Search" />
@@ -141,8 +141,8 @@ function EventsList() {
     );
     return (
       <>
-        {form}
-        <ul className="events-list">{eventsItems}</ul>
+        {SEARCH_FORM}
+        <ul className="events-list">{EVENTS_ITEMS}</ul>
         <Buttons
           onPrevClick={handlePrevClick}
           onNextClick={handleNextClick}

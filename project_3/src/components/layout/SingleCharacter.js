@@ -5,20 +5,20 @@ import ComicsInfo from "./ComicsInfo";
 import EventsInfo from "./EventsInfo";
 import SeriesInfo from "./SeriesInfo";
 
-const baseURL = "http://gateway.marvel.com/v1/public/characters/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/characters/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleCharacter() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [character, setCharacter] = useState(null);
   const [error, setError] = useState(null);
 
   async function fetchCharacter() {
     axios
-      .get(baseURL + "/" + id, {
+      .get(BASE_URL + "/" + ID, {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
         },
       })
       .then((response) => setCharacter(response.data.data.results[0]))

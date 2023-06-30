@@ -3,12 +3,12 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Buttons from "./Buttons";
 
-const baseURL = "http://gateway.marvel.com/v1/public/series/";
-const API_key = "95857d6d985fa57f979a3eca57531d54";
+const BASE_URL = "http://gateway.marvel.com/v1/public/series/";
+const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleSeriesCharacters() {
-  const params = useParams();
-  const id = params.id;
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
   const [characters, setCharacters] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
@@ -18,9 +18,9 @@ function SingleSeriesCharacters() {
 
   async function fetchSeriesCharacters(offset) {
     axios
-      .get(baseURL + "/" + id + "/characters", {
+      .get(BASE_URL + "/" + ID + "/characters", {
         params: {
-          apikey: API_key,
+          apikey: API_KEY,
           limit: LIMIT,
           offset: offset,
         },
@@ -63,7 +63,7 @@ function SingleSeriesCharacters() {
       </div>
     );
   } else if (characters) {
-    const charactersItems = characters.map((character) => (
+    const CHARACTERS_ITEMS = characters.map((character) => (
       <li key={character.id} className="characters-item">
         <div className="character-add-info">
           <Link
@@ -84,7 +84,7 @@ function SingleSeriesCharacters() {
 
     return (
       <>
-        <ul className="characters-list">{charactersItems}</ul>
+        <ul className="characters-list">{CHARACTERS_ITEMS}</ul>
         <Buttons
           onPrevClick={handlePrevClick}
           onNextClick={handleNextClick}

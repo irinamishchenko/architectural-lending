@@ -1,11 +1,11 @@
 import { Link, useParams } from "react-router-dom";
 
 function CreatorsInfo(props) {
-  const params = useParams();
-  const id = params.id;
-  const name = props.name;
-  const creators = props.creators.items;
-  const creatorsItems = creators.map((creator, index) => (
+  const PARAMS = useParams();
+  const ID = PARAMS.id;
+  const NAME = props.name;
+  const CREATORS = props.creators.items;
+  const CREATORS_ITEMS = CREATORS.map((creator, index) => (
     <li className="info-list-item" key={index}>
       <Link to={"/creators/" + creator.resourceURI.split("/").splice(6).join()}>
         {creator.name}: {creator.role}
@@ -15,9 +15,9 @@ function CreatorsInfo(props) {
   return (
     <section className="info-container">
       <h3 className="info-title">Creators</h3>
-      <ol className="info-list">{creatorsItems}</ol>
+      <ol className="info-list">{CREATORS_ITEMS}</ol>
       {props.creators.available && props.creators.available > 20 ? (
-        <Link to={"/" + name + "/" + id + "/creators"} className="info-button">
+        <Link to={"/" + NAME + "/" + ID + "/creators"} className="info-button">
           More
         </Link>
       ) : null}
