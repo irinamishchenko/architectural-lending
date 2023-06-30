@@ -41,11 +41,19 @@ function SingleEventCreators() {
   function handlePrevClick() {
     setOffset(offset - LIMIT);
     fetchEventsCreators(offset - LIMIT);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
     fetchEventsCreators(offset + LIMIT);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   if (error) {

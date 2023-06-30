@@ -41,11 +41,19 @@ function SingleSeriesCharacters() {
   function handlePrevClick() {
     setOffset(offset - LIMIT);
     fetchSeriesCharacters(offset - LIMIT);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
     fetchSeriesCharacters(offset + LIMIT);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   if (error) {

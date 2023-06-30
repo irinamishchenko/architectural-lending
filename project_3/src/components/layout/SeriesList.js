@@ -79,11 +79,19 @@ function SeriesList() {
   function handlePrevClick() {
     setOffset(offset - LIMIT);
     fetchSeries(search, offset - LIMIT, year, order, format);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
     fetchSeries(search, offset + LIMIT, year, order, format);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   if (error) {

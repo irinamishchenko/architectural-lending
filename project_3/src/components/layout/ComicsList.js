@@ -77,11 +77,20 @@ function ComicsList() {
   function handlePrevClick() {
     setOffset(offset - LIMIT);
     fetchComics(search, offset - LIMIT, type, year, format);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
   }
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
     fetchComics(search, offset + LIMIT, type, year, format);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   if (error) {

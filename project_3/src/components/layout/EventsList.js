@@ -73,11 +73,19 @@ function EventsList() {
   function handlePrevClick() {
     setOffset(offset - LIMIT);
     fetchEvents(search, offset - LIMIT, order);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
     fetchEvents(search, offset + LIMIT, order);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   if (error) {

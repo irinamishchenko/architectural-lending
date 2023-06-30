@@ -41,11 +41,19 @@ function SingleSeriesCreators() {
   function handlePrevClick() {
     setOffset(offset - LIMIT);
     fetchSeriesCreators(offset - LIMIT);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
     fetchSeriesCreators(offset + LIMIT);
+    window.scrollTo({
+      top: 300,
+      behavior: "smooth",
+    });
   }
 
   if (error) {
