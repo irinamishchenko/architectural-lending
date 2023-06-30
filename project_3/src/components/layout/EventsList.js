@@ -114,31 +114,34 @@ function EventsList() {
     const ordersItems = orders.map((order) => (
       <option key={order}>{order}</option>
     ));
+    const form = (
+      <form
+        className="events-form"
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      >
+        <input
+          className="events-title-input"
+          type="text"
+          placeholder="title"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <label className="events-order-title">
+          Order by:
+          <select
+            className="events-order-select"
+            onChange={(e) => setOrder(e.target.value)}
+          >
+            {ordersItems}
+          </select>
+        </label>
+        <input className="events-form-button" type="submit" value="Search" />
+      </form>
+    );
     return (
       <>
-        <form
-          className="events-form"
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-        >
-          <input
-            className="events-title-input"
-            type="text"
-            placeholder="title"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <label className="events-order-title">
-            Order by:
-            <select
-              className="events-order-select"
-              onChange={(e) => setOrder(e.target.value)}
-            >
-              {ordersItems}
-            </select>
-          </label>
-          <input className="events-form-button" type="submit" value="Search" />
-        </form>
+        {form}
         <ul className="events-list">{eventsItems}</ul>
         <Buttons
           onPrevClick={handlePrevClick}

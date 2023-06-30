@@ -118,65 +118,68 @@ function ComicsList() {
     const formatItems = formats.map((format) => (
       <option key={format}>{format}</option>
     ));
+    const form = (
+      <form
+        className="comics-form"
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      >
+        <input
+          className="comics-title-input"
+          type="text"
+          placeholder="title"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <div className="comics-type-wrapper">
+          <h3>Type:</h3>
+          <label className="comics-type-title">
+            <input
+              className="comics-type-input"
+              type="radio"
+              id="comic"
+              name="type"
+              value="comic"
+              onChange={(e) => setType(e.target.value)}
+            />
+            comic
+          </label>
+          <label className="comics-type-title">
+            <input
+              className="comics-type-input"
+              type="radio"
+              id="collection"
+              name="type"
+              value="collection"
+              onChange={(e) => setType(e.target.value)}
+            />
+            collection
+          </label>
+        </div>
+        <label className="comics-year-title">
+          Start year:{" "}
+          <input
+            className="comics-year-input"
+            type="text"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          />
+        </label>
+        <label className="comics-format-title">
+          Format:
+          <select
+            className="comics-format-select"
+            onChange={(e) => setFormat(e.target.value)}
+          >
+            {formatItems}
+          </select>
+        </label>
+        <input className="comics-form-button" type="submit" value="Search" />
+      </form>
+    );
     return (
       <>
-        <form
-          className="comics-form"
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-        >
-          <input
-            className="comics-title-input"
-            type="text"
-            placeholder="title"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <div className="comics-type-wrapper">
-            <h3>Type:</h3>
-            <label className="comics-type-title">
-              <input
-                className="comics-type-input"
-                type="radio"
-                id="comic"
-                name="type"
-                value="comic"
-                onChange={(e) => setType(e.target.value)}
-              />
-              comic
-            </label>
-            <label className="comics-type-title">
-              <input
-                className="comics-type-input"
-                type="radio"
-                id="collection"
-                name="type"
-                value="collection"
-                onChange={(e) => setType(e.target.value)}
-              />
-              collection
-            </label>
-          </div>
-          <label className="comics-year-title">
-            Start year:{" "}
-            <input
-              className="comics-year-input"
-              type="text"
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-            />
-          </label>
-          <label className="comics-format-title">
-            Format:
-            <select
-              className="comics-format-select"
-              onChange={(e) => setFormat(e.target.value)}
-            >
-              {formatItems}
-            </select>
-          </label>
-          <input className="comics-form-button" type="submit" value="Search" />
-        </form>
+        {form}
         <ul className="comics-list">{comicsItems}</ul>
         <Buttons
           onPrevClick={handlePrevClick}

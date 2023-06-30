@@ -109,27 +109,30 @@ function CharactersList() {
         <h2 className="characters-item-name">{character.name}</h2>
       </li>
     ));
+    const form = (
+      <form
+        className="characters-form"
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      >
+        <input
+          className="characters-input"
+          type="text"
+          placeholder="name"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <input
+          className="characters-form-button"
+          type="submit"
+          value="Search"
+        />
+      </form>
+    );
 
     return (
       <>
-        <form
-          className="characters-form"
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-        >
-          <input
-            className="characters-input"
-            type="text"
-            placeholder="name"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <input
-            className="characters-form-button"
-            type="submit"
-            value="Search"
-          />
-        </form>
+        {form}
         <ul className="characters-list">{charactersItems}</ul>
         <Buttons
           onPrevClick={handlePrevClick}

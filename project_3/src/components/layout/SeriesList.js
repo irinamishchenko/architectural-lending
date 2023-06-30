@@ -125,49 +125,52 @@ function SeriesList() {
     const formatItems = formats.map((format) => (
       <option key={format}>{format}</option>
     ));
+    const form = (
+      <form
+        className="series-form"
+        onChange={handleChange}
+        onSubmit={handleSubmit}
+      >
+        <input
+          className="series-title-input"
+          type="text"
+          placeholder="title"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <label className="series-year-title">
+          Start year:{" "}
+          <input
+            className="series-year-input"
+            type="text"
+            value={year}
+            onChange={(e) => setYear(e.target.value)}
+          />
+        </label>
+        <label className="series-order-title">
+          Order by:
+          <select
+            className="series-order-select"
+            onChange={(e) => setOrder(e.target.value)}
+          >
+            {orderItems}
+          </select>
+        </label>
+        <label className="series-format-title">
+          Format:
+          <select
+            className="series-order-select"
+            onChange={(e) => setFormat(e.target.value)}
+          >
+            {formatItems}
+          </select>
+        </label>
+        <input className="series-form-button" type="submit" value="Search" />
+      </form>
+    );
     return (
       <>
-        <form
-          className="series-form"
-          onChange={handleChange}
-          onSubmit={handleSubmit}
-        >
-          <input
-            className="series-title-input"
-            type="text"
-            placeholder="title"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-          />
-          <label className="series-year-title">
-            Start year:{" "}
-            <input
-              className="series-year-input"
-              type="text"
-              value={year}
-              onChange={(e) => setYear(e.target.value)}
-            />
-          </label>
-          <label className="series-order-title">
-            Order by:
-            <select
-              className="series-order-select"
-              onChange={(e) => setOrder(e.target.value)}
-            >
-              {orderItems}
-            </select>
-          </label>
-          <label className="series-format-title">
-            Format:
-            <select
-              className="series-order-select"
-              onChange={(e) => setFormat(e.target.value)}
-            >
-              {formatItems}
-            </select>
-          </label>
-          <input className="series-form-button" type="submit" value="Search" />
-        </form>
+        {form}
         <ul className="series-list">{seriesItems}</ul>
         <Buttons
           onPrevClick={handlePrevClick}
