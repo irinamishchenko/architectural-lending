@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
 const BASE_URL = "http://gateway.marvel.com/v1/public/comics/";
@@ -34,16 +34,22 @@ function SingleComicsCreators() {
       </div>
     );
   } else if (creators) {
+    console.log(creators);
     const CREATORS_ITEMS = creators.map((creator, index) => (
       <li className="creator-list-item" key={index}>
         <h3 className="creator-name">{creator.fullName} </h3>
+        <p className="creator-info">
+          Created {creator.comics.available} comics
+        </p>
+        <div className="creator-add-info">
+          <Link to={"/creators/" + creator.id} className="creator-add-info-btn">
+            More
+          </Link>
+        </div>
         <img
           className="creator-picture"
           src={creator.thumbnail.path + "." + creator.thumbnail.extension}
         />
-        <p className="creator-info">
-          Created {creator.comics.available} comics
-        </p>
       </li>
     ));
     return <ul className="creators-list">{CREATORS_ITEMS}</ul>;
