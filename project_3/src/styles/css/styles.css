@@ -797,10 +797,24 @@ main {
   text-align: center;
 }
 
+@media (min-width: 769px) and (max-width: 1200px) {
+  .characters-list .characters-item .character-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
 @media (max-width: 768px) {
+  .characters-form {
+    height: 100px;
+    flex-direction: column;
+  }
   .characters-list {
     flex-direction: column;
     align-items: center;
+  }
+  .characters-list .characters-item .character-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
   }
 }
 .comics-title {
@@ -970,6 +984,10 @@ main {
   .comics-form {
     gap: 50px;
   }
+  .comics-list .comics-item .comics-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
+  }
 }
 @media (max-width: 768px) {
   .comics-form {
@@ -978,6 +996,10 @@ main {
   .comics-list {
     flex-direction: column;
     align-items: center;
+  }
+  .comics-list .comics-item .comics-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
   }
 }
 .events-title {
@@ -1223,7 +1245,7 @@ main {
 }
 .series-list .series-item {
   width: 260px;
-  height: 400px;
+  height: auto;
   border: 1px solid black;
   margin-bottom: 50px;
   display: flex;
@@ -1291,9 +1313,13 @@ main {
   font-size: 18px;
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
+@media (min-width: 581px) and (max-width: 1200px) {
   .series-form {
     gap: 50px;
+  }
+  .series-list .series-item .series-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
   }
 }
 @media (max-width: 580px) {
@@ -1303,6 +1329,10 @@ main {
   .series-list {
     flex-direction: column;
     align-items: center;
+  }
+  .series-list .series-item .series-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
   }
 }
 .series-title {
