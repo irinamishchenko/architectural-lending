@@ -4,7 +4,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  row-gap: 300px;
   margin-bottom: 50px;
   .comics-title-input {
     font-family: "Oswald", sans-serif;
@@ -134,5 +133,21 @@
       padding: 0 10px;
       text-align: center;
     }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .comics-form {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comics-form {
+    gap: 50px;
+  }
+  .comics-list {
+    flex-direction: column;
+    align-items: center;
   }
 }

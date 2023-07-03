@@ -100,3 +100,10 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .characters-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}

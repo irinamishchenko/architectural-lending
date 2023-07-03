@@ -797,6 +797,12 @@ main {
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .characters-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .comics-title {
   padding: 100px 0;
   text-align: center;
@@ -828,7 +834,6 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  row-gap: 300px;
   margin-bottom: 50px;
 }
 .comics-form .comics-title-input {
@@ -961,6 +966,20 @@ main {
   text-align: center;
 }
 
+@media (min-width: 769px) and (max-width: 1200px) {
+  .comics-form {
+    gap: 50px;
+  }
+}
+@media (max-width: 768px) {
+  .comics-form {
+    gap: 50px;
+  }
+  .comics-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .events-title {
   padding: 100px 0;
   text-align: center;
@@ -1026,6 +1045,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 50px;
+  width: 100%;
 }
 .events-list .events-item {
   display: flex;
@@ -1086,10 +1106,61 @@ main {
   transition: all 0.5s;
 }
 
+@media (min-width: 769px) and (max-width: 1200px) {
+  .events-list .events-item {
+    flex-direction: column;
+    height: auto;
+  }
+  .events-list .events-item:nth-child(even) {
+    flex-direction: column;
+    padding-left: 0;
+  }
+  .events-list .events-item:nth-child(odd) {
+    padding-right: 0;
+  }
+  .events-list .events-item .event-item-picture {
+    width: 100%;
+  }
+  .events-list .events-item .event-item-info {
+    padding: 0 20px;
+  }
+  .events-list .events-item .event-item-info .event-item-button {
+    margin-bottom: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .events-form {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  .events-list .events-item {
+    flex-direction: column;
+    height: auto;
+  }
+  .events-list .events-item:nth-child(even) {
+    flex-direction: column;
+    padding-left: 0;
+  }
+  .events-list .events-item:nth-child(odd) {
+    padding-right: 0;
+  }
+  .events-list .events-item .event-item-picture {
+    width: 100%;
+  }
+  .events-list .events-item .event-item-info {
+    padding: 0 20px;
+  }
+  .events-list .events-item .event-item-info .event-item-button {
+    margin-bottom: 15px;
+  }
+}
 .series-form {
   margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
 }
 .series-form .series-title-input {
   font-family: "Oswald", sans-serif;
@@ -1220,6 +1291,20 @@ main {
   font-size: 18px;
 }
 
+@media (min-width: 769px) and (max-width: 1200px) {
+  .series-form {
+    gap: 50px;
+  }
+}
+@media (max-width: 580px) {
+  .series-form {
+    gap: 50px;
+  }
+  .series-list {
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .series-title {
   padding: 100px 0;
   text-align: center;
@@ -1800,6 +1885,8 @@ main {
   justify-content: space-between;
   margin: 0 auto;
   width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .list-buttons .list-button {
   border: none;

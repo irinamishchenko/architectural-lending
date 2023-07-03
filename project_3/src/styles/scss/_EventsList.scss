@@ -38,6 +38,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  width: 100%;
   .events-item {
     display: flex;
     align-items: center;
@@ -92,6 +93,61 @@
         &:hover {
           font-size: 30px;
           transition: all 0.5s;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .events-list {
+    .events-item {
+      flex-direction: column;
+      height: auto;
+      &:nth-child(even) {
+        flex-direction: column;
+        padding-left: 0;
+      }
+      &:nth-child(odd) {
+        padding-right: 0;
+      }
+      .event-item-picture {
+        width: 100%;
+      }
+      .event-item-info {
+        padding: 0 20px;
+        .event-item-button {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .events-form {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  .events-list {
+    .events-item {
+      flex-direction: column;
+      height: auto;
+      &:nth-child(even) {
+        flex-direction: column;
+        padding-left: 0;
+      }
+      &:nth-child(odd) {
+        padding-right: 0;
+      }
+      .event-item-picture {
+        width: 100%;
+      }
+      .event-item-info {
+        padding: 0 20px;
+        .event-item-button {
+          margin-bottom: 15px;
         }
       }
     }
