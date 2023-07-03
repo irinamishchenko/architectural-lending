@@ -20,9 +20,9 @@
     font-size: 20px;
     border: 2px solid black;
     border-radius: 5px;
-
     cursor: pointer;
     &:hover {
+      transition: all 0.3s linear;
       color: white;
       background-color: #000;
     }
@@ -75,12 +75,14 @@
         background-position: center;
         background-size: cover;
         &:hover {
+          transition: all 0.3s linear;
           width: 310px;
           height: 155px;
         }
       }
     }
     &:hover {
+      transition: all 0.3s linear;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
       .character-add-info {
         z-index: 1;

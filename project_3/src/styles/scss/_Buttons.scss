@@ -20,6 +20,7 @@
       transform: rotate(180deg);
     }
     &:hover {
+      transition: all 0.3s linear;
       svg {
         fill: red;
       }

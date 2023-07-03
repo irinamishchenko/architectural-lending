@@ -106,12 +106,14 @@
         background-size: cover;
         padding: 0 25px 20px 0;
         &:hover {
+          transition: all 0.3s linear;
           width: 220px;
           height: 175px;
         }
       }
     }
     &:hover {
+      transition: all 0.3s linear;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
       .series-add-info {
         z-index: 1;

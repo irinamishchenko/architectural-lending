@@ -23,6 +23,7 @@
     &:hover {
       border: 1px solid transparent;
       background-color: white;
+      transition: all 0.3s linear;
       a {
         svg {
           fill: red;

@@ -17,6 +17,7 @@
         font-size: 20px;
         &:hover {
           color: red;
+          transition: all 0.3s linear;
         }
       }
       .active {
@@ -33,19 +34,20 @@
       fill: white;
       width: 70px;
       height: 70px;
+      transition: all 0.4s linear;
     }
     .header-close {
       display: block;
       stroke: white;
       width: 70px;
       height: 70px;
+      transition: all 0.4s linear;
     }
     nav {
       background-color: black;
       width: 100%;
       position: absolute;
       right: 0;
-
       .navigation {
         flex-direction: column;
         height: 360px;

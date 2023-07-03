@@ -16,6 +16,7 @@
     margin-bottom: 50px;
     position: relative;
     &:hover {
+      transition: all 0.3s linear;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
       .creator-add-info {
         z-index: 1;
@@ -60,6 +61,7 @@
         background-position: center;
         background-size: cover;
         &:hover {
+          transition: all 0.3s linear;
           width: 320px;
           height: 225px;
         }

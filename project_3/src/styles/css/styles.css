@@ -46,6 +46,7 @@
 }
 .header-navigation-wrapper nav .navigation .navigation-item:hover {
   color: red;
+  transition: all 0.3s linear;
 }
 .header-navigation-wrapper nav .navigation .active {
   color: red;
@@ -57,12 +58,14 @@
     fill: white;
     width: 70px;
     height: 70px;
+    transition: all 0.4s linear;
   }
   .header-navigation-wrapper .header-close {
     display: block;
     stroke: white;
     width: 70px;
     height: 70px;
+    transition: all 0.4s linear;
   }
   .header-navigation-wrapper nav {
     background-color: black;
@@ -722,6 +725,7 @@ main {
   cursor: pointer;
 }
 .characters-form .characters-form-button:hover {
+  transition: all 0.3s linear;
   color: white;
   background-color: #000;
 }
@@ -776,10 +780,12 @@ main {
   background-size: cover;
 }
 .characters-list .characters-item .character-add-info .character-add-info-btn:hover {
+  transition: all 0.3s linear;
   width: 310px;
   height: 155px;
 }
 .characters-list .characters-item:hover {
+  transition: all 0.3s linear;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .characters-list .characters-item:hover .character-add-info {
@@ -964,11 +970,13 @@ main {
   background-size: cover;
 }
 .comics-list .comics-item .comics-add-info .comics-add-info-btn:hover {
+  transition: all 0.3s linear;
   width: 220px;
   height: 155px;
 }
 .comics-list .comics-item:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s linear;
 }
 .comics-list .comics-item:hover .comics-add-info {
   z-index: 1;
@@ -1083,6 +1091,7 @@ main {
   height: 350px;
 }
 .events-list .events-item:hover {
+  transition: all 0.3s linear;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .events-list .events-item:nth-child(even) {
@@ -1294,10 +1303,12 @@ main {
   padding: 0 25px 20px 0;
 }
 .series-list .series-item .series-add-info .series-add-info-btn:hover {
+  transition: all 0.3s linear;
   width: 220px;
   height: 175px;
 }
 .series-list .series-item:hover {
+  transition: all 0.3s linear;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .series-list .series-item:hover .series-add-info {
@@ -1397,6 +1408,7 @@ main {
 }
 .footer .footer-container nav .navigation .navigation-item:hover {
   color: red;
+  transition: all 0.3s linear;
 }
 .footer .footer-container nav .navigation .active {
   color: red;
@@ -1689,6 +1701,7 @@ main {
 .socials-list .socials-list-item:hover {
   border: 1px solid transparent;
   background-color: white;
+  transition: all 0.3s linear;
 }
 .socials-list .socials-list-item:hover a svg {
   fill: red;
@@ -1740,6 +1753,7 @@ main {
   font-size: 25px;
 }
 .info-container .info-list .info-list-item a:hover {
+  transition: all 0.2s linear;
   color: red;
 }
 .info-container .info-button {
@@ -1890,6 +1904,7 @@ main {
   color: black;
 }
 .not-found-container .not-found-button:hover {
+  transition: all 0.3s linear;
   background-color: black;
   color: white;
 }
@@ -1917,6 +1932,9 @@ main {
 .list-buttons .list-button:last-of-type {
   transform: rotate(180deg);
 }
+.list-buttons .list-button:hover {
+  transition: all 0.3s linear;
+}
 .list-buttons .list-button:hover svg {
   fill: red;
 }
@@ -1943,6 +1961,7 @@ main {
   position: relative;
 }
 .creators-list .creator-list-item:hover {
+  transition: all 0.3s linear;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 .creators-list .creator-list-item:hover .creator-add-info {
@@ -1989,6 +2008,7 @@ main {
   background-size: cover;
 }
 .creators-list .creator-list-item .creator-add-info .creator-add-info-btn:hover {
+  transition: all 0.3s linear;
   width: 320px;
   height: 225px;
 }

@@ -26,6 +26,7 @@
           font-size: 20px;
           &:hover {
             color: red;
+            transition: all 0.3s linear;
           }
         }
         .active {

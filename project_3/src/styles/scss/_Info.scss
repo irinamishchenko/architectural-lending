@@ -29,6 +29,7 @@
         color: black;
         font-size: 25px;
         &:hover {
+          transition: all 0.2s linear;
           color: red;
         }
       }
