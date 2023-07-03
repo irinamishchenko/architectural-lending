@@ -4,7 +4,9 @@
   justify-content: center;
   gap: 50px;
   .comics-picture {
-    width: 500px;
+    max-width: 500px;
+    width: 90%;
+    height: auto;
   }
   .comics-content-container {
     display: flex;
@@ -47,5 +49,12 @@
     &:hover {
       color: red;
     }
+  }
+}
+
+@media (max-width: 950px) {
+  .comics-main-info-container {
+    flex-direction: column;
+    align-items: center;
   }
 }

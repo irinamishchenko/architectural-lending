@@ -4,10 +4,11 @@
   align-items: center;
   gap: 350px;
   padding: 100px 0;
+  width: 100%;
   .creator-name {
     text-align: center;
     font-family: "Oswald", sans-serif;
-    font-size: 70px;
+    font-size: calc(30px + 40 * (100vw / 1200));
     text-transform: uppercase;
     font-weight: bold;
     &::before {
@@ -29,6 +30,15 @@
     }
   }
   .creator-picture {
-    width: 500px;
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .creator-main-info {
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 0;
   }
 }

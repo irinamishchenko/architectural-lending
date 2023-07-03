@@ -2,7 +2,7 @@
   padding: 100px 0;
   text-align: center;
   font-family: "Oswald", sans-serif;
-  font-size: 70px;
+  font-size: calc(30px + 40 * (100vw / 1200));
   text-transform: uppercase;
   font-weight: bold;
   &::before {
