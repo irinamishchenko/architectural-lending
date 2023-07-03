@@ -1802,6 +1802,14 @@ main {
   font-size: 50px;
 }
 
+@media (max-width: 768px) {
+  .comics-info-container::after {
+    opacity: 0.2;
+  }
+  .series-info-container::after {
+    opacity: 0.2;
+  }
+}
 .creator-main-info {
   display: flex;
   justify-content: center;
