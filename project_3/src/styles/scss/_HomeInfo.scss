@@ -37,7 +37,8 @@
       }
     }
     .home-info-content {
-      width: 600px;
+      max-width: 600px;
+      width: 100%;
       font-family: "Roboto Condensed", sans-serif;
       font-size: 36px;
       text-align: center;
@@ -60,7 +61,7 @@
     background-position: right;
     background-repeat: no-repeat;
     background-size: 500px;
-    width: 500px;
+    max-width: 500px;
     height: 1000px;
     position: absolute;
     bottom: -130px;
