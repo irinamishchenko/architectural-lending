@@ -86,7 +86,7 @@
   }
 }
 .first-screen {
-  height: 100vh;
+  height: calc(100vh - 73px);
 }
 .first-screen .first-screen-title {
   font-family: "Oswald", sans-serif;
