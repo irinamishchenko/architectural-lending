@@ -31,3 +31,20 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .socials-list {
+    height: 300px;
+    .socials-list-item {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 15px;
+      a {
+        svg {
+          width: 50px;
+          height: 50px;
+        }
+      }
+    }
+  }
+}

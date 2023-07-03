@@ -4,12 +4,16 @@
 @import "../../../node_modules/swiper/modules/effect-fade/effect-fade.scss";
 
 .slider {
+  width: 100%;
   height: calc(100vh - 73px);
-  .slider-item {
-    .slider-image {
+  .swiper-wrapper {
+    .slider-item {
       width: 100%;
-      height: auto;
-      filter: blur(5px);
+      .slider-image {
+        width: 100%;
+        height: 100vh;
+        filter: blur(5px);
+      }
     }
   }
   .swiper-pagination {

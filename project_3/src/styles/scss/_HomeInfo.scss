@@ -52,10 +52,6 @@
     }
     &:nth-child(even) {
       flex-direction: row-reverse;
-      padding-left: 30px;
-    }
-    &:nth-child(odd) {
-      padding-right: 30px;
     }
   }
   &::after {
@@ -72,5 +68,19 @@
     left: 0;
     margin: auto;
     opacity: 0.2;
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-info-list {
+    padding: 0 15px;
+    .home-info-list-item {
+      height: 600px;
+      flex-direction: column;
+      gap: 30px;
+      &:nth-child(even) {
+        flex-direction: column;
+      }
+    }
   }
 }

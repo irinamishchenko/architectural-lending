@@ -13,36 +13,82 @@
 }
 .header .header-container {
   max-width: 1200px;
+  width: 100%;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
 }
 .header .header-container .header-logo {
   width: 150px;
   height: auto;
 }
 
-.navigation {
+.header-navigation-wrapper .header-burger-menu {
+  display: none;
+}
+.header-navigation-wrapper .header-close {
+  display: none;
+}
+.header-navigation-wrapper nav .navigation {
   display: flex;
   gap: 30px;
 }
-.navigation .navigation-item {
+.header-navigation-wrapper nav .navigation .navigation-item {
   font-family: "Roboto Condensed", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   color: #ffffff;
   font-size: 20px;
 }
-.navigation .navigation-item:hover {
+.header-navigation-wrapper nav .navigation .navigation-item:hover {
   color: red;
 }
-.navigation .active {
+.header-navigation-wrapper nav .navigation .active {
   color: red;
 }
 
-.first-screen-title {
+@media (max-width: 768px) {
+  .header-navigation-wrapper .header-burger-menu {
+    display: block;
+    fill: white;
+    width: 70px;
+    height: 70px;
+  }
+  .header-navigation-wrapper .header-close {
+    display: block;
+    stroke: white;
+    width: 70px;
+    height: 70px;
+  }
+  .header-navigation-wrapper nav {
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    right: 0;
+  }
+  .header-navigation-wrapper nav .navigation {
+    flex-direction: column;
+    height: 360px;
+    margin-top: 50px;
+  }
+  .header-navigation-wrapper nav .navigation li {
+    text-align: center;
+  }
+  .header-navigation-wrapper nav .navigation li .navigation-item {
+    font-size: 40px;
+  }
+  .header-navigation-wrapper nav .navigation-inactive {
+    display: none;
+  }
+}
+.first-screen {
+  height: 100vh;
+}
+.first-screen .first-screen-title {
   font-family: "Oswald", sans-serif;
   position: absolute;
   top: 0;
@@ -54,11 +100,13 @@
   width: 1000px;
   height: 200px;
   color: #ffffff;
-  font-size: 90px;
+  font-size: calc(20px + 5.8333333333vw);
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
   text-shadow: 3px 3px 3px #000;
+  max-width: 900px;
+  width: 100%;
 }
 
 .home-info-list {
@@ -117,10 +165,6 @@
 }
 .home-info-list .home-info-list-item:nth-child(even) {
   flex-direction: row-reverse;
-  padding-left: 30px;
-}
-.home-info-list .home-info-list-item:nth-child(odd) {
-  padding-right: 30px;
 }
 .home-info-list::after {
   content: "";
@@ -138,6 +182,19 @@
   opacity: 0.2;
 }
 
+@media (max-width: 1200px) {
+  .home-info-list {
+    padding: 0 15px;
+  }
+  .home-info-list .home-info-list-item {
+    height: 600px;
+    flex-direction: column;
+    gap: 30px;
+  }
+  .home-info-list .home-info-list-item:nth-child(even) {
+    flex-direction: column;
+  }
+}
 /**
  * Swiper 9.3.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -574,11 +631,15 @@ button.swiper-pagination-bullet {
 }
 
 .slider {
+  width: 100%;
   height: calc(100vh - 73px);
 }
-.slider .slider-item .slider-image {
+.slider .swiper-wrapper .slider-item {
   width: 100%;
-  height: auto;
+}
+.slider .swiper-wrapper .slider-item .slider-image {
+  width: 100%;
+  height: 100vh;
   filter: blur(5px);
 }
 .slider .swiper-pagination {
@@ -603,7 +664,8 @@ main {
 }
 
 .container {
-  width: 1200px;
+  max-width: 1200px;
+  widows: 100%;
   margin: 100px auto;
 }
 .container .characters-title {
@@ -1183,25 +1245,59 @@ main {
 .footer {
   background-color: black;
   height: 300px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 .footer .footer-container {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding-top: 70px;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.footer .footer-container nav ul {
+.footer .footer-container nav .navigation {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+.footer .footer-container nav .navigation .navigation-item {
+  font-family: "Roboto Condensed", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 20px;
+}
+.footer .footer-container nav .navigation .navigation-item:hover {
+  color: red;
+}
+.footer .footer-container nav .navigation .active {
+  color: red;
 }
 .footer .footer-container a .footer-logo {
   width: 300px;
   height: auto;
 }
 
+@media (max-width: 768px) {
+  .footer {
+    height: 900px;
+  }
+  .footer .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer .footer-container nav .navigation {
+    align-items: center;
+    gap: 20px;
+  }
+  .footer .footer-container nav .navigation .navigation-item {
+    font-size: 35px;
+  }
+}
 .character-main-info-wrapper {
   display: flex;
   gap: 50px;
@@ -1480,6 +1576,20 @@ main {
   fill: red;
 }
 
+@media (max-width: 768px) {
+  .socials-list {
+    height: 300px;
+  }
+  .socials-list .socials-list-item {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+  }
+  .socials-list .socials-list-item a svg {
+    width: 50px;
+    height: 50px;
+  }
+}
 .info-container {
   display: flex;
   flex-direction: column;

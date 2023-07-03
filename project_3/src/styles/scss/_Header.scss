@@ -10,11 +10,14 @@
   box-sizing: border-box;
   .header-container {
     max-width: 1200px;
+    width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: auto;
+    padding: 0 15px;
+    box-sizing: border-box;
     .header-logo {
       width: 150px;
       height: auto;
