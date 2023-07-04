@@ -1873,7 +1873,9 @@ main {
   }
 }
 .not-found-container {
-  width: 1200px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
   height: calc(100vh - 73px);
   display: flex;
   flex-direction: column;
@@ -1891,6 +1893,7 @@ main {
 .not-found-container .not-found-subtitle {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 50px;
+  text-align: center;
 }
 .not-found-container .not-found-button {
   width: 200px;
