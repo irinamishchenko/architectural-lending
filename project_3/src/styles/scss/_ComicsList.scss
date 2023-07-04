@@ -141,6 +141,7 @@
 @media (min-width: 769px) and (max-width: 1200px) {
   .comics-form {
     gap: 50px;
+    flex-direction: column;
   }
   .comics-list {
     .comics-item {
@@ -155,6 +156,7 @@
 @media (max-width: 768px) {
   .comics-form {
     gap: 50px;
+    flex-direction: column;
   }
   .comics-list {
     flex-direction: column;

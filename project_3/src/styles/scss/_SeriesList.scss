@@ -140,6 +140,8 @@
 @media (min-width: 581px) and (max-width: 1200px) {
   .series-form {
     gap: 50px;
+    flex-direction: column;
+    align-items: center;
   }
   .series-list {
     .series-item {
@@ -154,6 +156,8 @@
 @media (max-width: 580px) {
   .series-form {
     gap: 50px;
+    flex-direction: column;
+    align-items: center;
   }
   .series-list {
     flex-direction: column;
