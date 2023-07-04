@@ -3,22 +3,23 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import Buttons from "./Buttons";
 
-const BASE_URL = "http://gateway.marvel.com/v1/public/series/";
+const BASE_URL = "http://gateway.marvel.com/v1/public/characters";
 const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
-function SingleSeriesComics() {
+function SpecificCharacters() {
   const PARAMS = useParams();
   const ID = PARAMS.id;
-  const [comics, setComics] = useState(null);
+  const NAME = PARAMS.name;
+  const [characters, setCharacters] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);
   const [offset, setOffset] = useState(0);
 
   const LIMIT = 99;
 
-  async function fetchSeriesComics(offset) {
+  async function fetchEventCharacters(offset) {
     axios
-      .get(BASE_URL + "/" + ID + "/comics", {
+      .get(BASE_URL + "?" + NAME + "=" + ID, {
         params: {
           apikey: API_KEY,
           limit: LIMIT,
@@ -27,7 +28,7 @@ function SingleSeriesComics() {
       })
       .then(
         (response) => (
-          setComics(response.data.data.results),
+          setCharacters(response.data.data.results),
           setTotal(response.data.data.total)
         )
       )
@@ -35,12 +36,12 @@ function SingleSeriesComics() {
   }
 
   useEffect(() => {
-    fetchSeriesComics();
+    fetchEventCharacters();
   }, []);
 
   function handlePrevClick() {
     setOffset(offset - LIMIT);
-    fetchSeriesComics(offset - LIMIT);
+    fetchEventCharacters(offset - LIMIT);
     window.scrollTo({
       top: 300,
       behavior: "smooth",
@@ -49,7 +50,7 @@ function SingleSeriesComics() {
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
-    fetchSeriesComics(offset + LIMIT);
+    fetchEventCharacters(offset + LIMIT);
     window.scrollTo({
       top: 300,
       behavior: "smooth",
@@ -62,26 +63,30 @@ function SingleSeriesComics() {
         <h2 className="error-message">{error}</h2>
       </div>
     );
-  } else if (comics) {
-    const COMICS_ITEMS = comics.map((item) => (
-      <li key={item.id} className="comics-item">
-        <div className="comics-add-info">
-          <Link to={"/comics/" + item.id} className="comics-add-info-btn">
+  } else if (characters) {
+    const CHARACTERS_ITEMS = characters.map((character) => (
+      <li key={character.id} className="characters-item">
+        <div className="character-add-info">
+          <Link
+            className="character-add-info-btn"
+            to={"/characters/" + character.id}
+          >
             More
           </Link>
         </div>
         <img
-          className="comics-item-picture"
-          src={item.thumbnail.path + "." + item.thumbnail.extension}
-          alt={item.title}
+          className="characters-item-picture"
+          src={character.thumbnail.path + "." + character.thumbnail.extension}
+          alt={character.name}
         />
-        <h2 className="comics-item-title">{item.title}</h2>
+        <h2 className="characters-item-name">{character.name}</h2>
       </li>
     ));
 
     return (
       <>
-        <ul className="comics-list">{COMICS_ITEMS}</ul>
+        <ul className="characters-list">{CHARACTERS_ITEMS}</ul>
+
         <Buttons
           onPrevClick={handlePrevClick}
           onNextClick={handleNextClick}
@@ -94,4 +99,4 @@ function SingleSeriesComics() {
   }
 }
 
-export default SingleSeriesComics;
+export default SpecificCharacters;

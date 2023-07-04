@@ -5,6 +5,7 @@ function SeriesPage() {
   useEffect(() => {
     document.title = "Marvel | Series";
   }, []);
+
   return (
     <div className="container">
       <h2 className="series-title">Marvel series</h2>

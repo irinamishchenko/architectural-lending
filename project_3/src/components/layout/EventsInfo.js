@@ -17,7 +17,7 @@ function EventsInfo(props) {
       <h3 className="info-title">Events</h3>
       <ol className="info-list">{EVENTS_ITEMS}</ol>
       {props.events.available && props.events.available > 20 ? (
-        <Link to={"/" + NAME + "/" + ID + "/events"} className="info-button">
+        <Link to={"/events/" + NAME + "/" + ID} className="info-button">
           More
         </Link>
       ) : null}

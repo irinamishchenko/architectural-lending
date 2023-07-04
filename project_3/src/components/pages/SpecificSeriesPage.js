@@ -1,15 +1,16 @@
 import { useEffect } from "react";
-import SingleEventSeries from "./../layout/SingleEventSeries";
+import SpecificSeries from "./../layout/SpecificSeries";
 
-function SingleEventSeriesPage() {
+function SpecificSeriesPage() {
   useEffect(() => {
     document.title = "Marvel | Series";
   }, []);
+
   return (
     <div className="container">
-      <SingleEventSeries />
+      <SpecificSeries />
     </div>
   );
 }
 
-export default SingleEventSeriesPage;
+export default SpecificSeriesPage;

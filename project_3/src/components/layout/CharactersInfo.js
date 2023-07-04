@@ -19,10 +19,7 @@ function CharactersInfo(props) {
       <h3 className="info-title">Characters</h3>
       <ol className="info-list">{CHARACTERS_ITEMS}</ol>
       {props.characters.available && props.characters.available > 20 ? (
-        <Link
-          to={"/" + NAME + "/" + ID + "/characters"}
-          className="info-button"
-        >
+        <Link to={"/characters/" + NAME + "/" + ID} className="info-button">
           More
         </Link>
       ) : null}

@@ -18,7 +18,7 @@ function ComicsInfo(props) {
       <h3 className="info-title">Comics</h3>
       <ol className="info-list">{COMICS_ITEMS}</ol>
       {props.comics.available && props.comics.available > 20 ? (
-        <Link to={"/" + NAME + "/" + ID + "/comics"} className="info-button">
+        <Link to={"/comics/" + NAME + "/" + ID} className="info-button">
           More
         </Link>
       ) : null}

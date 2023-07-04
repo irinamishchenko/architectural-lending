@@ -17,7 +17,7 @@ function CreatorsInfo(props) {
       <h3 className="info-title">Creators</h3>
       <ol className="info-list">{CREATORS_ITEMS}</ol>
       {props.creators.available && props.creators.available > 20 ? (
-        <Link to={"/" + NAME + "/" + ID + "/creators"} className="info-button">
+        <Link to={"/creators/" + NAME + "/" + ID} className="info-button">
           More
         </Link>
       ) : null}

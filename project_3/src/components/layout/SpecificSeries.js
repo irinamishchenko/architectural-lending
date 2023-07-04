@@ -2,21 +2,22 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
-const BASE_URL = "http://gateway.marvel.com/v1/public/characters/";
+const BASE_URL = "http://gateway.marvel.com/v1/public/series";
 const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
-function SingleCharacterSeries() {
+function SpecificSeries() {
   const PARAMS = useParams();
   const ID = PARAMS.id;
+  const NAME = PARAMS.name;
   const [series, setSeries] = useState(null);
   const [error, setError] = useState(null);
 
-  async function fetchCharacterSeries() {
+  async function fetchEventsSeries() {
     axios
-      .get(BASE_URL + "/" + ID + "/events", {
+      .get(BASE_URL + "?" + NAME + "=" + ID, {
         params: {
           apikey: API_KEY,
-          limit: 99,
+          limit: 100,
         },
       })
       .then((response) => setSeries(response.data.data.results))
@@ -24,7 +25,7 @@ function SingleCharacterSeries() {
   }
 
   useEffect(() => {
-    fetchCharacterSeries();
+    fetchEventsSeries();
   }, []);
 
   if (error) {
@@ -47,6 +48,9 @@ function SingleCharacterSeries() {
           alt={item.title}
         />
         <h2 className="series-item-title">{item.title}</h2>
+        <p className="series-item-date">
+          {item.startYear}-{item.endYear}
+        </p>
       </li>
     ));
     return (
@@ -57,4 +61,4 @@ function SingleCharacterSeries() {
   }
 }
 
-export default SingleCharacterSeries;
+export default SpecificSeries;

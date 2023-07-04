@@ -17,7 +17,7 @@ function SeriesInfo(props) {
       <h3 className="info-title">Series</h3>
       <ol className="info-list">{SERIES_ITEMS}</ol>
       {props.series.available && props.series.available > 20 ? (
-        <Link to={"/" + NAME + "/" + ID + "/series"} className="info-button">
+        <Link to={"/series/" + NAME + "/" + ID} className="info-button">
           More
         </Link>
       ) : null}

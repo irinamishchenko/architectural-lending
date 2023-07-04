@@ -12,17 +12,11 @@ import SingleComicsPage from "./components/pages/SingleComicsPage";
 import SingleEventPage from "./components/pages/SingleEventPage";
 import SingleSeriesPage from "./components/pages/SingleSeriesPage";
 import SingleCreatorPage from "./components/pages/SingleCreatorPage";
-import SingleCharacterComicsPage from "./components/pages/SingleCharacterComicsPage";
-import SingleCharacterEventsPage from "./components/pages/SingleCharacterEventsPage";
-import SingleCharacterSeriesPage from "./components/pages/SingleCharacterSeriesPage";
-import SingleComicsCreatorsPage from "./components/pages/SingleComicsCreatorsPage";
-import SingleEventCharactersPage from "./components/pages/SingleEventCharactersPage";
-import SingleEventComicsPage from "./components/pages/SingleEventComicsPage";
-import SingleEventCreatorsPage from "./components/pages/SingleEventCreatorsPage";
-import SingleEventSeriesPage from "./components/pages/SingleEventSeriesPage";
-import SingleSeriesCharactersPage from "./components/pages/SingleSeriesCharactersPage";
-import SingleSeriesComicsPage from "./components/pages/SingleSeriesComicsPage";
-import SingleSeriesCreatorsPage from "./components/pages/SingleSeriesCreatorsPage";
+import SpecificComicsPage from "./components/pages/SpecificComicsPage";
+import SpecificCharactersPage from "./components/pages/SpecificCharactersPage";
+import SpecificCreatorsPage from "./components/pages/SpecificCreatorsPage";
+import SpecificEventsPage from "./components/pages/SpecificEventsPage";
+import SpecificSeriesPage from "./components/pages/SpecificSeriesPage";
 
 import "./styles/css/styles.css";
 
@@ -34,57 +28,24 @@ function App() {
           <Route index element={<HomePage />} />
           <Route path="/characters" element={<CharactersPage />} />
           <Route path="/characters/:id" element={<SingleCharacterPage />} />
-          <Route
-            path="/characters/:id/comics"
-            element={<SingleCharacterComicsPage />}
-          />
-          <Route
-            path="/characters/:id/events"
-            element={<SingleCharacterEventsPage />}
-          />
-          <Route
-            path="/characters/:id/series"
-            element={<SingleCharacterSeriesPage />}
-          />
           <Route path="/comics" element={<ComicsPage />} />
           <Route path="/comics/:id" element={<SingleComicsPage />} />
-          <Route
-            path="/comics/:id/creators"
-            element={<SingleComicsCreatorsPage />}
-          />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/events/:id" element={<SingleEventPage />} />
-          <Route
-            path="/events/:id/characters"
-            element={<SingleEventCharactersPage />}
-          />
-          <Route
-            path="/events/:id/comics"
-            element={<SingleEventComicsPage />}
-          />
-          <Route
-            path="/events/:id/creators"
-            element={<SingleEventCreatorsPage />}
-          />
-          <Route
-            path="/events/:id/series"
-            element={<SingleEventSeriesPage />}
-          />
           <Route path="/series" element={<SeriesPage />} />
           <Route path="/series/:id" element={<SingleSeriesPage />} />
-          <Route
-            path="/series/:id/characters"
-            element={<SingleSeriesCharactersPage />}
-          />
-          <Route
-            path="/series/:id/comics"
-            element={<SingleSeriesComicsPage />}
-          />
-          <Route
-            path="/series/:id/creators"
-            element={<SingleSeriesCreatorsPage />}
-          />
           <Route path="/creators/:id" element={<SingleCreatorPage />} />
+          <Route path="/comics/:name/:id" element={<SpecificComicsPage />} />
+          <Route
+            path="/characters/:name/:id"
+            element={<SpecificCharactersPage />}
+          />
+          <Route
+            path="/creators/:name/:id"
+            element={<SpecificCreatorsPage />}
+          />
+          <Route path="/events/:name/:id" element={<SpecificEventsPage />} />
+          <Route path="/series/:name/:id" element={<SpecificSeriesPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
