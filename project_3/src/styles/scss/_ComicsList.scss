@@ -144,6 +144,8 @@
     flex-direction: column;
   }
   .comics-list {
+    gap: 10px;
+    justify-content: center;
     .comics-item {
       .comics-add-info {
         background-color: rgba(255, 0, 0, 0.5);

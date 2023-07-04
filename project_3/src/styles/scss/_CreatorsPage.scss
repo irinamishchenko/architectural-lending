@@ -1,0 +1,30 @@
+.creators-title {
+  padding: 100px 0;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: calc(30px + 40 * (100vw / 1200));
+  text-transform: uppercase;
+  font-weight: bold;
+  &::before {
+    content: "";
+    width: 170px;
+    height: 3px;
+    background-color: red;
+    display: block;
+    margin: 0 auto 15px;
+  }
+  &::after {
+    content: "";
+    width: 170px;
+    height: 3px;
+    background-color: red;
+    display: block;
+    margin: 20px auto 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .creators-title {
+    padding: 50px 0;
+  }
+}

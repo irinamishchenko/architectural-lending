@@ -35,7 +35,7 @@
 }
 .header-navigation-wrapper nav .navigation {
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 .header-navigation-wrapper nav .navigation .navigation-item {
   font-family: "Roboto Condensed", sans-serif;
@@ -802,6 +802,10 @@ main {
 }
 
 @media (min-width: 769px) and (max-width: 1200px) {
+  .characters-list {
+    gap: 10px;
+    justify-content: center;
+  }
   .characters-list .characters-item .character-add-info {
     background-color: rgba(255, 0, 0, 0.5);
     z-index: 1;
@@ -995,6 +999,10 @@ main {
   .comics-form {
     gap: 50px;
     flex-direction: column;
+  }
+  .comics-list {
+    gap: 10px;
+    justify-content: center;
   }
   .comics-list .comics-item .comics-add-info {
     background-color: rgba(255, 0, 0, 0.5);
@@ -1328,6 +1336,7 @@ main {
 .series-list .series-item .series-item-date {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 18px;
+  margin-bottom: 10px;
 }
 
 @media (min-width: 581px) and (max-width: 1200px) {
@@ -1381,6 +1390,166 @@ main {
   margin: 20px auto 0;
 }
 
+.creators-title {
+  padding: 100px 0;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: calc(30px + 3.3333333333vw);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.creators-title::before {
+  content: "";
+  width: 170px;
+  height: 3px;
+  background-color: red;
+  display: block;
+  margin: 0 auto 15px;
+}
+.creators-title::after {
+  content: "";
+  width: 170px;
+  height: 3px;
+  background-color: red;
+  display: block;
+  margin: 20px auto 0;
+}
+
+@media (max-width: 1200px) {
+  .creators-title {
+    padding: 50px 0;
+  }
+}
+.creators-form {
+  max-width: 500px;
+  height: 40px;
+  margin: 0 auto 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.creators-form .creators-input {
+  width: 300px;
+  height: 100%;
+  font-size: 20px;
+  padding-left: 5px;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+.creators-form .creators-form-button {
+  font-family: "Oswald", sans-serif;
+  width: 120px;
+  height: 100%;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.creators-form .creators-form-button:hover {
+  transition: all 0.3s linear;
+  color: white;
+  background-color: #000;
+}
+
+.creators-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.creators-list .creator-list-item {
+  width: 350px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 10px;
+  border: 1px solid black;
+  background-color: #f1f1f1;
+  margin-bottom: 50px;
+  position: relative;
+}
+.creators-list .creator-list-item:hover {
+  transition: all 0.3s linear;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+.creators-list .creator-list-item:hover .creator-add-info {
+  z-index: 1;
+}
+.creators-list .creator-list-item .creator-name {
+  font-family: "Oswald", sans-serif;
+  font-size: 30px;
+}
+.creators-list .creator-list-item .creator-info {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+.creators-list .creator-list-item .creator-add-info {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 0, 0, 0.8);
+  z-index: -1;
+}
+.creators-list .creator-list-item .creator-add-info .creator-add-info-btn {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 300px;
+  height: 210px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  background-image: url(../../images/creators-btn.png);
+  background-position: center;
+  background-size: cover;
+}
+.creators-list .creator-list-item .creator-add-info .creator-add-info-btn:hover {
+  transition: all 0.3s linear;
+  width: 320px;
+  height: 225px;
+}
+.creators-list .creator-list-item .creator-picture {
+  height: 500px;
+  width: 100%;
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .creators-list {
+    gap: 10px;
+    justify-content: center;
+  }
+  .creators-list .creator-list-item .creator-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
+@media (max-width: 768px) {
+  .creators-form {
+    height: 100px;
+    flex-direction: column;
+  }
+  .creators-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .creators-list .creator-list-item .creator-add-info {
+    background-color: rgba(255, 0, 0, 0.5);
+    z-index: 1;
+  }
+}
 .footer {
   background-color: black;
   height: 300px;
@@ -1947,98 +2116,6 @@ main {
 }
 .list-buttons .list-button-inactive {
   visibility: hidden;
-}
-
-.creators-list {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.creators-list .creator-list-item {
-  width: 350px;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-  padding-top: 10px;
-  border: 1px solid black;
-  background-color: #f1f1f1;
-  margin-bottom: 50px;
-  position: relative;
-}
-.creators-list .creator-list-item:hover {
-  transition: all 0.3s linear;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-.creators-list .creator-list-item:hover .creator-add-info {
-  z-index: 1;
-}
-.creators-list .creator-list-item .creator-name {
-  font-family: "Oswald", sans-serif;
-  font-size: 30px;
-}
-.creators-list .creator-list-item .creator-info {
-  font-family: "Oswald", sans-serif;
-  font-size: 20px;
-}
-.creators-list .creator-list-item .creator-add-info {
-  position: absolute;
-  width: 100%;
-  height: 500px;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(255, 0, 0, 0.8);
-  z-index: -1;
-}
-.creators-list .creator-list-item .creator-add-info .creator-add-info-btn {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 300px;
-  height: 210px;
-  font-family: "Roboto Condensed", sans-serif;
-  font-size: 50px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: black;
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  background-image: url(../../images/creators-btn.png);
-  background-position: center;
-  background-size: cover;
-}
-.creators-list .creator-list-item .creator-add-info .creator-add-info-btn:hover {
-  transition: all 0.3s linear;
-  width: 320px;
-  height: 225px;
-}
-.creators-list .creator-list-item .creator-picture {
-  height: 500px;
-  width: 100%;
-}
-
-@media (min-width: 769px) and (max-width: 1200px) {
-  .creators-list .creator-list-item .creator-add-info {
-    background-color: rgba(255, 0, 0, 0.5);
-    z-index: 1;
-  }
-}
-@media (max-width: 768px) {
-  .creators-list {
-    flex-direction: column;
-    align-items: center;
-  }
-  .creators-list .creator-list-item .creator-add-info {
-    background-color: rgba(255, 0, 0, 0.5);
-    z-index: 1;
-  }
 }
 
 /*# sourceMappingURL=styles.css.map */

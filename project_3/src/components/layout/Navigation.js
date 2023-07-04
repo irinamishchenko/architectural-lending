@@ -21,6 +21,10 @@ const LINKS = [
     link: "Series",
     path: "/series",
   },
+  {
+    link: "Creators",
+    path: "/creators",
+  },
 ];
 
 function Navigation(props) {

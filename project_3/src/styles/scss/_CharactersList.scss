@@ -105,6 +105,8 @@
 
 @media (min-width: 769px) and (max-width: 1200px) {
   .characters-list {
+    gap: 10px;
+    justify-content: center;
     .characters-item {
       .character-add-info {
         background-color: rgba(255, 0, 0, 0.5);
