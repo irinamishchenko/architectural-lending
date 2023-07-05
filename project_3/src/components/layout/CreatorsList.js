@@ -11,65 +11,35 @@ function CreatorsList() {
   const [error, setError] = useState(null);
   const [total, setTotal] = useState(null);
   const [offset, setOffset] = useState(0);
-  const [search, setSearch] = useState(null);
 
   const LIMIT = 48;
 
-  async function fetchCreators(search, offset) {
-    if (!search) {
-      axios
-        .get(BASE_URL, {
-          params: {
-            apikey: API_KEY,
-            orderBy: "-modified",
-            limit: LIMIT,
-            offset: offset,
-          },
-        })
-        .then(
-          (response) => (
-            setCreators(response.data.data.results),
-            setTotal(response.data.data.total)
-          )
+  async function fetchCreators(offset) {
+    axios
+      .get(BASE_URL, {
+        params: {
+          apikey: API_KEY,
+          orderBy: "-modified",
+          limit: LIMIT,
+          offset: offset,
+        },
+      })
+      .then(
+        (response) => (
+          setCreators(response.data.data.results),
+          setTotal(response.data.data.total)
         )
-        .catch((error) => setError(error.message));
-    } else if (search) {
-      axios
-        .get(BASE_URL, {
-          params: {
-            apikey: API_KEY,
-            lastNameStartsWith: search,
-            limit: LIMIT,
-            offset: offset,
-          },
-        })
-        .then(
-          (response) => (
-            fetchCreators(response.data.data.results),
-            setTotal(response.data.data.total)
-          )
-        )
-        .catch((error) => setError(error.message));
-    }
+      )
+      .catch((error) => setError(error.message));
   }
 
   useEffect(() => {
     fetchCreators();
   }, []);
 
-  function handleChange() {
-    console.log(search);
-    fetchCreators(search, offset);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    fetchCreators(search, offset);
-  }
-
   function handlePrevClick() {
     setOffset(offset - LIMIT);
-    fetchCreators(search, offset - LIMIT);
+    fetchCreators(offset - LIMIT);
     window.scrollTo({
       top: 0,
       left: 0,
@@ -79,7 +49,7 @@ function CreatorsList() {
 
   function handleNextClick() {
     setOffset(offset + LIMIT);
-    fetchCreators(search, offset + LIMIT);
+    fetchCreators(offset + LIMIT);
     window.scrollTo({
       top: 300,
       behavior: "smooth",
@@ -93,8 +63,6 @@ function CreatorsList() {
       </div>
     );
   } else if (creators) {
-    console.log(search);
-    console.log(creators);
     const CREATORS_ITEMS = creators.map((creator, index) => (
       <li className="creator-list-item" key={index}>
         <h3 className="creator-name">{creator.fullName}</h3>
@@ -113,25 +81,8 @@ function CreatorsList() {
         />
       </li>
     ));
-    const SEARCH_FORM = (
-      <form
-        className="creators-form"
-        onChange={handleChange}
-        onSubmit={handleSubmit}
-      >
-        <input
-          className="creators-input"
-          type="text"
-          placeholder="name"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <input className="creators-form-button" type="submit" value="Search" />
-      </form>
-    );
     return (
       <>
-        {SEARCH_FORM}
         <ul className="creators-list">{CREATORS_ITEMS}</ul>
         <Buttons
           onPrevClick={handlePrevClick}
