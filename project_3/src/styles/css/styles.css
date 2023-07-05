@@ -698,7 +698,7 @@ main {
 }
 
 .characters-form {
-  max-width: 500px;
+  max-width: 550px;
   height: 40px;
   margin: 0 auto 50px;
   display: flex;
@@ -715,7 +715,7 @@ main {
 }
 .characters-form .characters-form-button {
   font-family: "Oswald", sans-serif;
-  width: 120px;
+  width: 160px;
   height: 100%;
   font-size: 20px;
   border: 2px solid black;
@@ -723,9 +723,10 @@ main {
   cursor: pointer;
 }
 .characters-form .characters-form-button:hover {
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
   color: white;
   background-color: #000;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
 .characters-list {
@@ -911,7 +912,7 @@ main {
 }
 .comics-form .comics-form-button {
   font-family: "Oswald", sans-serif;
-  width: 80px;
+  width: 120px;
   font-size: 20px;
   border: 2px solid black;
   border-radius: 5px;
@@ -920,6 +921,7 @@ main {
 .comics-form .comics-form-button:hover {
   color: white;
   background-color: #000;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
 .comics-list {
@@ -1049,9 +1051,11 @@ main {
 }
 
 .events-form {
-  margin-bottom: 50px;
   display: flex;
   justify-content: space-between;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto 50px;
 }
 .events-form .events-title-input {
   font-family: "Oswald", sans-serif;
@@ -1073,7 +1077,7 @@ main {
 }
 .events-form .events-form-button {
   font-family: "Oswald", sans-serif;
-  width: 80px;
+  width: 120px;
   font-size: 20px;
   border: 2px solid black;
   border-radius: 5px;
@@ -1082,6 +1086,7 @@ main {
 .events-form .events-form-button:hover {
   color: white;
   background-color: #000;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
 .events-list {
@@ -1249,7 +1254,7 @@ main {
 }
 .series-form .series-form-button {
   font-family: "Oswald", sans-serif;
-  width: 80px;
+  width: 120px;
   font-size: 20px;
   border: 2px solid black;
   border-radius: 5px;
@@ -1258,6 +1263,7 @@ main {
 .series-form .series-form-button:hover {
   color: white;
   background-color: #000;
+  box-shadow: 0 0 0 2px white, 0 0 0 4px black;
 }
 
 .series-list {
@@ -1420,37 +1426,6 @@ main {
     padding: 50px 0;
   }
 }
-.creators-form {
-  max-width: 500px;
-  height: 40px;
-  margin: 0 auto 50px;
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-.creators-form .creators-input {
-  width: 300px;
-  height: 100%;
-  font-size: 20px;
-  padding-left: 5px;
-  box-sizing: border-box;
-  font-family: "Oswald", sans-serif;
-}
-.creators-form .creators-form-button {
-  font-family: "Oswald", sans-serif;
-  width: 120px;
-  height: 100%;
-  font-size: 20px;
-  border: 2px solid black;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.creators-form .creators-form-button:hover {
-  transition: all 0.3s linear;
-  color: white;
-  background-color: #000;
-}
-
 .creators-list {
   display: flex;
   justify-content: space-between;
@@ -1537,10 +1512,6 @@ main {
   }
 }
 @media (max-width: 768px) {
-  .creators-form {
-    height: 100px;
-    flex-direction: column;
-  }
   .creators-list {
     flex-direction: column;
     align-items: center;
