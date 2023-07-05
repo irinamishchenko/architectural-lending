@@ -21,7 +21,7 @@ function Slider() {
       effect="fade"
       slidesPerView={1}
       loop={true}
-      // autoplay={{ delay: 4000 }}
+      autoplay={{ delay: 4000 }}
       pagination={{ clickable: true }}
     >
       {SLIDES}
