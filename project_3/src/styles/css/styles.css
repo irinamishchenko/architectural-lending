@@ -173,13 +173,13 @@
 .home-info-list::after {
   content: "";
   background-image: url("./../../images/decor-picture-3.png");
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 500px;
-  max-width: 500px;
-  height: 1000px;
+  background-size: 700px;
+  max-width: 700px;
+  height: 1500px;
   position: absolute;
-  bottom: -130px;
+  bottom: -188px;
   right: 0;
   left: 0;
   margin: auto;

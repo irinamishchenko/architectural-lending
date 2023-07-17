@@ -15,6 +15,10 @@ const HOME_CONTENT = [
     title: "Series",
     info: "One more reason to know more about Marvel characters. For your convenience we have combined them into awsome series. Read and enjoy!",
   },
+  {
+    title: "Creators",
+    info: "Do you want to know, who created your favourite characters, comics and stories? It's easy now!",
+  },
 ];
 function HomeInfo() {
   const CONTENT_ITEMS = HOME_CONTENT.map((item) => (
