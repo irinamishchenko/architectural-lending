@@ -10,7 +10,6 @@ function SpecificCreators() {
   const PARAMS = useParams();
   const ID = PARAMS.id;
   const NAME = PARAMS.name;
-  console.log(PARAMS);
   const [creators, setCreators] = useState(null);
   const [total, setTotal] = useState(null);
   const [error, setError] = useState(null);

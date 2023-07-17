@@ -86,7 +86,6 @@ function SpecificCharacters() {
     return (
       <>
         <ul className="characters-list">{CHARACTERS_ITEMS}</ul>
-
         <Buttons
           onPrevClick={handlePrevClick}
           onNextClick={handleNextClick}
