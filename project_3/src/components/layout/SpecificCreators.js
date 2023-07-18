@@ -43,7 +43,7 @@ function SpecificCreators() {
     setOffset(offset - LIMIT);
     fetchEventsCreators(offset - LIMIT);
     window.scrollTo({
-      top: 300,
+      top: 0,
       behavior: "smooth",
     });
   }
@@ -52,7 +52,7 @@ function SpecificCreators() {
     setOffset(offset + LIMIT);
     fetchEventsCreators(offset + LIMIT);
     window.scrollTo({
-      top: 300,
+      top: 0,
       behavior: "smooth",
     });
   }

@@ -43,7 +43,7 @@ function SpecificCharacters() {
     setOffset(offset - LIMIT);
     fetchEventCharacters(offset - LIMIT);
     window.scrollTo({
-      top: 300,
+      top: 0,
       behavior: "smooth",
     });
   }
@@ -52,7 +52,7 @@ function SpecificCharacters() {
     setOffset(offset + LIMIT);
     fetchEventCharacters(offset + LIMIT);
     window.scrollTo({
-      top: 300,
+      top: 0,
       behavior: "smooth",
     });
   }

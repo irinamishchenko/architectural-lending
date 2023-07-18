@@ -44,7 +44,7 @@ function SpecificComics() {
     fetchCharacterComics(offset - LIMIT);
     console.log("Prev click");
     window.scrollTo({
-      top: 300,
+      top: 0,
       behavior: "smooth",
     });
   }
@@ -54,7 +54,7 @@ function SpecificComics() {
     fetchCharacterComics(offset + LIMIT);
     console.log("Next click");
     window.scrollTo({
-      top: 300,
+      top: 0,
       behavior: "smooth",
     });
   }

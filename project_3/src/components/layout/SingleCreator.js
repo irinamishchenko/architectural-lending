@@ -53,13 +53,13 @@ function SingleCreator() {
       <>
         {GENERAL_INFO}
         {creator.comics.items.length > 0 ? (
-          <ComicsInfo comics={creator.comics} />
+          <ComicsInfo comics={creator.comics} name={"creators"} />
         ) : null}
         {creator.events.items.length > 0 ? (
-          <EventsInfo events={creator.events} />
+          <EventsInfo events={creator.events} name={"creators"} />
         ) : null}
         {creator.series.items.length > 0 ? (
-          <SeriesInfo series={creator.series} />
+          <SeriesInfo series={creator.series} name={"creators"} />
         ) : null}
       </>
     );
