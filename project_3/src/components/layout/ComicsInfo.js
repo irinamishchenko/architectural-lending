@@ -3,8 +3,7 @@ import { Link, useParams } from "react-router-dom";
 function ComicsInfo(props) {
   const PARAMS = useParams();
   const ID = PARAMS.id;
-  const NAME = props.name;
-  const COMICS = props.comics.items;
+  const { NAME, COMICS } = props;
   const COMICS_ITEMS = COMICS.map((item) => (
     <li className="info-list-item" key={item.name}>
       <Link to={"/comics/" + item.resourceURI.split("/").splice(6).join()}>

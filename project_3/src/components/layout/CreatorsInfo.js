@@ -3,8 +3,7 @@ import { Link, useParams } from "react-router-dom";
 function CreatorsInfo(props) {
   const PARAMS = useParams();
   const ID = PARAMS.id;
-  const NAME = props.name;
-  const CREATORS = props.creators.items;
+  const { NAME, CREATORS } = props;
   const CREATORS_ITEMS = CREATORS.map((creator, index) => (
     <li className="info-list-item" key={index}>
       <Link to={"/creators/" + creator.resourceURI.split("/").splice(6).join()}>

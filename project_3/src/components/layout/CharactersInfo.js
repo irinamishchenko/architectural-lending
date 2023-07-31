@@ -3,8 +3,7 @@ import { Link, useParams } from "react-router-dom";
 function CharactersInfo(props) {
   const PARAMS = useParams();
   const ID = PARAMS.id;
-  const NAME = props.name;
-  const CHARACTERS = props.characters.items;
+  const { NAME, CHARACTERS } = props;
   const CHARACTERS_ITEMS = CHARACTERS.map((character, index) => (
     <li className="info-list-item" key={index}>
       <Link

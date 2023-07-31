@@ -1,13 +1,14 @@
 import sprite from "./../../images/sprite.svg";
 
 function Buttons(props) {
+  const { offset, total, limit, onPrevClick, onNextClick } = props;
   return (
     <div className="list-buttons">
       <button
         className={
-          props.offset > 0 ? "list-button" : "list-button list-button-inactive"
+          offset > 0 ? "list-button" : "list-button list-button-inactive"
         }
-        onClick={() => props.onPrevClick()}
+        onClick={() => onPrevClick()}
       >
         <svg>
           <use href={sprite + "#arrow-icon"} />
@@ -16,11 +17,11 @@ function Buttons(props) {
 
       <button
         className={
-          props.offset + props.limit < props.total
+          offset + limit < total
             ? "list-button"
             : "list-button list-button-inactive"
         }
-        onClick={() => props.onNextClick()}
+        onClick={() => onNextClick()}
       >
         <svg>
           <use href={sprite + "#arrow-icon"} />

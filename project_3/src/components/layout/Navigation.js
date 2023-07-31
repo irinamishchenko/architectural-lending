@@ -28,6 +28,7 @@ const LINKS = [
 ];
 
 function Navigation(props) {
+  const isMenuActive = props.isMenuActive;
   const NAV_ITEMS = LINKS.map((item) => (
     <li key={item.link}>
       <NavLink to={item.path} className="navigation-item">
@@ -40,7 +41,7 @@ function Navigation(props) {
     <nav>
       <ul
         className={
-          props.isMenuActive ? "navigation" : "navigation navigation-inactive"
+          isMenuActive ? "navigation" : "navigation navigation-inactive"
         }
       >
         {NAV_ITEMS}
