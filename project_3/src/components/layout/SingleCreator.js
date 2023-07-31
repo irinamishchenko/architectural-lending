@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+import { API_KEY, BASE_URL } from "./../../API_info";
 import ComicsInfo from "./ComicsInfo";
 import EventsInfo from "./EventsInfo";
 import SeriesInfo from "./SeriesInfo";
-import axios from "axios";
-
-const BASE_URL = "http://gateway.marvel.com/v1/public/creators/";
-const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleCreator() {
   const PARAMS = useParams();
@@ -16,7 +14,7 @@ function SingleCreator() {
 
   async function fetchCreator() {
     axios
-      .get(BASE_URL + "/" + ID, {
+      .get(BASE_URL + "/creators/" + ID, {
         params: {
           apikey: API_KEY,
         },

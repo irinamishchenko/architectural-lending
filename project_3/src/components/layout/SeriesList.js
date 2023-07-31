@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_KEY, BASE_URL } from "./../../API_info";
 import Buttons from "./Buttons";
-
-const BASE_URL = "http://gateway.marvel.com/v1/public/series";
-const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SeriesList() {
   const [series, setSeries] = useState(null);
@@ -21,7 +19,7 @@ function SeriesList() {
   async function fetchSeries(search, offset, year, order, format) {
     if (!search && !year && !order && !format) {
       axios
-        .get(BASE_URL, {
+        .get(BASE_URL + "/series", {
           params: {
             apikey: API_KEY,
             orderBy: "-modified",
@@ -39,7 +37,7 @@ function SeriesList() {
         .catch((error) => setError(error.message));
     } else if (search || year || order || format) {
       axios
-        .get(BASE_URL, {
+        .get(BASE_URL + "/series", {
           params: {
             apikey: API_KEY,
             titleStartsWith: search,

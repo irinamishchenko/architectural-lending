@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-
-const BASE_URL = "http://gateway.marvel.com/v1/public/events";
-const API_KEY = "95857d6d985fa57f979a3eca57531d54";
+import { API_KEY, BASE_URL } from "./../../API_info";
 
 function SpecificEvents() {
   const PARAMS = useParams();
@@ -14,7 +12,7 @@ function SpecificEvents() {
 
   async function fetchCharacterEvents() {
     axios
-      .get(BASE_URL + "?" + NAME + "=" + ID, {
+      .get(BASE_URL + "/events?" + NAME + "=" + ID, {
         params: {
           apikey: API_KEY,
           limit: 100,

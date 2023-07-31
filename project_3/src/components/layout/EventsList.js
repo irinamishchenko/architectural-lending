@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_KEY, BASE_URL } from "./../../API_info";
 import Buttons from "./Buttons";
-
-const BASE_URL = "http://gateway.marvel.com/v1/public/events";
-const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function EventsList() {
   const [events, setEvents] = useState(null);
@@ -19,7 +17,7 @@ function EventsList() {
   async function fetchEvents(search, offset, order) {
     if (!search && !order) {
       axios
-        .get(BASE_URL, {
+        .get(BASE_URL + "/events", {
           params: {
             apikey: API_KEY,
             orderBy: "-startDate",
@@ -36,7 +34,7 @@ function EventsList() {
         .catch((error) => setError(error.message));
     } else if (search || order) {
       axios
-        .get(BASE_URL, {
+        .get(BASE_URL + "/events", {
           params: {
             apikey: API_KEY,
             nameStartsWith: search,

@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_KEY, BASE_URL } from "./../../API_info";
 import Buttons from "./Buttons";
-
-const BASE_URL = "http://gateway.marvel.com/v1/public/creators";
-const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function CreatorsList() {
   const [creators, setCreators] = useState(null);
@@ -16,7 +14,7 @@ function CreatorsList() {
 
   async function fetchCreators(offset) {
     axios
-      .get(BASE_URL, {
+      .get(BASE_URL + "/creators", {
         params: {
           apikey: API_KEY,
           orderBy: "-modified",

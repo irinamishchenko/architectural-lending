@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { API_KEY, BASE_URL } from "./../../API_info";
 import EventsInfo from "./EventsInfo";
 import CreatorsInfo from "./CreatorsInfo";
 import CharactersInfo from "./CharactersInfo";
-
-const BASE_URL = "http://gateway.marvel.com/v1/public/comics/";
-const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function SingleComics() {
   const PARAMS = useParams();
@@ -16,7 +14,7 @@ function SingleComics() {
 
   async function fetchSingleComics() {
     axios
-      .get(BASE_URL + "/" + ID, {
+      .get(BASE_URL + "/comics/" + ID, {
         params: {
           apikey: API_KEY,
         },

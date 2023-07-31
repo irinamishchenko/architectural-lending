@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_KEY, BASE_URL } from "./../../API_info";
 import Buttons from "./Buttons";
-
-const BASE_URL = "http://gateway.marvel.com/v1/public/comics";
-const API_KEY = "95857d6d985fa57f979a3eca57531d54";
 
 function ComicsList() {
   const [comics, setComics] = useState(null);
@@ -21,7 +19,7 @@ function ComicsList() {
   async function fetchComics(search, offset, type, year, format) {
     if (!search && !type && !year && !format) {
       axios
-        .get(BASE_URL, {
+        .get(BASE_URL + "/comics", {
           params: {
             apikey: API_KEY,
             format: "hardcover",
@@ -38,7 +36,7 @@ function ComicsList() {
         .catch((error) => setError(error.message));
     } else if (search || type || year || format) {
       axios
-        .get(BASE_URL, {
+        .get(BASE_URL + "/comics", {
           params: {
             apikey: API_KEY,
             titleStartsWith: search,
