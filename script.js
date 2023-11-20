@@ -58,8 +58,6 @@ gallery.addEventListener("click", toggleModal);
 
 // Map
 
-// const APIkey = "AIzaSyCIZAOgowSck3MLAr1YC3FGKk9OFSK8jrw";
-
 let map;
 function initMap() {
   map = new google.maps.Map(document.getElementById("googleMap"), {
